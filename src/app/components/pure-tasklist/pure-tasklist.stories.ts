@@ -1,6 +1,6 @@
 import { moduleMetadata ,componentWrapperDecorator} from '@storybook/angular';
 import type { Meta, StoryObj } from '@storybook/angular';
-import { TasklistComponent } from './tasklist.component';
+import { PureTaskListComponent } from './pure-tasklist.component'; 
 import { TaskComponent } from '../task/task.component';
 import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
@@ -9,16 +9,13 @@ import { importProvidersFrom } from '@angular/core';
 import * as TaskStory from '../task/task.stories';
 import { Task } from '../../models/task.model';
 
-const metaDetail: Meta<TasklistComponent> = {
-  /* 👇 The title prop is optional.
-   * See https://storybook.js.org/docs/angular/configure/overview#configure-story-loading
-   * to learn how to generate automatic titles
-   */
-  title: 'Task/TaskListComponent',
-  component: TasklistComponent,
+const metaDetail: Meta<PureTaskListComponent> = {
+
+  title: 'Task/PureTaskListComponent',
+  component: PureTaskListComponent,
   decorators: [
     moduleMetadata({
-      declarations: [TasklistComponent, TaskComponent],
+      declarations: [PureTaskListComponent, TaskComponent],
       imports: [
         CommonModule,
         HttpClientModule,
@@ -39,7 +36,7 @@ const metaDetail: Meta<TasklistComponent> = {
 };
 
 export default metaDetail;
-type tasklistStyleStory = StoryObj<TasklistComponent>;
+type tasklistStyleStory = StoryObj<PureTaskListComponent>;
 
 
 export const Template: tasklistStyleStory = {

@@ -1,42 +1,36 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { Task } from '../../models/task.model';
+import { Component } from '@angular/core';
+import { Store } from '@ngxs/store';
+import { ArchiveTask, PinTask } from '../../state/task.state';
+import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'app-tasklist',
-  templateUrl: './tasklist.component.html',
-  styleUrls: ['./tasklist.component.css']
+  selector: 'app-task-list',
+  template: `
+    <app-pure-tasklist
+      [tasks]="tasks$ | async"
+      (onArchiveTask)="archiveTask($event)"
+      (onPinTask)="pinTask($event)"
+    ></app-pure-tasklist>
+  `,
 })
-export class TasklistComponent {
+export  class TaskListComponent {
+  tasks$?: Observable<any>;
+
+  constructor(private store: Store) {
+     this.tasks$ = store.select((state) => state.taskbox.tasks);
+  }
+
   /**
-   * @ignore
-   * Component property to define ordering of tasks
+   * Component method to trigger the archiveTask event
    */
-  tasksInOrder: Task[] = [
-    { id: '1', title: 'Something', state: 'TASK_INBOX' },
-    { id: '2', title: 'Something more', state: 'TASK_INBOX' },
-    { id: '3', title: 'Something else', state: 'TASK_INBOX' },
-    { id: '4', title: 'Something again', state: 'TASK_INBOX' },
-  ];
+  archiveTask(id: string) {
+    this.store.dispatch(new ArchiveTask(id));
+  }
 
-  @Input() loading = false;
-
-  // tslint:disable-next-line: no-output-on-prefix
-  @Output() onPinTask: EventEmitter<any> = new EventEmitter();
-
-  // tslint:disable-next-line: no-output-on-prefix
-  @Output() onArchiveTask: EventEmitter<any> = new EventEmitter();
-
-  @Input()
-  set tasks(arr: Task[]) {
-    const initialTasks = [     
-      ...arr.filter((t) => t.state !== 'TASK_PINNED'),
-      ...arr.filter((t) => t.state === 'TASK_PINNED'),
-    ];
-    const filteredTasks = initialTasks.filter(
-      (t) => t.state === 'TASK_INBOX' || t.state === 'TASK_PINNED'
-    );
-    this.tasksInOrder = filteredTasks.filter(
-      (t) => t.state === 'TASK_INBOX' || t.state === 'TASK_PINNED'
-    );
+  /**
+   * Component method to trigger the pinTask event
+   */
+  pinTask(id: string) {
+    this.store.dispatch(new PinTask(id));
   }
 }
