@@ -1,0 +1,24 @@
+
+
+<ng-template #simpleTask>
+    <markdown ngPreserveWhitespaces> --- </markdown>
+    <markdown ngPreserveWhitespaces> {{simpleTaskMarkdown1}} </markdown>
+    <markdown mermaid ngPreserveWhitespaces>
+      {{ simpleTaskMermaid}}
+    </markdown>
+    <markdown ngPreserveWhitespaces> {{simpleTaskMarkdown2}} </markdown>
+    <div markdown ngPreserveWhitespaces>---</div>
+  </ng-template>
+  
+  <ng-template #taskList>
+    <markdown ngPreserveWhitespaces> --- </markdown>
+    <markdown mermaid ngPreserveWhitespaces>
+      {{ taskListMermaid}}
+    </markdown>
+    <markdown ngPreserveWhitespaces> --- </markdown>
+    <div markdown ngPreserveWhitespaces>{{taskListMarkdown1}}</div>
+  </ng-template>
+  
+
+<ng-container [ngTemplateOutlet]="tems" [ngTemplateOutletContext]="myContext">
+</ng-container>

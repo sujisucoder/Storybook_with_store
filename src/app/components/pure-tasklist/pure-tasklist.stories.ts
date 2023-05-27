@@ -11,7 +11,7 @@ import { Task } from '../../models/task.model';
 
 const metaDetail: Meta<PureTaskListComponent> = {
 
-  title: 'Task/PureTaskListComponent',
+  title: 'Task/TaskListComponent',
   component: PureTaskListComponent,
   decorators: [
     moduleMetadata({

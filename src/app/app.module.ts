@@ -20,6 +20,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { MermaidComponent } from './mermaid/mermaid.component';
 import { YoutubeComponent } from './youtube/youtube.component';
 import { StorybookDesignComponent } from './storybook-design/storybook-design.component';
+import { HideComponent } from './hide/hide.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { StorybookDesignComponent } from './storybook-design/storybook-design.co
     MermaidComponent,
     YoutubeComponent,
     StorybookDesignComponent,
+    HideComponent,
     
     
   ],
