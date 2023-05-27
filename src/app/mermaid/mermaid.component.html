@@ -1,0 +1,88 @@
+<ng-template #fromTemplate>
+  <markdown mermaid ngPreserveWhitespaces>
+    <pre class="mermaid">
+            flowchart TD
+            id1([Mermaid]) --> id2([Mermaid in html])
+            id1([Mermaid]) -->  id3([Mermaid in template])
+            id1([Mermaid]) --> id4([Mermaid in data])
+            id1([Mermaid]) --> id5([Mermaid loaded from src])
+          </pre>
+  </markdown>
+
+  <markdown ngPreserveWhitespaces> --- </markdown>
+  <div markdown ngPreserveWhitespaces>{{ mermaidfromtemplate}}</div>
+</ng-template>
+
+<ng-template #fromComponent>
+  <markdown ngPreserveWhitespaces> --- </markdown>
+  <markdown mermaid ngPreserveWhitespaces>
+    {{ mermaidfromcomponent}}
+  </markdown>
+  <markdown ngPreserveWhitespaces> --- </markdown>
+  <div markdown ngPreserveWhitespaces>{{ mermaidfromcomponentExplain }}</div>
+</ng-template>
+
+<ng-template #fromSrc>
+  <div class="markdown">
+    <markdown mermaid [src]="'./Testing.md'"></markdown>
+  </div>
+  <markdown ngPreserveWhitespaces> --- </markdown>
+  <div markdown ngPreserveWhitespaces>{{ mermaidfromSrcExplain }}</div>
+</ng-template>
+
+<ng-template #subgraph>
+  <markdown ngPreserveWhitespaces> --- </markdown>
+  <markdown mermaid ngPreserveWhitespaces>
+    {{ mermaidsubgraph}}
+  </markdown>
+  <markdown ngPreserveWhitespaces> --- </markdown>
+  <div markdown ngPreserveWhitespaces>{{ mermaidsubgraphExplained }}</div>
+</ng-template>
+
+<ng-template #attachclass>
+  <markdown ngPreserveWhitespaces> --- </markdown>
+  <markdown mermaid ngPreserveWhitespaces>
+    {{ mermaidattachclass}}
+  </markdown>
+  <markdown ngPreserveWhitespaces> --- </markdown>
+  <div markdown ngPreserveWhitespaces>{{ mermaidattachclassExplained }}</div>
+</ng-template>
+
+<ng-template #simpleform>
+  <markdown ngPreserveWhitespaces> --- </markdown>
+  <markdown mermaid ngPreserveWhitespaces>
+    {{ mermaidsimpleform}}
+  </markdown>
+  <markdown ngPreserveWhitespaces> --- </markdown>
+  <div markdown ngPreserveWhitespaces>{{ mermaidsimpleformExplained }}</div>
+</ng-template>
+
+<ng-template #customcolors>
+  <markdown ngPreserveWhitespaces> --- </markdown>
+  <markdown mermaid ngPreserveWhitespaces>
+    {{ mermaidcustomcolors}}
+  </markdown>
+  <markdown ngPreserveWhitespaces> --- </markdown>
+  <div markdown ngPreserveWhitespaces>{{ mermaidcustomcolorsExplained }}</div>
+</ng-template>
+
+<ng-template #fa>
+  <markdown ngPreserveWhitespaces> --- </markdown>
+  <markdown mermaid ngPreserveWhitespaces>
+    {{ mermaidfa}}
+  </markdown>
+  <markdown ngPreserveWhitespaces> --- </markdown>
+  <div markdown ngPreserveWhitespaces>{{ mermaidfaExplained }}</div>
+</ng-template>
+
+<ng-template #themes>
+  <markdown ngPreserveWhitespaces> --- </markdown>
+  <markdown mermaid ngPreserveWhitespaces>
+    {{ mermaidthemes}}
+  </markdown>
+  <markdown ngPreserveWhitespaces> --- </markdown>
+  <div markdown ngPreserveWhitespaces>{{ mermaidthemesExplained }}</div>
+</ng-template>
+
+<ng-container [ngTemplateOutlet]="tems" [ngTemplateOutletContext]="myContext">
+</ng-container>

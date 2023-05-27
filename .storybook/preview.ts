@@ -5,6 +5,22 @@ setCompodocJson(docJson);
 
 const preview: Preview = {
   parameters: {
+    layout: 'centered',
+    options: {
+      storySort: {
+        order: [
+          'Youtube',
+          ['Title'],
+          'Setup',
+          [  'Markdown', 'Mermaid'],
+          'Task',
+          ['Task', 'TaskList'],
+          'Screen',
+          ['InboxScreen']
+        ],
+      },
+       showPanel: false 
+    },
     actions: { argTypesRegex: "^on[A-Z].*" },
     controls: {
       matchers: {

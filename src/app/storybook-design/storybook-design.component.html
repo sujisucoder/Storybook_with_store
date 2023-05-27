@@ -1,0 +1,84 @@
+<ng-template #plan>
+    <markdown mermaid ngPreserveWhitespaces>
+      <pre class="mermaid">
+          flowchart TD
+            id44([Main Steps]) -->  id4([1.Modify Meta])
+            id4([1.Modify Meta]) -->  id5([2.Import Modules])
+            id5([2.Import Modules]) -->  id6([3.Prepare FileStructure])
+            id6([3.Prepare FileStructure])  -->  id7([4.Add Story])
+            id7([4.Add Story]) --> id8([.Re-use stories for MDX])
+            id8([5.Re-use stories for MDX]) --> id9([6.Modify Order])
+            id9([6.Modify Order]) -->  id10([7.Git Commands])
+            id10([7.Git Commands]) -->  id11([8.Chromatic deploy for visual testing])
+            
+        </pre>
+    </markdown>
+</ng-template>
+    
+<ng-template #meta>
+  <markdown ngPreserveWhitespaces> --- </markdown>
+  <markdown ngPreserveWhitespaces fxFlex="grow" >
+  {{metasteps}}
+  </markdown>
+</ng-template>
+
+<ng-template #import>
+  <markdown ngPreserveWhitespaces> --- </markdown>
+  <markdown ngPreserveWhitespaces commandLine [prompt]="'PS C:\Manoj>'" [filterOutput]="'(out)'" fxFlex="grow" >
+  {{importsteps}}
+  </markdown>
+</ng-template>
+
+<ng-template #structure>
+  <markdown ngPreserveWhitespaces> --- </markdown>
+  <markdown ngPreserveWhitespaces commandLine [prompt]="'PS C:\Manoj>'" [filterOutput]="'(out)'" fxFlex="grow" >
+  {{structuresteps}}
+  </markdown>
+</ng-template>
+
+<ng-template #addstory>
+  <markdown ngPreserveWhitespaces> --- </markdown>
+  <markdown ngPreserveWhitespaces commandLine [prompt]="'PS C:\Manoj>'" [filterOutput]="'(out)'" fxFlex="grow" >
+  {{addstorysteps}}
+  </markdown>
+</ng-template>
+
+<ng-template #addmdx>
+  <markdown ngPreserveWhitespaces> --- </markdown>
+  <markdown ngPreserveWhitespaces commandLine [prompt]="'PS C:\Manoj>'" [filterOutput]="'(out)'" fxFlex="grow" >
+  {{addmdxsteps}}
+  </markdown>
+</ng-template>
+
+<ng-template #order>
+  <markdown ngPreserveWhitespaces> --- </markdown>
+  <markdown ngPreserveWhitespaces commandLine [prompt]="'PS C:\Manoj>'" [filterOutput]="'(out)'" fxFlex="grow" >
+  {{ordersteps}}
+  </markdown>
+</ng-template>
+
+<ng-template #git>
+  <markdown ngPreserveWhitespaces> --- </markdown>
+  <markdown ngPreserveWhitespaces commandLine [prompt]="'PS C:\Manoj>'" [filterOutput]="'(out)'" fxFlex="grow" >
+  {{gitsteps}}
+  </markdown>
+</ng-template>
+
+<ng-template #chromatic>
+  <markdown ngPreserveWhitespaces> --- </markdown>
+  <markdown ngPreserveWhitespaces commandLine [prompt]="'PS C:\Manoj>'" [filterOutput]="'(out)'" fxFlex="grow" >
+  {{chromaticsteps}}
+  </markdown>
+</ng-template>
+
+
+
+
+
+
+
+
+<ng-container [ngTemplateOutlet]="tems" [ngTemplateOutletContext]="myContext">
+    </ng-container>
+
+

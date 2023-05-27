@@ -1,0 +1,67 @@
+<ng-template #fromTemplate>
+    <markdown mermaid ngPreserveWhitespaces>
+      <pre class="mermaid">
+              flowchart TD
+              id1([Markdown]) --> id2([Markdown in html])
+              id1([Markdown]) -->  id3([Markdown in template])
+              id1([Markdown]) --> id4([Markdown in data])
+              id1([Markdown]) --> id5([Markdown loaded from src])
+              id1([Markdown]) --> id6([Markdown with commandline])
+            </pre>
+    </markdown>
+    <markdown ngPreserveWhitespaces> --- </markdown>
+    <markdown ngPreserveWhitespaces>
+      ### Lists
+      1. Ordered list
+      2. Another bullet point
+      - Unordered list
+      - Another unordered bullet
+      {{ '#working' | language: 'typescript' }}
+    </markdown>
+    <markdown ngPreserveWhitespaces> --- </markdown>
+    <div markdown ngPreserveWhitespaces>{{ markdownfromtemplate }}</div>
+  </ng-template>
+  
+  
+  <ng-template #fromComponent>
+    <markdown ngPreserveWhitespaces> --- </markdown>
+    <div markdown ngPreserveWhitespaces>{{ markdownfromcomponent }}</div>
+  </ng-template>
+  
+  <ng-template #fromSrc>
+    <div class="markdown">
+      <markdown [src]="'../Testing.md'"></markdown>
+    </div>
+    <markdown ngPreserveWhitespaces> --- </markdown>
+    <div markdown ngPreserveWhitespaces>{{ markdownfromsrc }}</div>
+  </ng-template>
+  
+  <ng-template #showcommandline>
+    <div markdown ngPreserveWhitespaces>{{ markdownnofilter }}</div>
+    <markdown ngPreserveWhitespaces> --- </markdown>
+    <markdown
+    ngPreserveWhitespaces
+    commandLine
+    [prompt]="'PS C:\Users\Chris>'"
+    [filterOutput]="'(out)'">
+    ```powershell
+    Get-Date
+    (out)
+    (out)Sunday, November 7, 2021 8:19:21 PM
+    (out)
+    `​``
+  </markdown>
+  
+  </ng-template>
+  
+  <ng-template #showclipboard>
+    <div markdown ngPreserveWhitespaces>{{ markdownnclipboard }}</div>
+    <markdown ngPreserveWhitespaces clipboard>
+      {{someothervar}}
+      {{ somevar | language: 'typescript' }}
+      </markdown> 
+  
+  </ng-template>
+  
+  <ng-container [ngTemplateOutlet]="tems" [ngTemplateOutletContext]="myContext">
+  </ng-container>

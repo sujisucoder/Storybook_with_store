@@ -878,6 +878,650 @@
             }
         },
         {
+            "name": "MarkdownComponent",
+            "id": "component-MarkdownComponent-2d4e397bcbf1632c0b5a34b165d98770ed5308968a41012f15b53f085e7371af70e87b562b5bad3233280b3d87a58c1a66470abf9521a7a1429e5727a86a6ce8",
+            "file": "src/app/markdown/markdown.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-markdowncode",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./markdown.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "myselectedtemp",
+                    "defaultValue": "'fromComponent'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 118,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "fromComponent",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TemplateRef<any>",
+                    "optional": false,
+                    "description": "",
+                    "line": 102,
+                    "decorators": [
+                        {
+                            "name": "ViewChild",
+                            "stringifiedArguments": "'fromComponent', {static: true}"
+                        }
+                    ],
+                    "modifierKind": [
+                        167
+                    ]
+                },
+                {
+                    "name": "fromsrc",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TemplateRef<any>",
+                    "optional": false,
+                    "description": "",
+                    "line": 105,
+                    "decorators": [
+                        {
+                            "name": "ViewChild",
+                            "stringifiedArguments": "'fromSrc', {static: true}"
+                        }
+                    ],
+                    "modifierKind": [
+                        167
+                    ]
+                },
+                {
+                    "name": "fromTemplate",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TemplateRef<any>",
+                    "optional": false,
+                    "description": "",
+                    "line": 99,
+                    "decorators": [
+                        {
+                            "name": "ViewChild",
+                            "stringifiedArguments": "'fromTemplate', {static: true}"
+                        }
+                    ],
+                    "modifierKind": [
+                        167
+                    ]
+                },
+                {
+                    "name": "markdownfromcomponent",
+                    "defaultValue": "` \n  ## keep a variable in component to load the value \n\n\n  \\`\\`\\`typescript\n  markdownfromcomponent = XXX\n  \\`\\`\\`\n\n  ### From the HTML the usage is:\n   \\`\\`\\`typescript\n   <div markdown ngPreserveWhitespaces>{{ markdownfromcomponent }}</div>\n   \\`\\`\\`\n\n  `",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 31
+                },
+                {
+                    "name": "markdownfromsrc",
+                    "defaultValue": "`\n  # Working for app.component.html but not working in strories\n  ## Need to raise PR for storybook\n  \n  \\`\\`\\`typescript\n      <div class=\"markdown\">\n      <markdown mermaid [src]=\"'../../assets/Testing.md'\"></markdown>\n      </div>\n  \\`\\`\\`\n  `",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 46
+                },
+                {
+                    "name": "markdownfromtemplate",
+                    "defaultValue": "`  \n  ### Usage is done by:\n  \\`\\`\\`typescript\n  <markdown ngPreserveWhitespaces> --- </markdown>  \n  <markdown ngPreserveWhitespaces >\n    ### Lists\n      1. Ordered list\n      2. Another bullet point\n        - Unordered list\n        - Another unordered bullet\n    {{ '#working' | language: 'typescript' }}\n    </markdown>\n    <markdown ngPreserveWhitespaces> --- </markdown>  \n  \\`\\`\\`\n  `",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 15
+                },
+                {
+                    "name": "markdownnclipboard",
+                    "defaultValue": "`\n  # Clipboard copy feature Working for app.component.html but not working in strories\n  ## Need to raise PR for storybook\n\n  \\`\\`\\`typescript\n  <markdown ngPreserveWhitespaces clipboard>\n  {{someothervar}}\n  {{ somevar | language: 'typescript' }}\n  </markdown>\n  \\`\\`\\`\n  `",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 76
+                },
+                {
+                    "name": "markdownnofilter",
+                    "defaultValue": "`\n  # Working fine\n  ## Need to give the prompt and filtered output\n  \\`\\`\\`typescript\n  <markdown\n  ngPreserveWhitespaces\n  commandLine\n  [prompt]=\"'PS C:\\Users\\Chris>'\"\n  [filterOutput]=\"'(out)'\">\n  \\`\\`\\`typescript\n  Get-Date\n  (out)\n  (out)Sunday, November 7, 2021 8:19:21 PM\n  (out)\n  \\`\\`\\`\n  </markdown>\n  \\`\\`\\` \n  `",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 57
+                },
+                {
+                    "name": "myContext",
+                    "defaultValue": "{ $implicit: 'World', localSk: 'Svet' }",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "optional": false,
+                    "description": "",
+                    "line": 115
+                },
+                {
+                    "name": "showclipboard",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TemplateRef<any>",
+                    "optional": false,
+                    "description": "",
+                    "line": 111,
+                    "decorators": [
+                        {
+                            "name": "ViewChild",
+                            "stringifiedArguments": "'showclipboard', {static: true}"
+                        }
+                    ],
+                    "modifierKind": [
+                        167
+                    ]
+                },
+                {
+                    "name": "showcommandline",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TemplateRef<any>",
+                    "optional": false,
+                    "description": "",
+                    "line": 108,
+                    "decorators": [
+                        {
+                            "name": "ViewChild",
+                            "stringifiedArguments": "'showcommandline', {static: true}"
+                        }
+                    ],
+                    "modifierKind": [
+                        167
+                    ]
+                },
+                {
+                    "name": "someothervar",
+                    "defaultValue": "`\n  ## Markdown from component no code __works__!\n  ---\n  `",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 89
+                },
+                {
+                    "name": "somevar",
+                    "defaultValue": "`\n  ## Markdown from component with typescript __works__!\n  ---\n  `",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 93
+                },
+                {
+                    "name": "tems",
+                    "defaultValue": "this.fromTemplate",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TemplateRef<any>",
+                    "optional": false,
+                    "description": "",
+                    "line": 113
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngAfterContentInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 121,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {\n  Component,\n  Input,\n  AfterContentInit,\n  ViewChild,\n  TemplateRef,\n} from '@angular/core';\n\n@Component({\n  selector: 'app-markdowncode',\n  templateUrl: './markdown.component.html',\n  \n})\nexport class MarkdownComponent implements  AfterContentInit {\n  markdownfromtemplate = `  \n  ### Usage is done by:\n  \\`\\`\\`typescript\n  <markdown ngPreserveWhitespaces> --- </markdown>  \n  <markdown ngPreserveWhitespaces >\n    ### Lists\n      1. Ordered list\n      2. Another bullet point\n        - Unordered list\n        - Another unordered bullet\n    {{ '#working' | language: 'typescript' }}\n    </markdown>\n    <markdown ngPreserveWhitespaces> --- </markdown>  \n  \\`\\`\\`\n  `;\n\n  markdownfromcomponent = ` \n  ## keep a variable in component to load the value \n\n\n  \\`\\`\\`typescript\n  markdownfromcomponent = XXX\n  \\`\\`\\`\n\n  ### From the HTML the usage is:\n   \\`\\`\\`typescript\n   <div markdown ngPreserveWhitespaces>{{ markdownfromcomponent }}</div>\n   \\`\\`\\`\n\n  `;\n\n  markdownfromsrc = `\n  # Working for app.component.html but not working in strories\n  ## Need to raise PR for storybook\n  \n  \\`\\`\\`typescript\n      <div class=\"markdown\">\n      <markdown mermaid [src]=\"'../../assets/Testing.md'\"></markdown>\n      </div>\n  \\`\\`\\`\n  `;\n\n  markdownnofilter = `\n  # Working fine\n  ## Need to give the prompt and filtered output\n  \\`\\`\\`typescript\n  <markdown\n  ngPreserveWhitespaces\n  commandLine\n  [prompt]=\"'PS C:\\Users\\Chris>'\"\n  [filterOutput]=\"'(out)'\">\n  \\`\\`\\`typescript\n  Get-Date\n  (out)\n  (out)Sunday, November 7, 2021 8:19:21 PM\n  (out)\n  \\`\\`\\`\n  </markdown>\n  \\`\\`\\` \n  `;\n\n  markdownnclipboard = `\n  # Clipboard copy feature Working for app.component.html but not working in strories\n  ## Need to raise PR for storybook\n\n  \\`\\`\\`typescript\n  <markdown ngPreserveWhitespaces clipboard>\n  {{someothervar}}\n  {{ somevar | language: 'typescript' }}\n  </markdown>\n  \\`\\`\\`\n  `;\n\n\n  someothervar = `\n  ## Markdown from component no code __works__!\n  ---\n  `;\n  somevar = `\n  ## Markdown from component with typescript __works__!\n  ---\n  `;\n\n  @ViewChild('fromTemplate', { static: true })\n  fromTemplate!: TemplateRef<any>;\n\n  @ViewChild('fromComponent', { static: true })\n  fromComponent!: TemplateRef<any>;\n\n  @ViewChild('fromSrc', { static: true })\n  fromsrc!: TemplateRef<any>;\n\n  @ViewChild('showcommandline', { static: true })\n  showcommandline!: TemplateRef<any>;\n\n  @ViewChild('showclipboard', { static: true })\n  showclipboard!: TemplateRef<any>;\n  \n  tems: TemplateRef<any> = this.fromTemplate;\n\n  myContext = { $implicit: 'World', localSk: 'Svet' };\n\n  @Input()\n  myselectedtemp: string = 'fromComponent';\n\n\n  ngAfterContentInit() {\n    switch (this.myselectedtemp) {\n      case 'fromTemplate':\n        this.tems = this.fromTemplate;\n        break;\n\n      case 'fromComponent':\n        this.tems = this.fromComponent;\n        break;\n\n      case 'fromSrc':\n        this.tems = this.fromsrc;\n        break;\n\n      case 'showcommandline':\n        this.tems = this.showcommandline;\n        break;\n\n        case 'showclipboard':\n          this.tems = this.showclipboard;\n          break;\n\n    }\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "implements": [
+                "AfterContentInit"
+            ],
+            "templateData": "<ng-template #fromTemplate>\n    <markdown mermaid ngPreserveWhitespaces>\n      <pre class=\"mermaid\">\n              flowchart TD\n              id1([Markdown]) --> id2([Markdown in html])\n              id1([Markdown]) -->  id3([Markdown in template])\n              id1([Markdown]) --> id4([Markdown in data])\n              id1([Markdown]) --> id5([Markdown loaded from src])\n              id1([Markdown]) --> id6([Markdown with commandline])\n            </pre>\n    </markdown>\n    <markdown ngPreserveWhitespaces> --- </markdown>\n    <markdown ngPreserveWhitespaces>\n      ### Lists\n      1. Ordered list\n      2. Another bullet point\n      - Unordered list\n      - Another unordered bullet\n      {{ '#working' | language: 'typescript' }}\n    </markdown>\n    <markdown ngPreserveWhitespaces> --- </markdown>\n    <div markdown ngPreserveWhitespaces>{{ markdownfromtemplate }}</div>\n  </ng-template>\n  \n  \n  <ng-template #fromComponent>\n    <markdown ngPreserveWhitespaces> --- </markdown>\n    <div markdown ngPreserveWhitespaces>{{ markdownfromcomponent }}</div>\n  </ng-template>\n  \n  <ng-template #fromSrc>\n    <div class=\"markdown\">\n      <markdown [src]=\"'../Testing.md'\"></markdown>\n    </div>\n    <markdown ngPreserveWhitespaces> --- </markdown>\n    <div markdown ngPreserveWhitespaces>{{ markdownfromsrc }}</div>\n  </ng-template>\n  \n  <ng-template #showcommandline>\n    <div markdown ngPreserveWhitespaces>{{ markdownnofilter }}</div>\n    <markdown ngPreserveWhitespaces> --- </markdown>\n    <markdown\n    ngPreserveWhitespaces\n    commandLine\n    [prompt]=\"'PS C:\\Users\\Chris>'\"\n    [filterOutput]=\"'(out)'\">\n    ```powershell\n    Get-Date\n    (out)\n    (out)Sunday, November 7, 2021 8:19:21 PM\n    (out)\n    `​``\n  </markdown>\n  \n  </ng-template>\n  \n  <ng-template #showclipboard>\n    <div markdown ngPreserveWhitespaces>{{ markdownnclipboard }}</div>\n    <markdown ngPreserveWhitespaces clipboard>\n      {{someothervar}}\n      {{ somevar | language: 'typescript' }}\n      </markdown> \n  \n  </ng-template>\n  \n  <ng-container [ngTemplateOutlet]=\"tems\" [ngTemplateOutletContext]=\"myContext\">\n  </ng-container>\n"
+        },
+        {
+            "name": "MermaidComponent",
+            "id": "component-MermaidComponent-eddbdea71588454e2ed65f28c10b850081f902bc3e558de4232d1cd537f84fa85d41e6c91c28b3ff3a2b18e25afeae65084d8618c287523ce1ee29ae84604040",
+            "file": "src/app/mermaid/mermaid.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-mermaidcode",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./mermaid.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "myselectedtemp",
+                    "defaultValue": "'fromComponent'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 50,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "attachclass",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TemplateRef<any>",
+                    "optional": false,
+                    "description": "",
+                    "line": 30,
+                    "decorators": [
+                        {
+                            "name": "ViewChild",
+                            "stringifiedArguments": "'attachclass', {static: true}"
+                        }
+                    ],
+                    "modifierKind": [
+                        167
+                    ]
+                },
+                {
+                    "name": "customcolors",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TemplateRef<any>",
+                    "optional": false,
+                    "description": "",
+                    "line": 36,
+                    "decorators": [
+                        {
+                            "name": "ViewChild",
+                            "stringifiedArguments": "'customcolors', {static: true}"
+                        }
+                    ],
+                    "modifierKind": [
+                        167
+                    ]
+                },
+                {
+                    "name": "fa",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TemplateRef<any>",
+                    "optional": false,
+                    "description": "",
+                    "line": 39,
+                    "decorators": [
+                        {
+                            "name": "ViewChild",
+                            "stringifiedArguments": "'fa', {static: true}"
+                        }
+                    ],
+                    "modifierKind": [
+                        167
+                    ]
+                },
+                {
+                    "name": "fromComponent",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TemplateRef<any>",
+                    "optional": false,
+                    "description": "",
+                    "line": 20,
+                    "decorators": [
+                        {
+                            "name": "ViewChild",
+                            "stringifiedArguments": "'fromComponent', {static: true}"
+                        }
+                    ],
+                    "modifierKind": [
+                        167
+                    ]
+                },
+                {
+                    "name": "fromSrc",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TemplateRef<any>",
+                    "optional": false,
+                    "description": "",
+                    "line": 23,
+                    "decorators": [
+                        {
+                            "name": "ViewChild",
+                            "stringifiedArguments": "'fromSrc', {static: true}"
+                        }
+                    ],
+                    "modifierKind": [
+                        167
+                    ]
+                },
+                {
+                    "name": "fromTemplate",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TemplateRef<any>",
+                    "optional": false,
+                    "description": "",
+                    "line": 17,
+                    "decorators": [
+                        {
+                            "name": "ViewChild",
+                            "stringifiedArguments": "'fromTemplate', {static: true}"
+                        }
+                    ],
+                    "modifierKind": [
+                        167
+                    ]
+                },
+                {
+                    "name": "mermaidattachclass",
+                    "defaultValue": "`\n  <pre class=\"mermaid\">\n  flowchart LR\n    A:::someclass --> B\n    classDef someclass fill:#f96;\n    </pre>\n  `",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 171
+                },
+                {
+                    "name": "mermaidattachclassExplained",
+                    "defaultValue": "`\n  \n  ## Easiliy we can explain relationship between classes\n  \\`\\`\\`typescript\n  <pre class=\"mermaid\">\n  flowchart LR\n    A:::someclass --> B\n    classDef someclass fill:#f96;\n    </pre>\n\\`\\`\\`\n  `",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 179
+                },
+                {
+                    "name": "mermaidcustomcolors",
+                    "defaultValue": "`\n  <pre class=\"mermaid\">\n\n  graph TD\n  %% Nodes\n      0[Key Variable]\n      1[Top Variable 1]\n      2[Top Variable 2]\n      3[Top Variable 3]\n      31[Sub Variable 1]\n      32[Sub Variable 2]\n      321[Element 1]\n      322[Element 2]\n\n  %% Links\n      0 --- 1\n      0 --- 2\n      0 --- 3\n      3 --- 31\n      3 --- 32\n      32 --- 321\n      32 --- 322\n\n          %% Defining the styles\n      classDef Red fill:#FF9999;\n      classDef Amber fill:#FFDEAD;\n      classDef Green fill:#BDFFA4;\n\n  %% Assigning styles to nodes\n      class 3,32,321 Red;\n      class 322 Amber;\n      class 1,2,31 Green;\n\n</pre>\n\n  `",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 223
+                },
+                {
+                    "name": "mermaidcustomcolorsExplained",
+                    "defaultValue": "`\n  \n  ## Easiliy we can explain with custom colors\n  \\`\\`\\`typescript\n  <pre class=\"mermaid\">\n\n  graph TD\n  %% Nodes\n      0[Key Variable]\n      1[Top Variable 1]\n      2[Top Variable 2]\n      3[Top Variable 3]\n      31[Sub Variable 1]\n      32[Sub Variable 2]\n      321[Element 1]\n      322[Element 2]\n\n  %% Links\n      0 --- 1\n      0 --- 2\n      0 --- 3\n      3 --- 31\n      3 --- 32\n      32 --- 321\n      32 --- 322\n\n          %% Defining the styles\n      classDef Red fill:#FF9999;\n      classDef Amber fill:#FFDEAD;\n      classDef Green fill:#BDFFA4;\n\n  %% Assigning styles to nodes\n      class 3,32,321 Red;\n      class 322 Amber;\n      class 1,2,31 Green;\n\n</pre>\n\n\\`\\`\\`\n  `",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 260
+                },
+                {
+                    "name": "mermaidfa",
+                    "defaultValue": "`\n  <pre class=\"mermaid\">\n  flowchart TD\n    B[\"fab:fa-twitter for peace\"]\n    B-->C[fa:fa-ban forbidden]\n    B-->D(fa:fa-spinner);\n    B-->E(A fa:fa-camera-retro perhaps?)\n</pre>\n\n\n  `",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 301
+                },
+                {
+                    "name": "mermaidfaExplained",
+                    "defaultValue": "`\n  \n  ## Font Awesome is not working - Mermaid is now only compatible with Font Awesome versions 4 and 5\n  \\`\\`\\`typescript\n  <pre class=\"mermaid\">\n    flowchart TD\n      B[\"fab:fa-twitter for peace\"]\n      B-->C[fa:fa-ban forbidden]\n      B-->D(fa:fa-spinner);\n      B-->E(A fa:fa-camera-retro perhaps?)\n  </pre>\n\n\n\\`\\`\\`\n  `",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 313
+                },
+                {
+                    "name": "mermaidfromcomponent",
+                    "defaultValue": "`\n  <pre class=\"mermaid\">\n    flowchart TD\n    id1([Mermaid]) --> id2([Markdown in html])\n    id1([Mermaid]) -->  id3([Markdown in template])\n    id1([Mermaid]) --> id4([Markdown in data])\n    id1([Mermaid]) --> id5([Markdown loaded from src])\n  </pre>\n  </markdown>\n  `",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 71
+                },
+                {
+                    "name": "mermaidfromcomponentExplain",
+                    "defaultValue": "`\n  ## keep a variable in component to load the value \n\n  \\`\\`\\`typescript\n  mermaidfromcomponent = \\`\n  <pre class=\"mermaid\">\n    flowchart TD\n    id1([Mermaid]) --> id2([Markdown in html])\n    id1([Mermaid]) -->  id3([Markdown in template])\n    id1([Mermaid]) --> id4([Markdown in data])\n    id1([Mermaid]) --> id5([Markdown loaded from src])\n  </pre>\n  </markdown>\n  \\`\n  \\`\\`\\`\n\n  ## And call the variable from Template\n\n  \\`\\`\\`typescript\n  <markdown mermaid  ngPreserveWhitespaces>\n  {{ mermaidfromcomponent}}\n  </markdown>\n  \\`\\`\\`\n  `",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 82
+                },
+                {
+                    "name": "mermaidfromSrcExplain",
+                    "defaultValue": "`\n  # Working for app.component.html but not working in strories\n  ## Need to raise PR for storybook\n  \n  \\`\\`\\`typescript\n  <div class=\"markdown\" >\n  <markdown mermaid [src]=\"'./Testing.md'\"></markdown>\n  </div>\n  \\`\\`\\`\n\n  ## Testing.md file contains\n  \\`\\`\\`typescript\n  <pre class=\"mermaid\">\n  journey\n    title My Career Graph\n    section Before Tech\n    Secondary- 88%: 1: Manoj\n    Higher Secondary-89%: 2: Manoj\n    College-UG- 67%: 3: Manoj\n    College-PG- 74%: 4: Manoj\n    section After Tech\n    Lecturer- 1Y: 5: Manoj\n    Telecom Testing- 14Y: 6: Manoj\n    Development- 7Y: 7: Manoj\n  \n  </pre>\n  \\`\\`\\`\n  `",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 107
+                },
+                {
+                    "name": "mermaidfromtemplate",
+                    "defaultValue": "`\n  ## keep a variable in component to load the value \n\n  \\`\\`\\`typescript\n  <markdown mermaid  ngPreserveWhitespaces>\n  <pre class=\"mermaid\">\n    flowchart TD\n    id1([Mermaid]) --> id2([Markdown in html])\n    id1([Mermaid]) -->  id3([Markdown in template])\n    id1([Mermaid]) --> id4([Markdown in data])\n    id1([Mermaid]) --> id5([Markdown loaded from src])\n  </pre>\n  </markdown>\n  \\`\\`\\`\n\n  `",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 54
+                },
+                {
+                    "name": "mermaidsimpleform",
+                    "defaultValue": "`\n  <pre class=\"mermaid\">\n    graph LR\n    %% Nodes\n    1([Start])\n    2[Look for lost item]\n    3{Did I find it?}\n    4([Stop])\n    %% Node links\n    1 --> 2 --> 3 -->|Yes| 4\n    3 -.->|No| 2\n  </pre>\n  `",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 191
+                },
+                {
+                    "name": "mermaidsimpleformExplained",
+                    "defaultValue": "`\n  \n  ## Easiliy we can explain Simple Forms\n  \\`\\`\\`typescript\n  <pre class=\"mermaid\">\n    graph LR\n    %% Nodes\n    1([Start])\n    2[Look for lost item]\n    3{Did I find it?}\n    4([Stop])\n    %% Node links\n    1 --> 2 --> 3 -->|Yes| 4\n    3 -.->|No| 2\n  </pre>\n\\`\\`\\`\n  `",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 205
+                },
+                {
+                    "name": "mermaidsubgraph",
+                    "defaultValue": "`\n  <pre class=\"mermaid\">\n  flowchart TB\n  c1-->a2\n  subgraph one\n  a1-->a2\n  end\n  subgraph two\n  b1-->b2\n  end\n  subgraph three\n  c1-->c2\n  end\n</pre>\n  `",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 136
+                },
+                {
+                    "name": "mermaidsubgraphExplained",
+                    "defaultValue": "`\n  ## Easiliy we can explain ideas in subgraphs\n  \\`\\`\\`typescript\n  <pre class=\"mermaid\">\n  flowchart TB\n  c1-->a2\n  subgraph one\n  a1-->a2\n  end\n  subgraph two\n  b1-->b2\n  end\n  subgraph three\n  c1-->c2\n  end\n</pre>\n\\`\\`\\`\n  `",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 152
+                },
+                {
+                    "name": "mermaidthemes",
+                    "defaultValue": "`\n\n  <pre class=\"mermaid\">\n    %%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#ff0000'}}}%%\n            graph TD\n              A[Christmas] -->|Get money| B(Go shopping)\n              B --> C{Let me think}\n              B --> G[/Another/]\n              C ==>|One| D[Laptop]\n              C -->|Two| E[iPhone]\n              C -->|Three| F[fa:fa-car Car]\n              subgraph section\n                C\n                D\n                E\n                F\n                G\n              end\n  </pre>\n\n\n\n\n  `",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 329
+                },
+                {
+                    "name": "mermaidthemesExplained",
+                    "defaultValue": "`\n  \n  ## Themes is working\n  \\`\\`\\`typescript\n  <pre class=\"mermaid\">\n  <pre class=\"mermaid\">\n    %%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#ff0000'}}}%%\n            graph TD\n              A[Christmas] -->|Get money| B(Go shopping)\n              B --> C{Let me think}\n              B --> G[/Another/]\n              C ==>|One| D[Laptop]\n              C -->|Two| E[iPhone]\n              C -->|Three| F[fa:fa-car Car]\n              subgraph section\n                C\n                D\n                E\n                F\n                G\n              end\n  </pre>\n\n  </pre>\n\n\n\\`\\`\\`\n  `",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 354
+                },
+                {
+                    "name": "myContext",
+                    "defaultValue": "{ $implicit: 'World', localSk: 'Svet' }",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "optional": false,
+                    "description": "",
+                    "line": 47
+                },
+                {
+                    "name": "simpleform",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TemplateRef<any>",
+                    "optional": false,
+                    "description": "",
+                    "line": 33,
+                    "decorators": [
+                        {
+                            "name": "ViewChild",
+                            "stringifiedArguments": "'simpleform', {static: true}"
+                        }
+                    ],
+                    "modifierKind": [
+                        167
+                    ]
+                },
+                {
+                    "name": "subgraph",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TemplateRef<any>",
+                    "optional": false,
+                    "description": "",
+                    "line": 27,
+                    "decorators": [
+                        {
+                            "name": "ViewChild",
+                            "stringifiedArguments": "'subgraph', {static: true}"
+                        }
+                    ],
+                    "modifierKind": [
+                        167
+                    ]
+                },
+                {
+                    "name": "tems",
+                    "defaultValue": "this.fromTemplate",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TemplateRef<any>",
+                    "optional": false,
+                    "description": "",
+                    "line": 45
+                },
+                {
+                    "name": "themes",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TemplateRef<any>",
+                    "optional": false,
+                    "description": "",
+                    "line": 42,
+                    "decorators": [
+                        {
+                            "name": "ViewChild",
+                            "stringifiedArguments": "'themes', {static: true}"
+                        }
+                    ],
+                    "modifierKind": [
+                        167
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngAfterContentInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 383,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {\n  Component,\n  Input,\n  AfterContentInit,\n  ViewChild,\n  TemplateRef,\n} from '@angular/core';\n\n\n@Component({\n  selector: 'app-mermaidcode',\n  templateUrl: './mermaid.component.html',\n})\nexport class MermaidComponent implements AfterContentInit {\n\n  @ViewChild('fromTemplate', { static: true })\n  fromTemplate!: TemplateRef<any>;\n\n  @ViewChild('fromComponent', { static: true })\n  fromComponent!: TemplateRef<any>;\n\n  @ViewChild('fromSrc', { static: true })\n  fromSrc!: TemplateRef<any>;\n\n\n  @ViewChild('subgraph', { static: true })\n  subgraph!: TemplateRef<any>;\n\n  @ViewChild('attachclass', { static: true })\n  attachclass!: TemplateRef<any>;\n\n  @ViewChild('simpleform', { static: true })\n  simpleform!: TemplateRef<any>;\n\n  @ViewChild('customcolors', { static: true })\n  customcolors!: TemplateRef<any>;\n\n  @ViewChild('fa', { static: true })\n  fa!: TemplateRef<any>;\n\n  @ViewChild('themes', { static: true })\n  themes!: TemplateRef<any>;\n\n\n  tems: TemplateRef<any> = this.fromTemplate;\n\n  myContext = { $implicit: 'World', localSk: 'Svet' };\n\n  @Input()\n  myselectedtemp: string = 'fromComponent';\n\n\n\n  mermaidfromtemplate = `\n  ## keep a variable in component to load the value \n\n  \\`\\`\\`typescript\n  <markdown mermaid  ngPreserveWhitespaces>\n  <pre class=\"mermaid\">\n    flowchart TD\n    id1([Mermaid]) --> id2([Markdown in html])\n    id1([Mermaid]) -->  id3([Markdown in template])\n    id1([Mermaid]) --> id4([Markdown in data])\n    id1([Mermaid]) --> id5([Markdown loaded from src])\n  </pre>\n  </markdown>\n  \\`\\`\\`\n\n  `;\n\n  mermaidfromcomponent = `\n  <pre class=\"mermaid\">\n    flowchart TD\n    id1([Mermaid]) --> id2([Markdown in html])\n    id1([Mermaid]) -->  id3([Markdown in template])\n    id1([Mermaid]) --> id4([Markdown in data])\n    id1([Mermaid]) --> id5([Markdown loaded from src])\n  </pre>\n  </markdown>\n  `;\n\n  mermaidfromcomponentExplain = `\n  ## keep a variable in component to load the value \n\n  \\`\\`\\`typescript\n  mermaidfromcomponent = \\`\n  <pre class=\"mermaid\">\n    flowchart TD\n    id1([Mermaid]) --> id2([Markdown in html])\n    id1([Mermaid]) -->  id3([Markdown in template])\n    id1([Mermaid]) --> id4([Markdown in data])\n    id1([Mermaid]) --> id5([Markdown loaded from src])\n  </pre>\n  </markdown>\n  \\`\n  \\`\\`\\`\n\n  ## And call the variable from Template\n\n  \\`\\`\\`typescript\n  <markdown mermaid  ngPreserveWhitespaces>\n  {{ mermaidfromcomponent}}\n  </markdown>\n  \\`\\`\\`\n  `;\n\n  mermaidfromSrcExplain = `\n  # Working for app.component.html but not working in strories\n  ## Need to raise PR for storybook\n  \n  \\`\\`\\`typescript\n  <div class=\"markdown\" >\n  <markdown mermaid [src]=\"'./Testing.md'\"></markdown>\n  </div>\n  \\`\\`\\`\n\n  ## Testing.md file contains\n  \\`\\`\\`typescript\n  <pre class=\"mermaid\">\n  journey\n    title My Career Graph\n    section Before Tech\n    Secondary- 88%: 1: Manoj\n    Higher Secondary-89%: 2: Manoj\n    College-UG- 67%: 3: Manoj\n    College-PG- 74%: 4: Manoj\n    section After Tech\n    Lecturer- 1Y: 5: Manoj\n    Telecom Testing- 14Y: 6: Manoj\n    Development- 7Y: 7: Manoj\n  \n  </pre>\n  \\`\\`\\`\n  `;\n\n  mermaidsubgraph = `\n  <pre class=\"mermaid\">\n  flowchart TB\n  c1-->a2\n  subgraph one\n  a1-->a2\n  end\n  subgraph two\n  b1-->b2\n  end\n  subgraph three\n  c1-->c2\n  end\n</pre>\n  `;\n\n  mermaidsubgraphExplained = `\n  ## Easiliy we can explain ideas in subgraphs\n  \\`\\`\\`typescript\n  <pre class=\"mermaid\">\n  flowchart TB\n  c1-->a2\n  subgraph one\n  a1-->a2\n  end\n  subgraph two\n  b1-->b2\n  end\n  subgraph three\n  c1-->c2\n  end\n</pre>\n\\`\\`\\`\n  `;\n\n  mermaidattachclass = `\n  <pre class=\"mermaid\">\n  flowchart LR\n    A:::someclass --> B\n    classDef someclass fill:#f96;\n    </pre>\n  `;\n\n  mermaidattachclassExplained = `\n  \n  ## Easiliy we can explain relationship between classes\n  \\`\\`\\`typescript\n  <pre class=\"mermaid\">\n  flowchart LR\n    A:::someclass --> B\n    classDef someclass fill:#f96;\n    </pre>\n\\`\\`\\`\n  `;\n\n  mermaidsimpleform = `\n  <pre class=\"mermaid\">\n    graph LR\n    %% Nodes\n    1([Start])\n    2[Look for lost item]\n    3{Did I find it?}\n    4([Stop])\n    %% Node links\n    1 --> 2 --> 3 -->|Yes| 4\n    3 -.->|No| 2\n  </pre>\n  `;\n\n  mermaidsimpleformExplained = `\n  \n  ## Easiliy we can explain Simple Forms\n  \\`\\`\\`typescript\n  <pre class=\"mermaid\">\n    graph LR\n    %% Nodes\n    1([Start])\n    2[Look for lost item]\n    3{Did I find it?}\n    4([Stop])\n    %% Node links\n    1 --> 2 --> 3 -->|Yes| 4\n    3 -.->|No| 2\n  </pre>\n\\`\\`\\`\n  `;\n\n  mermaidcustomcolors = `\n  <pre class=\"mermaid\">\n\n  graph TD\n  %% Nodes\n      0[Key Variable]\n      1[Top Variable 1]\n      2[Top Variable 2]\n      3[Top Variable 3]\n      31[Sub Variable 1]\n      32[Sub Variable 2]\n      321[Element 1]\n      322[Element 2]\n\n  %% Links\n      0 --- 1\n      0 --- 2\n      0 --- 3\n      3 --- 31\n      3 --- 32\n      32 --- 321\n      32 --- 322\n\n          %% Defining the styles\n      classDef Red fill:#FF9999;\n      classDef Amber fill:#FFDEAD;\n      classDef Green fill:#BDFFA4;\n\n  %% Assigning styles to nodes\n      class 3,32,321 Red;\n      class 322 Amber;\n      class 1,2,31 Green;\n\n</pre>\n\n  `;\n\n  mermaidcustomcolorsExplained = `\n  \n  ## Easiliy we can explain with custom colors\n  \\`\\`\\`typescript\n  <pre class=\"mermaid\">\n\n  graph TD\n  %% Nodes\n      0[Key Variable]\n      1[Top Variable 1]\n      2[Top Variable 2]\n      3[Top Variable 3]\n      31[Sub Variable 1]\n      32[Sub Variable 2]\n      321[Element 1]\n      322[Element 2]\n\n  %% Links\n      0 --- 1\n      0 --- 2\n      0 --- 3\n      3 --- 31\n      3 --- 32\n      32 --- 321\n      32 --- 322\n\n          %% Defining the styles\n      classDef Red fill:#FF9999;\n      classDef Amber fill:#FFDEAD;\n      classDef Green fill:#BDFFA4;\n\n  %% Assigning styles to nodes\n      class 3,32,321 Red;\n      class 322 Amber;\n      class 1,2,31 Green;\n\n</pre>\n\n\\`\\`\\`\n  `;\n\n  mermaidfa = `\n  <pre class=\"mermaid\">\n  flowchart TD\n    B[\"fab:fa-twitter for peace\"]\n    B-->C[fa:fa-ban forbidden]\n    B-->D(fa:fa-spinner);\n    B-->E(A fa:fa-camera-retro perhaps?)\n</pre>\n\n\n  `;\n\n  mermaidfaExplained = `\n  \n  ## Font Awesome is not working - Mermaid is now only compatible with Font Awesome versions 4 and 5\n  \\`\\`\\`typescript\n  <pre class=\"mermaid\">\n    flowchart TD\n      B[\"fab:fa-twitter for peace\"]\n      B-->C[fa:fa-ban forbidden]\n      B-->D(fa:fa-spinner);\n      B-->E(A fa:fa-camera-retro perhaps?)\n  </pre>\n\n\n\\`\\`\\`\n  `;\n\n  mermaidthemes = `\n\n  <pre class=\"mermaid\">\n    %%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#ff0000'}}}%%\n            graph TD\n              A[Christmas] -->|Get money| B(Go shopping)\n              B --> C{Let me think}\n              B --> G[/Another/]\n              C ==>|One| D[Laptop]\n              C -->|Two| E[iPhone]\n              C -->|Three| F[fa:fa-car Car]\n              subgraph section\n                C\n                D\n                E\n                F\n                G\n              end\n  </pre>\n\n\n\n\n  `;\n\n  mermaidthemesExplained = `\n  \n  ## Themes is working\n  \\`\\`\\`typescript\n  <pre class=\"mermaid\">\n  <pre class=\"mermaid\">\n    %%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#ff0000'}}}%%\n            graph TD\n              A[Christmas] -->|Get money| B(Go shopping)\n              B --> C{Let me think}\n              B --> G[/Another/]\n              C ==>|One| D[Laptop]\n              C -->|Two| E[iPhone]\n              C -->|Three| F[fa:fa-car Car]\n              subgraph section\n                C\n                D\n                E\n                F\n                G\n              end\n  </pre>\n\n  </pre>\n\n\n\\`\\`\\`\n  `;\n\n  ngAfterContentInit() {\n    switch (this.myselectedtemp) {\n      case 'fromTemplate':\n        this.tems = this.fromTemplate;\n        break;\n      case 'fromComponent':\n        this.tems = this.fromComponent;\n        break;\n      case 'fromSrc':\n        this.tems = this.fromSrc;\n        break;\n      case 'subgraph':\n        this.tems = this.subgraph;\n        break;\n      case 'attachclass':\n        this.tems = this.attachclass;\n        break;\n\n      case 'simpleform':\n        this.tems = this.simpleform;\n        break;\n      case 'customcolors':\n        this.tems = this.customcolors;\n        break;\n      case 'fa':\n        this.tems = this.fa;\n        break;\n      case 'themes':\n        this.tems = this.themes;\n        break;\n\n    }\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "implements": [
+                "AfterContentInit"
+            ],
+            "templateData": "<ng-template #fromTemplate>\n  <markdown mermaid ngPreserveWhitespaces>\n    <pre class=\"mermaid\">\n            flowchart TD\n            id1([Mermaid]) --> id2([Mermaid in html])\n            id1([Mermaid]) -->  id3([Mermaid in template])\n            id1([Mermaid]) --> id4([Mermaid in data])\n            id1([Mermaid]) --> id5([Mermaid loaded from src])\n          </pre>\n  </markdown>\n\n  <markdown ngPreserveWhitespaces> --- </markdown>\n  <div markdown ngPreserveWhitespaces>{{ mermaidfromtemplate}}</div>\n</ng-template>\n\n<ng-template #fromComponent>\n  <markdown ngPreserveWhitespaces> --- </markdown>\n  <markdown mermaid ngPreserveWhitespaces>\n    {{ mermaidfromcomponent}}\n  </markdown>\n  <markdown ngPreserveWhitespaces> --- </markdown>\n  <div markdown ngPreserveWhitespaces>{{ mermaidfromcomponentExplain }}</div>\n</ng-template>\n\n<ng-template #fromSrc>\n  <div class=\"markdown\">\n    <markdown mermaid [src]=\"'./Testing.md'\"></markdown>\n  </div>\n  <markdown ngPreserveWhitespaces> --- </markdown>\n  <div markdown ngPreserveWhitespaces>{{ mermaidfromSrcExplain }}</div>\n</ng-template>\n\n<ng-template #subgraph>\n  <markdown ngPreserveWhitespaces> --- </markdown>\n  <markdown mermaid ngPreserveWhitespaces>\n    {{ mermaidsubgraph}}\n  </markdown>\n  <markdown ngPreserveWhitespaces> --- </markdown>\n  <div markdown ngPreserveWhitespaces>{{ mermaidsubgraphExplained }}</div>\n</ng-template>\n\n<ng-template #attachclass>\n  <markdown ngPreserveWhitespaces> --- </markdown>\n  <markdown mermaid ngPreserveWhitespaces>\n    {{ mermaidattachclass}}\n  </markdown>\n  <markdown ngPreserveWhitespaces> --- </markdown>\n  <div markdown ngPreserveWhitespaces>{{ mermaidattachclassExplained }}</div>\n</ng-template>\n\n<ng-template #simpleform>\n  <markdown ngPreserveWhitespaces> --- </markdown>\n  <markdown mermaid ngPreserveWhitespaces>\n    {{ mermaidsimpleform}}\n  </markdown>\n  <markdown ngPreserveWhitespaces> --- </markdown>\n  <div markdown ngPreserveWhitespaces>{{ mermaidsimpleformExplained }}</div>\n</ng-template>\n\n<ng-template #customcolors>\n  <markdown ngPreserveWhitespaces> --- </markdown>\n  <markdown mermaid ngPreserveWhitespaces>\n    {{ mermaidcustomcolors}}\n  </markdown>\n  <markdown ngPreserveWhitespaces> --- </markdown>\n  <div markdown ngPreserveWhitespaces>{{ mermaidcustomcolorsExplained }}</div>\n</ng-template>\n\n<ng-template #fa>\n  <markdown ngPreserveWhitespaces> --- </markdown>\n  <markdown mermaid ngPreserveWhitespaces>\n    {{ mermaidfa}}\n  </markdown>\n  <markdown ngPreserveWhitespaces> --- </markdown>\n  <div markdown ngPreserveWhitespaces>{{ mermaidfaExplained }}</div>\n</ng-template>\n\n<ng-template #themes>\n  <markdown ngPreserveWhitespaces> --- </markdown>\n  <markdown mermaid ngPreserveWhitespaces>\n    {{ mermaidthemes}}\n  </markdown>\n  <markdown ngPreserveWhitespaces> --- </markdown>\n  <div markdown ngPreserveWhitespaces>{{ mermaidthemesExplained }}</div>\n</ng-template>\n\n<ng-container [ngTemplateOutlet]=\"tems\" [ngTemplateOutletContext]=\"myContext\">\n</ng-container>"
+        },
+        {
             "name": "PageComponent",
             "id": "component-PageComponent-badb6d8cee577661da79ba82ad8f599604afd40fa34e36c7b88d71d77a4fbc7184228cba2f0d73e255d0b7bc51c4c7a8e7b0128b3624aeb0255abab9030fa59a",
             "file": "src/stories/page.component.ts",
@@ -1112,6 +1756,329 @@
                 }
             },
             "templateData": "<div class=\"list-items\">\n    <app-task\n      *ngFor=\"let task of tasksInOrder\"\n      [task]=\"task\"\n      (onArchiveTask)=\"onArchiveTask.emit($event)\"\n      (onPinTask)=\"onPinTask.emit($event)\"\n    >\n    </app-task>\n    <div\n      *ngIf=\"tasksInOrder.length === 0 && !loading\"\n      class=\"wrapper-message\"\n    >\n      <span class=\"icon-check\"></span>\n      <p class=\"title-message\">You have no tasks</p>\n      <p class=\"subtitle-message\">Sit back and relax</p>\n    </div>\n    <div *ngIf=\"loading\">\n      <div *ngFor=\"let i of [1, 2, 3, 4, 5, 6]\" class=\"loading-item\">\n        <span class=\"glow-checkbox\"></span>\n        <span class=\"glow-text\">\n          <span>Loading</span> <span>cool</span> <span>state</span>\n        </span>\n      </div>\n    </div>\n  </div>"
+        },
+        {
+            "name": "StorybookDesignComponent",
+            "id": "component-StorybookDesignComponent-11d8d40aedf2142172f9f346f061d5673d29d604b912c63a6a808e46fad67d444db61a3d5145c86909aa59f5b531d4dbdd83b5978d3f216f50c1cbedb971d542",
+            "file": "src/app/storybook-design/storybook-design.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-storybook-design",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./storybook-design.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "myselectedtemp",
+                    "defaultValue": "'fromComponent'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 49,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "addmdxsteps",
+                    "defaultValue": "`\n  \n  # Refer to other stories and add them in the mdx file\n\n  ## MDX file should have the same name as the component to replace the docs\n\n  \\`\\`\\`powershell\n  import { Canvas, Meta, Story } from '@storybook/blocks';\n\nimport * as markdown from '../markdowncode/markdown.stories';\nimport * as mermaid from '../mermaidcode/mermaid.stories';\nimport * as task from './simpletask.stories';\n\n<Meta of={task} />\n\n# Checkbox\n\nA checkbox is a square box that can be activated or deactivated when ticked. \n\nUse checkboxes to select one or more options from a list of choices.\n\n## Usage\n\n<Story of={mermaid.MermaidFromTemplate} />\n\n# Checkbox\n\nA checkbox is a square box that can be activated or deactivated when ticked. \n\nUse checkboxes to select one or more options from a list of choices.\n\n## Usage\n\n<Story of={markdown.MarkdownFromTemplate} />\n\n\\`\\`\\`\n  `",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 202
+                },
+                {
+                    "name": "addstory",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TemplateRef<any>",
+                    "optional": false,
+                    "description": "",
+                    "line": 29,
+                    "decorators": [
+                        {
+                            "name": "ViewChild",
+                            "stringifiedArguments": "'addstory', {static: true}"
+                        }
+                    ],
+                    "modifierKind": [
+                        167
+                    ]
+                },
+                {
+                    "name": "addstorysteps",
+                    "defaultValue": "`\n  # Add the story here\n  \n  \\`\\`\\`powershell\nexport const ImportantSteps: StoryDetail = {\n  args: {\n    myselectedtemp: 'plan'\n  }\n};\n\\`\\`\\`\n  `",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 190
+                },
+                {
+                    "name": "chromatic",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TemplateRef<any>",
+                    "optional": false,
+                    "description": "",
+                    "line": 41,
+                    "decorators": [
+                        {
+                            "name": "ViewChild",
+                            "stringifiedArguments": "'chromatic', {static: true}"
+                        }
+                    ],
+                    "modifierKind": [
+                        167
+                    ]
+                },
+                {
+                    "name": "chromaticsteps",
+                    "defaultValue": "`\n  \n  # Create Chromtic login and create a new project tocken\n  \\`\\`\\`powershell\n\n  \"chromatic\": \"npx chromatic --project-token=f38be8eee28a  --exit-once-uploaded\"\n  \n  \\`\\`\\`\n  `",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 290
+                },
+                {
+                    "name": "fromplan",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TemplateRef<any>",
+                    "optional": false,
+                    "description": "",
+                    "line": 17,
+                    "decorators": [
+                        {
+                            "name": "ViewChild",
+                            "stringifiedArguments": "'plan', {static: true}"
+                        }
+                    ],
+                    "modifierKind": [
+                        167
+                    ]
+                },
+                {
+                    "name": "git",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TemplateRef<any>",
+                    "optional": false,
+                    "description": "",
+                    "line": 38,
+                    "decorators": [
+                        {
+                            "name": "ViewChild",
+                            "stringifiedArguments": "'git', {static: true}"
+                        }
+                    ],
+                    "modifierKind": [
+                        167
+                    ]
+                },
+                {
+                    "name": "gitsteps",
+                    "defaultValue": "`\n  \n  # Git commands to push to repo and gh-pages\n  \\`\\`\\`powershell\n  git remote remove origin\n  git remote add origin https://github.com/gmanojisaac/AngularStorybook.git\n  git remote -v show\n  git add .\n  git commit -am “Completed storybook design”\n  git push -u origin storydesign\n  npm run pre-deploy\n  npm run deploy-storybook\n\n  \\`\\`\\`\n  `",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 274
+                },
+                {
+                    "name": "import",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TemplateRef<any>",
+                    "optional": false,
+                    "description": "",
+                    "line": 23,
+                    "decorators": [
+                        {
+                            "name": "ViewChild",
+                            "stringifiedArguments": "'import', {static: true}"
+                        }
+                    ],
+                    "modifierKind": [
+                        167
+                    ]
+                },
+                {
+                    "name": "importsteps",
+                    "defaultValue": "`\n\n  # Import Modules for story use\n  ## Import sharedModule which contains FlexBox, HTTPClient Module for MarkdownModule\n  ## Component is used in the StorybookdesignComponent\n\n  \\`\\`\\`powershell\n  moduleMetadata({\n\n    declarations: [StorybookDesignComponent],\n    imports: [\n      CommonModule,\n      SharedModule,\n      HttpClientModule,\n      MarkdownModule.forRoot({ loader: HttpClient }),\n    ]\n  }),\n  applicationConfig({\n    providers: [\n      importProvidersFrom(\n        CommonModule,\n        HttpClientModule,\n        MarkdownModule.forRoot({ loader: HttpClient }),\n        MarkdownService\n      ),\n    ],\n  }),\n  \\`\\`\\`\n  `",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 68
+                },
+                {
+                    "name": "mdx",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TemplateRef<any>",
+                    "optional": false,
+                    "description": "",
+                    "line": 32,
+                    "decorators": [
+                        {
+                            "name": "ViewChild",
+                            "stringifiedArguments": "'addmdx', {static: true}"
+                        }
+                    ],
+                    "modifierKind": [
+                        167
+                    ]
+                },
+                {
+                    "name": "meta",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TemplateRef<any>",
+                    "optional": false,
+                    "description": "",
+                    "line": 20,
+                    "decorators": [
+                        {
+                            "name": "ViewChild",
+                            "stringifiedArguments": "'meta', {static: true}"
+                        }
+                    ],
+                    "modifierKind": [
+                        167
+                    ]
+                },
+                {
+                    "name": "metasteps",
+                    "defaultValue": "`\n  \\`\\`\\`powershell\nconst metaDetail: Meta<StorybookDesignComponent> = {\n\n  title: 'Setup/Storybook',\n  component: StorybookDesignComponent,\n  decorators: [\n    ...\n  ]\n};\n\nexport default metaDetail;\ntype StoryDetail = StoryObj<StorybookDesignComponent>;\n\\`\\`\\`\n---\n`",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 52
+                },
+                {
+                    "name": "myContext",
+                    "defaultValue": "{ $implicit: 'World', localSk: 'Svet' }",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "optional": false,
+                    "description": "",
+                    "line": 46
+                },
+                {
+                    "name": "order",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TemplateRef<any>",
+                    "optional": false,
+                    "description": "",
+                    "line": 35,
+                    "decorators": [
+                        {
+                            "name": "ViewChild",
+                            "stringifiedArguments": "'order', {static: true}"
+                        }
+                    ],
+                    "modifierKind": [
+                        167
+                    ]
+                },
+                {
+                    "name": "ordersteps",
+                    "defaultValue": "`\n  \n  # The order of the strories can be set in the preview.js -> parameters\n\n  \\`\\`\\`powershell\noptions: {\n    storySort: {\n      order: [\n       'YoutubeMaking', ['StorybookDesign'], 'Example', ['Page', '*']\n       ],\n    },\n  },\n     \n   \\`\\`\\`\n\n---\n   # For centering the stories, in Preview.js\n   \\`\\`\\`powershell\n   const preview: Preview = {\n    parameters: {\n      layout: 'centered',\n    \\`\\`\\`\n---\n   # To hide the Panel\n\n\\`\\`\\`powershell\noptions: {\n  storySort: {\n    order: [...\n    ],\n  },\n   showPanel: false\n \\`\\`\\`\n ---\n `",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 239
+                },
+                {
+                    "name": "structure",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TemplateRef<any>",
+                    "optional": false,
+                    "description": "",
+                    "line": 26,
+                    "decorators": [
+                        {
+                            "name": "ViewChild",
+                            "stringifiedArguments": "'structure', {static: true}"
+                        }
+                    ],
+                    "modifierKind": [
+                        167
+                    ]
+                },
+                {
+                    "name": "structuresteps",
+                    "defaultValue": "`\n  ## PageDesign __works__!\n  \\`\\`\\`powershell\n  <pre class=\"mermaid\">\n    flowchart TD\n      id1([Prepare ngTemplate]) -->  id2([Mmyselectedtemp receive input from story])\n\n      id2([myselectedtemp receive input from story]) -->  id3([Shows the template])\n\n      id3([Shows the template]) -->  id4([use templateOutlet and context])\n  </pre>\n  \\`\\`\\`\n  # In html use the different templates\n  \\`\\`\\`powershell\n  <ng-template #storydesign >\n  </ng-template>\n  \\`\\`\\`\n\n  # call the templates using templateOutlet and can pass a context\n\n  \\`\\`\\`powershell\n  <ng-container \n  [ngTemplateOutlet]=\"tems\"\n  [ngTemplateOutletContext]=\"myContext\"> \n  \\`\\`\\`\n\n  # use the context in html\n\n  \\`\\`\\`powershell\n  <ng-template #storydesign >\n  <h1>\n      Working\n  </h1>>\n  </ng-template>\n  <ng-template #greet let-person><span>Hello {{person}} </span></ng-template>\n  <ng-template #eng let-name><span>Hello {{name}}!</span></ng-template>\n  <ng-template #svk let-person=\"localSk\" ><span>Ahoj {{person}}!</span></ng-template>\n\n  \\`\\`\\`\n\n  # use the context in component\n\n  \\`\\`\\`powershell\n  @ViewChild('greet', { static: true })\n  greet!: TemplateRef<any>;\n  @ViewChild('svk', { static: true })\n  svk!: TemplateRef<any>;\n  @ViewChild('eng', { static: true })\n  eng!: TemplateRef<any>;\n  @ViewChild('storydesign', { static: true })\n  storydesign!: TemplateRef<any>;\n\n  myContext = { $implicit: 'World', localSk: 'Svet' };\n  tems: TemplateRef<any> = this.greet;\n  \\`\\`\\`\n\n  # use AfterContentInit\n\n  \\`\\`\\`powershell\n\n  import { OnInit, AfterContentInit, ViewChild, TemplateRef, Input, Component } from '@angular/core';\n\n  Component=>  implements OnInit, AfterContentInit {\n\n  @Input()\n  myselectedtemp: string = 'greet';\n\n  ngAfterContentInit() {\n\n    switch (this.myselectedtemp) {\n      case 'greet':\n        this.tems = this.greet;\n        break;\n      case 'svk':\n        this.tems = this.svk;\n        break;\n      case 'eng':\n        this.tems = this.eng;\n        break;\n      case 'storydesign':\n        this.tems = this.storydesign;\n        break;\n      }\n    }\n\n    constructor() { }\n\n    ngOnInit(): void {\n    }\n  }\n\n  \\`\\`\\`\n  `",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 97
+                },
+                {
+                    "name": "tems",
+                    "defaultValue": "this.fromplan",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TemplateRef<any>",
+                    "optional": false,
+                    "description": "",
+                    "line": 44
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngAfterContentInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 301,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {\n  Component,\n  Input,\n  AfterContentInit,\n  ViewChild,\n  TemplateRef,\n} from '@angular/core';\n\n@Component({\n  selector: 'app-storybook-design',\n  templateUrl: './storybook-design.component.html',\n})\nexport class StorybookDesignComponent implements AfterContentInit {\n\n\n  @ViewChild('plan', { static: true })\n  fromplan!: TemplateRef<any>;\n\n  @ViewChild('meta', { static: true })\n  meta!: TemplateRef<any>;\n\n  @ViewChild('import', { static: true })\n  import!: TemplateRef<any>;\n\n  @ViewChild('structure', { static: true })\n  structure!: TemplateRef<any>;\n\n  @ViewChild('addstory', { static: true })\n  addstory!: TemplateRef<any>;\n\n  @ViewChild('addmdx', { static: true })\n  mdx!: TemplateRef<any>;\n\n  @ViewChild('order', { static: true })\n  order!: TemplateRef<any>;\n\n  @ViewChild('git', { static: true })\n  git!: TemplateRef<any>;\n\n  @ViewChild('chromatic', { static: true })\n  chromatic!: TemplateRef<any>;\n\n\n  tems: TemplateRef<any> = this.fromplan;\n\n  myContext = { $implicit: 'World', localSk: 'Svet' };\n\n  @Input()\n  myselectedtemp: string = 'fromComponent';\n\n\n  metasteps = `\n  \\`\\`\\`powershell\nconst metaDetail: Meta<StorybookDesignComponent> = {\n\n  title: 'Setup/Storybook',\n  component: StorybookDesignComponent,\n  decorators: [\n    ...\n  ]\n};\n\nexport default metaDetail;\ntype StoryDetail = StoryObj<StorybookDesignComponent>;\n\\`\\`\\`\n---\n`;\n  importsteps = `\n\n  # Import Modules for story use\n  ## Import sharedModule which contains FlexBox, HTTPClient Module for MarkdownModule\n  ## Component is used in the StorybookdesignComponent\n\n  \\`\\`\\`powershell\n  moduleMetadata({\n\n    declarations: [StorybookDesignComponent],\n    imports: [\n      CommonModule,\n      SharedModule,\n      HttpClientModule,\n      MarkdownModule.forRoot({ loader: HttpClient }),\n    ]\n  }),\n  applicationConfig({\n    providers: [\n      importProvidersFrom(\n        CommonModule,\n        HttpClientModule,\n        MarkdownModule.forRoot({ loader: HttpClient }),\n        MarkdownService\n      ),\n    ],\n  }),\n  \\`\\`\\`\n  `;\n  structuresteps = `\n  ## PageDesign __works__!\n  \\`\\`\\`powershell\n  <pre class=\"mermaid\">\n    flowchart TD\n      id1([Prepare ngTemplate]) -->  id2([Mmyselectedtemp receive input from story])\n\n      id2([myselectedtemp receive input from story]) -->  id3([Shows the template])\n\n      id3([Shows the template]) -->  id4([use templateOutlet and context])\n  </pre>\n  \\`\\`\\`\n  # In html use the different templates\n  \\`\\`\\`powershell\n  <ng-template #storydesign >\n  </ng-template>\n  \\`\\`\\`\n\n  # call the templates using templateOutlet and can pass a context\n\n  \\`\\`\\`powershell\n  <ng-container \n  [ngTemplateOutlet]=\"tems\"\n  [ngTemplateOutletContext]=\"myContext\"> \n  \\`\\`\\`\n\n  # use the context in html\n\n  \\`\\`\\`powershell\n  <ng-template #storydesign >\n  <h1>\n      Working\n  </h1>>\n  </ng-template>\n  <ng-template #greet let-person><span>Hello {{person}} </span></ng-template>\n  <ng-template #eng let-name><span>Hello {{name}}!</span></ng-template>\n  <ng-template #svk let-person=\"localSk\" ><span>Ahoj {{person}}!</span></ng-template>\n\n  \\`\\`\\`\n\n  # use the context in component\n\n  \\`\\`\\`powershell\n  @ViewChild('greet', { static: true })\n  greet!: TemplateRef<any>;\n  @ViewChild('svk', { static: true })\n  svk!: TemplateRef<any>;\n  @ViewChild('eng', { static: true })\n  eng!: TemplateRef<any>;\n  @ViewChild('storydesign', { static: true })\n  storydesign!: TemplateRef<any>;\n\n  myContext = { $implicit: 'World', localSk: 'Svet' };\n  tems: TemplateRef<any> = this.greet;\n  \\`\\`\\`\n\n  # use AfterContentInit\n\n  \\`\\`\\`powershell\n\n  import { OnInit, AfterContentInit, ViewChild, TemplateRef, Input, Component } from '@angular/core';\n\n  Component=>  implements OnInit, AfterContentInit {\n\n  @Input()\n  myselectedtemp: string = 'greet';\n\n  ngAfterContentInit() {\n\n    switch (this.myselectedtemp) {\n      case 'greet':\n        this.tems = this.greet;\n        break;\n      case 'svk':\n        this.tems = this.svk;\n        break;\n      case 'eng':\n        this.tems = this.eng;\n        break;\n      case 'storydesign':\n        this.tems = this.storydesign;\n        break;\n      }\n    }\n\n    constructor() { }\n\n    ngOnInit(): void {\n    }\n  }\n\n  \\`\\`\\`\n  `;\n  addstorysteps = `\n  # Add the story here\n  \n  \\`\\`\\`powershell\nexport const ImportantSteps: StoryDetail = {\n  args: {\n    myselectedtemp: 'plan'\n  }\n};\n\\`\\`\\`\n  `;\n\n  addmdxsteps= `\n  \n  # Refer to other stories and add them in the mdx file\n\n  ## MDX file should have the same name as the component to replace the docs\n\n  \\`\\`\\`powershell\n  import { Canvas, Meta, Story } from '@storybook/blocks';\n\nimport * as markdown from '../markdowncode/markdown.stories';\nimport * as mermaid from '../mermaidcode/mermaid.stories';\nimport * as task from './simpletask.stories';\n\n<Meta of={task} />\n\n# Checkbox\n\nA checkbox is a square box that can be activated or deactivated when ticked. \n\nUse checkboxes to select one or more options from a list of choices.\n\n## Usage\n\n<Story of={mermaid.MermaidFromTemplate} />\n\n# Checkbox\n\nA checkbox is a square box that can be activated or deactivated when ticked. \n\nUse checkboxes to select one or more options from a list of choices.\n\n## Usage\n\n<Story of={markdown.MarkdownFromTemplate} />\n\n\\`\\`\\`\n  `;\n  ordersteps = `\n  \n  # The order of the strories can be set in the preview.js -> parameters\n\n  \\`\\`\\`powershell\noptions: {\n    storySort: {\n      order: [\n       'YoutubeMaking', ['StorybookDesign'], 'Example', ['Page', '*']\n       ],\n    },\n  },\n     \n   \\`\\`\\`\n\n---\n   # For centering the stories, in Preview.js\n   \\`\\`\\`powershell\n   const preview: Preview = {\n    parameters: {\n      layout: 'centered',\n    \\`\\`\\`\n---\n   # To hide the Panel\n\n\\`\\`\\`powershell\noptions: {\n  storySort: {\n    order: [...\n    ],\n  },\n   showPanel: false\n \\`\\`\\`\n ---\n `;\n  gitsteps = `\n  \n  # Git commands to push to repo and gh-pages\n  \\`\\`\\`powershell\n  git remote remove origin\n  git remote add origin https://github.com/gmanojisaac/AngularStorybook.git\n  git remote -v show\n  git add .\n  git commit -am “Completed storybook design”\n  git push -u origin storydesign\n  npm run pre-deploy\n  npm run deploy-storybook\n\n  \\`\\`\\`\n  `;\n\n  chromaticsteps = `\n  \n  # Create Chromtic login and create a new project tocken\n  \\`\\`\\`powershell\n\n  \"chromatic\": \"npx chromatic --project-token=f38be8eee28a  --exit-once-uploaded\"\n  \n  \\`\\`\\`\n  `;\n\n\n  ngAfterContentInit() {\n    switch (this.myselectedtemp) {\n      case 'plan':\n        this.tems = this.fromplan;\n        break;\n      case 'meta':\n        this.tems = this.meta;\n        break;\n      case 'import':\n        this.tems = this.import;\n        break;\n      case 'structure':\n        this.tems = this.structure;\n        break;\n      case 'addstory':\n        this.tems = this.addstory;\n        break;\n      case 'mdx':\n        this.tems = this.mdx;\n        break;\n      case 'order':\n        this.tems = this.order;\n        break;\n      case 'git':\n        this.tems = this.git;\n        break;\n      case 'chromatic':\n        this.tems = this.chromatic;\n        break;\n\n    }\n\n\n\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "implements": [
+                "AfterContentInit"
+            ],
+            "templateData": "<ng-template #plan>\n    <markdown mermaid ngPreserveWhitespaces>\n      <pre class=\"mermaid\">\n          flowchart TD\n            id44([Main Steps]) -->  id4([1.Modify Meta])\n            id4([1.Modify Meta]) -->  id5([2.Import Modules])\n            id5([2.Import Modules]) -->  id6([3.Prepare FileStructure])\n            id6([3.Prepare FileStructure])  -->  id7([4.Add Story])\n            id7([4.Add Story]) --> id8([.Re-use stories for MDX])\n            id8([5.Re-use stories for MDX]) --> id9([6.Modify Order])\n            id9([6.Modify Order]) -->  id10([7.Git Commands])\n            id10([7.Git Commands]) -->  id11([8.Chromatic deploy for visual testing])\n            \n        </pre>\n    </markdown>\n</ng-template>\n    \n<ng-template #meta>\n  <markdown ngPreserveWhitespaces> --- </markdown>\n  <markdown ngPreserveWhitespaces fxFlex=\"grow\" >\n  {{metasteps}}\n  </markdown>\n</ng-template>\n\n<ng-template #import>\n  <markdown ngPreserveWhitespaces> --- </markdown>\n  <markdown ngPreserveWhitespaces commandLine [prompt]=\"'PS C:\\Manoj>'\" [filterOutput]=\"'(out)'\" fxFlex=\"grow\" >\n  {{importsteps}}\n  </markdown>\n</ng-template>\n\n<ng-template #structure>\n  <markdown ngPreserveWhitespaces> --- </markdown>\n  <markdown ngPreserveWhitespaces commandLine [prompt]=\"'PS C:\\Manoj>'\" [filterOutput]=\"'(out)'\" fxFlex=\"grow\" >\n  {{structuresteps}}\n  </markdown>\n</ng-template>\n\n<ng-template #addstory>\n  <markdown ngPreserveWhitespaces> --- </markdown>\n  <markdown ngPreserveWhitespaces commandLine [prompt]=\"'PS C:\\Manoj>'\" [filterOutput]=\"'(out)'\" fxFlex=\"grow\" >\n  {{addstorysteps}}\n  </markdown>\n</ng-template>\n\n<ng-template #addmdx>\n  <markdown ngPreserveWhitespaces> --- </markdown>\n  <markdown ngPreserveWhitespaces commandLine [prompt]=\"'PS C:\\Manoj>'\" [filterOutput]=\"'(out)'\" fxFlex=\"grow\" >\n  {{addmdxsteps}}\n  </markdown>\n</ng-template>\n\n<ng-template #order>\n  <markdown ngPreserveWhitespaces> --- </markdown>\n  <markdown ngPreserveWhitespaces commandLine [prompt]=\"'PS C:\\Manoj>'\" [filterOutput]=\"'(out)'\" fxFlex=\"grow\" >\n  {{ordersteps}}\n  </markdown>\n</ng-template>\n\n<ng-template #git>\n  <markdown ngPreserveWhitespaces> --- </markdown>\n  <markdown ngPreserveWhitespaces commandLine [prompt]=\"'PS C:\\Manoj>'\" [filterOutput]=\"'(out)'\" fxFlex=\"grow\" >\n  {{gitsteps}}\n  </markdown>\n</ng-template>\n\n<ng-template #chromatic>\n  <markdown ngPreserveWhitespaces> --- </markdown>\n  <markdown ngPreserveWhitespaces commandLine [prompt]=\"'PS C:\\Manoj>'\" [filterOutput]=\"'(out)'\" fxFlex=\"grow\" >\n  {{chromaticsteps}}\n  </markdown>\n</ng-template>\n\n\n\n\n\n\n\n\n<ng-container [ngTemplateOutlet]=\"tems\" [ngTemplateOutletContext]=\"myContext\">\n    </ng-container>\n\n\n"
         },
         {
             "name": "TaskComponent",
@@ -1403,18 +2370,54 @@
                     }
                 ]
             }
+        },
+        {
+            "name": "YoutubeComponent",
+            "id": "component-YoutubeComponent-32e98fd4705db72762337352ae89c30b87f2fee536bd5ede6d4b0076751f9654af62a6881402b18c7c07f8d760042c296d54acbc1a0d5b7ddec412a3ca321eae",
+            "file": "src/app/youtube/youtube.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-youtube",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./youtube.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-youtube',\n  templateUrl: './youtube.component.html',\n  \n})\nexport class YoutubeComponent {\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "templateData": "<markdown mermaid ngPreserveWhitespaces>\n    <pre class=\"mermaid\">\n        flowchart TD\n        id1((( Angular-16, Storybook 7, Taskbox with NGXS  )))\n        style id1 fill:#f9f,stroke:#333,stroke-width:10px, font-size: 13px,padding-top: 4px\n    \n          </pre>\n  </markdown>\n"
         }
     ],
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-f701660072927bc98c69e5c691322b836bc9bade3efdac255a8cb59e9a52f1df6734169222e5e863c43228dd9163090f4b59504d506c9fc04adbb0aa62b3ddfa",
+            "id": "module-AppModule-733e28044084ed57e90cd6104cd88880cbc833d7061e4cad0ca4c2e3f237fd9e8f14c11ecec07921acc3d05b8e27ef431617e671bdd065a336fd10e7b1cb7ce8",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\n\r\nimport { TaskModule } from './components/task.module';\r\n import { NgxsModule } from '@ngxs/store';\r\n import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';\r\n import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';\r\n\r\n\r\n import { environment } from '../environments/environment';\r\n\r\nimport { AppComponent } from './app.component';\r\nimport { PureInboxScreenComponent } from './components/pure-inbox-screen/pure-inbox-screen.component';\r\nimport { InboxScreenComponent } from './components/inbox-screen/inbox-screen.component';\r\nimport { AppRoutingModule } from './app-routing.module';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent,\r\n    PureInboxScreenComponent,\r\n    InboxScreenComponent\r\n    \r\n    \r\n  ],\r\n  imports: [\r\n    BrowserModule,\r\n    AppRoutingModule,\r\n    TaskModule,\r\n    NgxsModule.forRoot([], {\r\n    developmentMode: !environment.production,\r\n    }),\r\n    NgxsReduxDevtoolsPluginModule.forRoot(),\r\n    NgxsLoggerPluginModule.forRoot({\r\n    disabled: environment.production,\r\n    }),\r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent]\r\n})\r\nexport class AppModule { }\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\n\r\nimport { TaskModule } from './components/task.module';\r\n import { NgxsModule } from '@ngxs/store';\r\n import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';\r\n import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';\r\n import { MarkdownModule } from 'ngx-markdown';\r\n\r\n\r\n\r\n import { environment } from '../environments/environment';\r\n\r\nimport { AppComponent } from './app.component';\r\nimport { PureInboxScreenComponent } from './components/pure-inbox-screen/pure-inbox-screen.component';\r\nimport { InboxScreenComponent } from './components/inbox-screen/inbox-screen.component';\r\nimport { AppRoutingModule } from './app-routing.module';\r\nimport { MarkdownComponent } from './markdown/markdown.component';\r\nimport { HttpClient, HttpClientModule } from '@angular/common/http';\nimport { MermaidComponent } from './mermaid/mermaid.component';\nimport { YoutubeComponent } from './youtube/youtube.component';\nimport { StorybookDesignComponent } from './storybook-design/storybook-design.component';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent,\r\n    PureInboxScreenComponent,\r\n    InboxScreenComponent,\r\n    MarkdownComponent,\r\n    MermaidComponent,\r\n    YoutubeComponent,\r\n    StorybookDesignComponent,\r\n    \r\n    \r\n  ],\r\n  imports: [\r\n    BrowserModule,\r\n    AppRoutingModule,\r\n    TaskModule,\r\n    HttpClientModule,\r\n    MarkdownModule.forRoot({ loader: HttpClient }),\r\n    NgxsModule.forRoot([], {\r\n    developmentMode: !environment.production,\r\n \r\n\r\n    }),\r\n    NgxsReduxDevtoolsPluginModule.forRoot(),\r\n    NgxsLoggerPluginModule.forRoot({\r\n    disabled: environment.production,\r\n    }),\r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent]\r\n})\r\nexport class AppModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -1430,7 +2433,19 @@
                             "name": "InboxScreenComponent"
                         },
                         {
+                            "name": "MarkdownComponent"
+                        },
+                        {
+                            "name": "MermaidComponent"
+                        },
+                        {
                             "name": "PureInboxScreenComponent"
+                        },
+                        {
+                            "name": "StorybookDesignComponent"
+                        },
+                        {
+                            "name": "YoutubeComponent"
                         }
                     ]
                 },
@@ -1569,11 +2584,41 @@
                 "name": "actionsData",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/markdown/markdown.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\r\n  onPinTask: action('onPinTask'),\r\n  onArchiveTask: action('onArchiveTask'),\r\n}"
+            },
+            {
+                "name": "actionsData",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/components/task/task.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "object",
                 "defaultValue": "{\r\n  onPinTask: action('onPinTask'),\r\n  onArchiveTask: action('onArchiveTask'),\r\n}"
+            },
+            {
+                "name": "AddMDX",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/storybook-design/storybook-design.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryDetail",
+                "defaultValue": "{\r\n  args: {\r\n    myselectedtemp: 'mdx'\r\n  }\r\n}"
+            },
+            {
+                "name": "AddStory",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/storybook-design/storybook-design.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryDetail",
+                "defaultValue": "{\r\n  args: {\r\n    myselectedtemp: 'addstory'\r\n  }\r\n}"
             },
             {
                 "name": "Archived",
@@ -1626,6 +2671,16 @@
                 "defaultValue": "[\r\n  { id: '1', title: 'Something', state: 'TASK_INBOX' },\r\n  { id: '2', title: 'Something more', state: 'TASK_INBOX' },\r\n  { id: '3', title: 'Something else', state: 'TASK_INBOX' },\r\n  { id: '4', title: 'Something again', state: 'TASK_INBOX' },\r\n]"
             },
             {
+                "name": "DeployChromatic",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/storybook-design/storybook-design.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryDetail",
+                "defaultValue": "{\r\n  args: {\r\n    myselectedtemp: 'chromatic'\r\n  }\r\n}"
+            },
+            {
                 "name": "Empty",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1664,6 +2719,46 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\r\n  args: {\r\n    error: true,\r\n  },\r\n}"
+            },
+            {
+                "name": "FileStructure",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/storybook-design/storybook-design.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryDetail",
+                "defaultValue": "{\r\n  args: {\r\n    myselectedtemp: 'structure'\r\n  }\r\n}"
+            },
+            {
+                "name": "GitComamnds",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/storybook-design/storybook-design.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryDetail",
+                "defaultValue": "{\r\n  args: {\r\n    myselectedtemp: 'git'\r\n  }\r\n}"
+            },
+            {
+                "name": "ImportantSteps",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/storybook-design/storybook-design.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryDetail",
+                "defaultValue": "{\r\n  args: {\r\n    myselectedtemp: 'plan'\r\n  }\r\n}"
+            },
+            {
+                "name": "ImportModules",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/storybook-design/storybook-design.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryDetail",
+                "defaultValue": "{\r\n  args: {\r\n    myselectedtemp: 'import'\r\n  }\r\n}"
             },
             {
                 "name": "Large",
@@ -1746,6 +2841,126 @@
                 "defaultValue": "`This task's name is absurdly large. In fact, I think if I keep going I might end up with content overflow. What will happen? The star that represents a pinned task could have text overlapping. The text could cut-off abruptly when it reaches the star. I hope not!`"
             },
             {
+                "name": "MarkdownFromComponent",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/markdown/markdown.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryDetail",
+                "defaultValue": "{\r\n    args:{\r\n      myselectedtemp : 'fromComponent'\r\n    }\r\n    }"
+            },
+            {
+                "name": "MarkdownFromsrc",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/markdown/markdown.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryDetail",
+                "defaultValue": "{\r\n      args:{\r\n        myselectedtemp : 'fromSrc'\r\n      }\r\n      }"
+            },
+            {
+                "name": "MarkdownFromTemplate",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/markdown/markdown.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryDetail",
+                "defaultValue": "{\r\n  args:{\r\n    myselectedtemp : 'fromTemplate'\r\n  }\r\n  }"
+            },
+            {
+                "name": "MermaidAttachClass",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/mermaid/mermaid.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryDetail",
+                "defaultValue": "{\r\n  args: {\r\n    myselectedtemp: 'attachclass'\r\n  }\r\n}"
+            },
+            {
+                "name": "MermaidCustomColors",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/mermaid/mermaid.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryDetail",
+                "defaultValue": "{\r\n  args: {\r\n    myselectedtemp: 'customcolors'\r\n  }\r\n}"
+            },
+            {
+                "name": "MermaidFontawesome",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/mermaid/mermaid.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryDetail",
+                "defaultValue": "{\r\n  args: {\r\n    myselectedtemp: 'fa'\r\n  }\r\n}"
+            },
+            {
+                "name": "MermaidFromComponent",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/mermaid/mermaid.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryDetail",
+                "defaultValue": "{\r\n  args: {\r\n    myselectedtemp: 'fromComponent'\r\n  }\r\n}"
+            },
+            {
+                "name": "MermaidFromSrc",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/mermaid/mermaid.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryDetail",
+                "defaultValue": "{\r\n  args: {\r\n    myselectedtemp: 'fromSrc'\r\n  }\r\n}"
+            },
+            {
+                "name": "MermaidFromTemplate",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/mermaid/mermaid.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryDetail",
+                "defaultValue": "{\r\n  args: {\r\n    myselectedtemp: 'fromTemplate'\r\n  }\r\n}"
+            },
+            {
+                "name": "MermaidSimpleform",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/mermaid/mermaid.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryDetail",
+                "defaultValue": "{\r\n  args: {\r\n    myselectedtemp: 'simpleform'\r\n  }\r\n}"
+            },
+            {
+                "name": "MermaidSubgraph",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/mermaid/mermaid.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryDetail",
+                "defaultValue": "{\r\n  args: {\r\n    myselectedtemp: 'subgraph'\r\n  }\r\n}"
+            },
+            {
+                "name": "MermaidThemes",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/mermaid/mermaid.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryDetail",
+                "defaultValue": "{\r\n  args: {\r\n    myselectedtemp: 'themes'\r\n  }\r\n}"
+            },
+            {
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1783,7 +2998,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<PureInboxScreenComponent>",
-                "defaultValue": "{\r\n  component: PureInboxScreenComponent,\r\n  title: 'Task/PureInboxScreen',\r\n  tags: ['autodocs'],\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [CommonModule, TaskModule],\r\n    }),\r\n    applicationConfig({\r\n     providers: [Store, importProvidersFrom(NgxsModule.forRoot([TasksState]))],\r\n    }),\r\n  ],\r\n}"
+                "defaultValue": "{\r\n  component: PureInboxScreenComponent,\r\n  title: 'Task/PureInboxScreen',\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [CommonModule, TaskModule],\r\n    }),\r\n    applicationConfig({\r\n     providers: [Store, importProvidersFrom(NgxsModule.forRoot([TasksState]))],\r\n    }),\r\n  ],\r\n}"
             },
             {
                 "name": "meta",
@@ -1799,11 +3014,71 @@
                 "name": "metaDetail",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/markdown/markdown.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<MarkdownComponent>",
+                "defaultValue": "{\r\n\r\n  title: 'Setup/Markdown',\r\n  component: MarkdownComponent,\r\n  decorators:[\r\n    moduleMetadata({\r\n        //👇 Imports both components to allow component composition with storybook\r\n        declarations: [MarkdownComponent],\r\n        imports: [            \r\n            CommonModule,\r\n            // SharedModule,\r\n            HttpClientModule,\r\n            MarkdownModule.forRoot({loader: HttpClient}),\r\n        ],\r\n        providers:[MarkdownService]\r\n      }),\r\n      applicationConfig({\r\n        providers: [\r\n          importProvidersFrom(\r\n            MarkdownService\r\n          ),\r\n        ],\r\n      }),\r\n  componentWrapperDecorator(story => `<app-markdowncode [myselectedtemp]= \"myselectedtemp\"></app-markdowncode>`)\r\n  ]\r\n}"
+            },
+            {
+                "name": "metaDetail",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/mermaid/mermaid.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<MermaidComponent>",
+                "defaultValue": "{\r\n  /* 👇 The title prop is optional.\r\n   * See https://storybook.js.org/docs/angular/configure/overview#configure-story-loading\r\n   * to learn how to generate automatic titles\r\n   */\r\n  title: 'Setup/Mermaid',\r\n  component: MermaidComponent,\r\n  decorators: [\r\n    moduleMetadata({\r\n      //👇 Imports both components to allow component composition with storybook\r\n      declarations: [MermaidComponent],\r\n      imports: [\r\n        CommonModule,\r\n        // SharedModule,\r\n        HttpClientModule,\r\n        MarkdownModule.forRoot({ loader: HttpClient }),\r\n      ]\r\n    }),\r\n    applicationConfig({\r\n      providers: [\r\n        importProvidersFrom(\r\n          CommonModule,\r\n          HttpClientModule,\r\n          MarkdownModule.forRoot({ loader: HttpClient }),\r\n          MarkdownService\r\n        ),\r\n      ],\r\n    }),\r\n    componentWrapperDecorator(story => `<app-mermaidcode [myselectedtemp]= \"myselectedtemp\"></app-mermaidcode>`)\r\n  ]\r\n}"
+            },
+            {
+                "name": "metaDetail",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/storybook-design/storybook-design.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<StorybookDesignComponent>",
+                "defaultValue": "{\r\n\r\n  title: 'Setup/Storybook',\r\n  component: StorybookDesignComponent,\r\n  decorators: [\r\n    moduleMetadata({\r\n      //👇 Imports both components to allow component composition with storybook\r\n      declarations: [StorybookDesignComponent],\r\n      imports: [\r\n        CommonModule,\r\n        // SharedModule,\r\n        HttpClientModule,\r\n        MarkdownModule.forRoot({ loader: HttpClient }),\r\n      ]\r\n    }),\r\n    applicationConfig({\r\n      providers: [\r\n        importProvidersFrom(\r\n          CommonModule,\r\n          HttpClientModule,\r\n          MarkdownModule.forRoot({ loader: HttpClient }),\r\n          MarkdownService\r\n        ),\r\n      ],\r\n    }),\r\n    componentWrapperDecorator(story => `<app-storybook-design [myselectedtemp]= \"myselectedtemp\"></app-storybook-design>`)\r\n  ]\r\n}"
+            },
+            {
+                "name": "metaDetail",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/youtube/youtube.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<YoutubeComponent>",
+                "defaultValue": "{\r\n  /* 👇 The title prop is optional.\r\n   * See https://storybook.js.org/docs/angular/configure/overview#configure-story-loading\r\n   * to learn how to generate automatic titles\r\n   */\r\n  title: 'Youtube/Title',\r\n  component: YoutubeComponent,\r\n  decorators: [\r\n    moduleMetadata({\r\n      //👇 Imports both components to allow component composition with storybook\r\n      declarations: [YoutubeComponent],\r\n      imports: [\r\n        CommonModule,\r\n        // SharedModule,\r\n        HttpClientModule,\r\n        MarkdownModule.forRoot({ loader: HttpClient }),\r\n      ]\r\n    }),\r\n    applicationConfig({\r\n      providers: [\r\n        importProvidersFrom(\r\n          CommonModule,\r\n          HttpClientModule,\r\n          MarkdownModule.forRoot({ loader: HttpClient }),\r\n          MarkdownService\r\n        ),\r\n      ],\r\n    }),\r\n    componentWrapperDecorator(story => `<app-youtube [myselectedtemp]= \"myselectedtemp\"></app-youtube>`)\r\n  ]\r\n}"
+            },
+            {
+                "name": "metaDetail",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/components/pure-tasklist/pure-tasklist.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<PureTaskListComponent>",
                 "defaultValue": "{\r\n\r\n  title: 'Task/PureTaskListComponent',\r\n  component: PureTaskListComponent,\r\n  decorators: [\r\n    moduleMetadata({\r\n      declarations: [PureTaskListComponent, TaskComponent],\r\n      imports: [\r\n        CommonModule,\r\n        HttpClientModule,\r\n        \r\n      ]\r\n    }),\r\n    applicationConfig({\r\n      providers: [\r\n        importProvidersFrom(\r\n          CommonModule,\r\n          HttpClientModule,\r\n   \r\n        ),\r\n      ],\r\n    }),\r\n    componentWrapperDecorator(story => `<div style=\"margin: 3em\">${story}</div>`)\r\n  ]\r\n}"
+            },
+            {
+                "name": "ModifyMetaData",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/storybook-design/storybook-design.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryDetail",
+                "defaultValue": "{\r\n  args: {\r\n    myselectedtemp: 'meta'\r\n  }\r\n}"
+            },
+            {
+                "name": "ModifyPreview",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/storybook-design/storybook-design.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryDetail",
+                "defaultValue": "{\r\n  args: {\r\n    myselectedtemp: 'order'\r\n  }\r\n}"
             },
             {
                 "name": "Pinned",
@@ -1823,7 +3098,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Preview",
-                "defaultValue": "{\n  parameters: {\n    actions: { argTypesRegex: \"^on[A-Z].*\" },\n    controls: {\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/,\n      },\n    },\n  },\n}"
+                "defaultValue": "{\n  parameters: {\n    layout: 'centered',\n    options: {\n      storySort: {\n        order: [\n          'Youtube',\n          ['Title'],\n          'Setup',\n          [  'Markdown', 'Mermaid'],\n          'Task',\n          ['Task', 'TaskList'],\n          'Screen',\n          ['InboxScreen']\n        ],\n      },\n       showPanel: false \n    },\n    actions: { argTypesRegex: \"^on[A-Z].*\" },\n    controls: {\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/,\n      },\n    },\n  },\n}"
             },
             {
                 "name": "Primary",
@@ -1846,6 +3121,26 @@
                 "defaultValue": "{\n  args: {\n    label: 'Button',\n  },\n}"
             },
             {
+                "name": "ShowClipboard",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/markdown/markdown.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryDetail",
+                "defaultValue": "{\r\n          args:{\r\n            myselectedtemp : 'showclipboard'\r\n          }\r\n          }"
+            },
+            {
+                "name": "ShowCommandline",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/markdown/markdown.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryDetail",
+                "defaultValue": "{\r\n        args:{\r\n          myselectedtemp : 'showcommandline'\r\n        }\r\n        }"
+            },
+            {
                 "name": "Small",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1864,6 +3159,16 @@
                 "deprecationMessage": "",
                 "type": "tasklistStyleStory",
                 "defaultValue": "{\r\n    args: {\r\n        onPinTask: TaskStory.DefaultTask.args?.onPinTask,\r\n        onArchiveTask: TaskStory.DefaultTask.args?.onArchiveTask,\r\n      }\r\n}"
+            },
+            {
+                "name": "Title",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/youtube/youtube.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "StoryDetail",
+                "defaultValue": "{\r\n  args: {\r\n    myselectedtemp: 'plan'\r\n  }\r\n}"
             },
             {
                 "name": "WithPinnedTasks",
@@ -1934,6 +3239,50 @@
                 "kind": 180
             },
             {
+                "name": "StoryDetail",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<MarkdownComponent>",
+                "file": "src/app/markdown/markdown.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 180
+            },
+            {
+                "name": "StoryDetail",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<MermaidComponent>",
+                "file": "src/app/mermaid/mermaid.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 180
+            },
+            {
+                "name": "StoryDetail",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<StorybookDesignComponent>",
+                "file": "src/app/storybook-design/storybook-design.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 180
+            },
+            {
+                "name": "StoryDetail",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<YoutubeComponent>",
+                "file": "src/app/youtube/youtube.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 180
+            },
+            {
                 "name": "tasklistStyleStory",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
@@ -1967,6 +3316,78 @@
                     "deprecationMessage": "",
                     "type": "[]",
                     "defaultValue": "[\r\n  { id: '1', title: 'Something', state: 'TASK_INBOX' },\r\n  { id: '2', title: 'Something more', state: 'TASK_INBOX' },\r\n  { id: '3', title: 'Something else', state: 'TASK_INBOX' },\r\n  { id: '4', title: 'Something again', state: 'TASK_INBOX' },\r\n]"
+                }
+            ],
+            "src/app/markdown/markdown.stories.ts": [
+                {
+                    "name": "actionsData",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/markdown/markdown.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n  onPinTask: action('onPinTask'),\r\n  onArchiveTask: action('onArchiveTask'),\r\n}"
+                },
+                {
+                    "name": "MarkdownFromComponent",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/markdown/markdown.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryDetail",
+                    "defaultValue": "{\r\n    args:{\r\n      myselectedtemp : 'fromComponent'\r\n    }\r\n    }"
+                },
+                {
+                    "name": "MarkdownFromsrc",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/markdown/markdown.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryDetail",
+                    "defaultValue": "{\r\n      args:{\r\n        myselectedtemp : 'fromSrc'\r\n      }\r\n      }"
+                },
+                {
+                    "name": "MarkdownFromTemplate",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/markdown/markdown.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryDetail",
+                    "defaultValue": "{\r\n  args:{\r\n    myselectedtemp : 'fromTemplate'\r\n  }\r\n  }"
+                },
+                {
+                    "name": "metaDetail",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/markdown/markdown.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<MarkdownComponent>",
+                    "defaultValue": "{\r\n\r\n  title: 'Setup/Markdown',\r\n  component: MarkdownComponent,\r\n  decorators:[\r\n    moduleMetadata({\r\n        //👇 Imports both components to allow component composition with storybook\r\n        declarations: [MarkdownComponent],\r\n        imports: [            \r\n            CommonModule,\r\n            // SharedModule,\r\n            HttpClientModule,\r\n            MarkdownModule.forRoot({loader: HttpClient}),\r\n        ],\r\n        providers:[MarkdownService]\r\n      }),\r\n      applicationConfig({\r\n        providers: [\r\n          importProvidersFrom(\r\n            MarkdownService\r\n          ),\r\n        ],\r\n      }),\r\n  componentWrapperDecorator(story => `<app-markdowncode [myselectedtemp]= \"myselectedtemp\"></app-markdowncode>`)\r\n  ]\r\n}"
+                },
+                {
+                    "name": "ShowClipboard",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/markdown/markdown.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryDetail",
+                    "defaultValue": "{\r\n          args:{\r\n            myselectedtemp : 'showclipboard'\r\n          }\r\n          }"
+                },
+                {
+                    "name": "ShowCommandline",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/markdown/markdown.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryDetail",
+                    "defaultValue": "{\r\n        args:{\r\n          myselectedtemp : 'showcommandline'\r\n        }\r\n        }"
                 }
             ],
             "src/app/components/task/task.stories.ts": [
@@ -2041,6 +3462,108 @@
                     "defaultValue": "{\r\n  args:{\r\n    task: {\r\n      id: '1',\r\n      title: 'Test Task',\r\n      state: 'TASK_PINNED',\r\n    },\r\n  }\r\n}"
                 }
             ],
+            "src/app/storybook-design/storybook-design.stories.ts": [
+                {
+                    "name": "AddMDX",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/storybook-design/storybook-design.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryDetail",
+                    "defaultValue": "{\r\n  args: {\r\n    myselectedtemp: 'mdx'\r\n  }\r\n}"
+                },
+                {
+                    "name": "AddStory",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/storybook-design/storybook-design.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryDetail",
+                    "defaultValue": "{\r\n  args: {\r\n    myselectedtemp: 'addstory'\r\n  }\r\n}"
+                },
+                {
+                    "name": "DeployChromatic",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/storybook-design/storybook-design.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryDetail",
+                    "defaultValue": "{\r\n  args: {\r\n    myselectedtemp: 'chromatic'\r\n  }\r\n}"
+                },
+                {
+                    "name": "FileStructure",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/storybook-design/storybook-design.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryDetail",
+                    "defaultValue": "{\r\n  args: {\r\n    myselectedtemp: 'structure'\r\n  }\r\n}"
+                },
+                {
+                    "name": "GitComamnds",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/storybook-design/storybook-design.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryDetail",
+                    "defaultValue": "{\r\n  args: {\r\n    myselectedtemp: 'git'\r\n  }\r\n}"
+                },
+                {
+                    "name": "ImportantSteps",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/storybook-design/storybook-design.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryDetail",
+                    "defaultValue": "{\r\n  args: {\r\n    myselectedtemp: 'plan'\r\n  }\r\n}"
+                },
+                {
+                    "name": "ImportModules",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/storybook-design/storybook-design.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryDetail",
+                    "defaultValue": "{\r\n  args: {\r\n    myselectedtemp: 'import'\r\n  }\r\n}"
+                },
+                {
+                    "name": "metaDetail",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/storybook-design/storybook-design.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<StorybookDesignComponent>",
+                    "defaultValue": "{\r\n\r\n  title: 'Setup/Storybook',\r\n  component: StorybookDesignComponent,\r\n  decorators: [\r\n    moduleMetadata({\r\n      //👇 Imports both components to allow component composition with storybook\r\n      declarations: [StorybookDesignComponent],\r\n      imports: [\r\n        CommonModule,\r\n        // SharedModule,\r\n        HttpClientModule,\r\n        MarkdownModule.forRoot({ loader: HttpClient }),\r\n      ]\r\n    }),\r\n    applicationConfig({\r\n      providers: [\r\n        importProvidersFrom(\r\n          CommonModule,\r\n          HttpClientModule,\r\n          MarkdownModule.forRoot({ loader: HttpClient }),\r\n          MarkdownService\r\n        ),\r\n      ],\r\n    }),\r\n    componentWrapperDecorator(story => `<app-storybook-design [myselectedtemp]= \"myselectedtemp\"></app-storybook-design>`)\r\n  ]\r\n}"
+                },
+                {
+                    "name": "ModifyMetaData",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/storybook-design/storybook-design.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryDetail",
+                    "defaultValue": "{\r\n  args: {\r\n    myselectedtemp: 'meta'\r\n  }\r\n}"
+                },
+                {
+                    "name": "ModifyPreview",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/storybook-design/storybook-design.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryDetail",
+                    "defaultValue": "{\r\n  args: {\r\n    myselectedtemp: 'order'\r\n  }\r\n}"
+                }
+            ],
             "src/app/components/pure-inbox-screen/pure-inbox-screen.stories.ts": [
                 {
                     "name": "Default",
@@ -2070,7 +3593,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<PureInboxScreenComponent>",
-                    "defaultValue": "{\r\n  component: PureInboxScreenComponent,\r\n  title: 'Task/PureInboxScreen',\r\n  tags: ['autodocs'],\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [CommonModule, TaskModule],\r\n    }),\r\n    applicationConfig({\r\n     providers: [Store, importProvidersFrom(NgxsModule.forRoot([TasksState]))],\r\n    }),\r\n  ],\r\n}"
+                    "defaultValue": "{\r\n  component: PureInboxScreenComponent,\r\n  title: 'Task/PureInboxScreen',\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [CommonModule, TaskModule],\r\n    }),\r\n    applicationConfig({\r\n     providers: [Store, importProvidersFrom(NgxsModule.forRoot([TasksState]))],\r\n    }),\r\n  ],\r\n}"
                 }
             ],
             "src/app/components/pure-tasklist/pure-tasklist.stories.ts": [
@@ -2275,6 +3798,130 @@
                     "defaultValue": "{\n  title: 'Example/Page',\n  component: Page,\n  parameters: {\n    // More on how to position stories at: https://storybook.js.org/docs/angular/configure/story-layout\n    layout: 'fullscreen',\n  },\n  decorators: [\n    moduleMetadata({\n      declarations: [Button, Header],\n      imports: [CommonModule],\n    }),\n  ],\n}"
                 }
             ],
+            "src/app/mermaid/mermaid.stories.ts": [
+                {
+                    "name": "MermaidAttachClass",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/mermaid/mermaid.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryDetail",
+                    "defaultValue": "{\r\n  args: {\r\n    myselectedtemp: 'attachclass'\r\n  }\r\n}"
+                },
+                {
+                    "name": "MermaidCustomColors",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/mermaid/mermaid.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryDetail",
+                    "defaultValue": "{\r\n  args: {\r\n    myselectedtemp: 'customcolors'\r\n  }\r\n}"
+                },
+                {
+                    "name": "MermaidFontawesome",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/mermaid/mermaid.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryDetail",
+                    "defaultValue": "{\r\n  args: {\r\n    myselectedtemp: 'fa'\r\n  }\r\n}"
+                },
+                {
+                    "name": "MermaidFromComponent",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/mermaid/mermaid.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryDetail",
+                    "defaultValue": "{\r\n  args: {\r\n    myselectedtemp: 'fromComponent'\r\n  }\r\n}"
+                },
+                {
+                    "name": "MermaidFromSrc",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/mermaid/mermaid.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryDetail",
+                    "defaultValue": "{\r\n  args: {\r\n    myselectedtemp: 'fromSrc'\r\n  }\r\n}"
+                },
+                {
+                    "name": "MermaidFromTemplate",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/mermaid/mermaid.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryDetail",
+                    "defaultValue": "{\r\n  args: {\r\n    myselectedtemp: 'fromTemplate'\r\n  }\r\n}"
+                },
+                {
+                    "name": "MermaidSimpleform",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/mermaid/mermaid.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryDetail",
+                    "defaultValue": "{\r\n  args: {\r\n    myselectedtemp: 'simpleform'\r\n  }\r\n}"
+                },
+                {
+                    "name": "MermaidSubgraph",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/mermaid/mermaid.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryDetail",
+                    "defaultValue": "{\r\n  args: {\r\n    myselectedtemp: 'subgraph'\r\n  }\r\n}"
+                },
+                {
+                    "name": "MermaidThemes",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/mermaid/mermaid.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryDetail",
+                    "defaultValue": "{\r\n  args: {\r\n    myselectedtemp: 'themes'\r\n  }\r\n}"
+                },
+                {
+                    "name": "metaDetail",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/mermaid/mermaid.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<MermaidComponent>",
+                    "defaultValue": "{\r\n  /* 👇 The title prop is optional.\r\n   * See https://storybook.js.org/docs/angular/configure/overview#configure-story-loading\r\n   * to learn how to generate automatic titles\r\n   */\r\n  title: 'Setup/Mermaid',\r\n  component: MermaidComponent,\r\n  decorators: [\r\n    moduleMetadata({\r\n      //👇 Imports both components to allow component composition with storybook\r\n      declarations: [MermaidComponent],\r\n      imports: [\r\n        CommonModule,\r\n        // SharedModule,\r\n        HttpClientModule,\r\n        MarkdownModule.forRoot({ loader: HttpClient }),\r\n      ]\r\n    }),\r\n    applicationConfig({\r\n      providers: [\r\n        importProvidersFrom(\r\n          CommonModule,\r\n          HttpClientModule,\r\n          MarkdownModule.forRoot({ loader: HttpClient }),\r\n          MarkdownService\r\n        ),\r\n      ],\r\n    }),\r\n    componentWrapperDecorator(story => `<app-mermaidcode [myselectedtemp]= \"myselectedtemp\"></app-mermaidcode>`)\r\n  ]\r\n}"
+                }
+            ],
+            "src/app/youtube/youtube.stories.ts": [
+                {
+                    "name": "metaDetail",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/youtube/youtube.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<YoutubeComponent>",
+                    "defaultValue": "{\r\n  /* 👇 The title prop is optional.\r\n   * See https://storybook.js.org/docs/angular/configure/overview#configure-story-loading\r\n   * to learn how to generate automatic titles\r\n   */\r\n  title: 'Youtube/Title',\r\n  component: YoutubeComponent,\r\n  decorators: [\r\n    moduleMetadata({\r\n      //👇 Imports both components to allow component composition with storybook\r\n      declarations: [YoutubeComponent],\r\n      imports: [\r\n        CommonModule,\r\n        // SharedModule,\r\n        HttpClientModule,\r\n        MarkdownModule.forRoot({ loader: HttpClient }),\r\n      ]\r\n    }),\r\n    applicationConfig({\r\n      providers: [\r\n        importProvidersFrom(\r\n          CommonModule,\r\n          HttpClientModule,\r\n          MarkdownModule.forRoot({ loader: HttpClient }),\r\n          MarkdownService\r\n        ),\r\n      ],\r\n    }),\r\n    componentWrapperDecorator(story => `<app-youtube [myselectedtemp]= \"myselectedtemp\"></app-youtube>`)\r\n  ]\r\n}"
+                },
+                {
+                    "name": "Title",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/youtube/youtube.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "StoryDetail",
+                    "defaultValue": "{\r\n  args: {\r\n    myselectedtemp: 'plan'\r\n  }\r\n}"
+                }
+            ],
             ".storybook/preview.ts": [
                 {
                     "name": "preview",
@@ -2284,7 +3931,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Preview",
-                    "defaultValue": "{\n  parameters: {\n    actions: { argTypesRegex: \"^on[A-Z].*\" },\n    controls: {\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/,\n      },\n    },\n  },\n}"
+                    "defaultValue": "{\n  parameters: {\n    layout: 'centered',\n    options: {\n      storySort: {\n        order: [\n          'Youtube',\n          ['Title'],\n          'Setup',\n          [  'Markdown', 'Mermaid'],\n          'Task',\n          ['Task', 'TaskList'],\n          'Screen',\n          ['InboxScreen']\n        ],\n      },\n       showPanel: false \n    },\n    actions: { argTypesRegex: \"^on[A-Z].*\" },\n    controls: {\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/,\n      },\n    },\n  },\n}"
                 }
             ]
         },
@@ -2356,6 +4003,58 @@
                     "kind": 180
                 }
             ],
+            "src/app/markdown/markdown.stories.ts": [
+                {
+                    "name": "StoryDetail",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<MarkdownComponent>",
+                    "file": "src/app/markdown/markdown.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 180
+                }
+            ],
+            "src/app/mermaid/mermaid.stories.ts": [
+                {
+                    "name": "StoryDetail",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<MermaidComponent>",
+                    "file": "src/app/mermaid/mermaid.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 180
+                }
+            ],
+            "src/app/storybook-design/storybook-design.stories.ts": [
+                {
+                    "name": "StoryDetail",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<StorybookDesignComponent>",
+                    "file": "src/app/storybook-design/storybook-design.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 180
+                }
+            ],
+            "src/app/youtube/youtube.stories.ts": [
+                {
+                    "name": "StoryDetail",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<YoutubeComponent>",
+                    "file": "src/app/youtube/youtube.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 180
+                }
+            ],
             "src/app/components/pure-tasklist/pure-tasklist.stories.ts": [
                 {
                     "name": "tasklistStyleStory",
@@ -2386,7 +4085,7 @@
         ]
     },
     "coverage": {
-        "count": 3,
+        "count": 1,
         "status": "low",
         "files": [
             {
@@ -2614,6 +4313,194 @@
                 "status": "medium"
             },
             {
+                "filePath": "src/app/markdown/markdown.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "MarkdownComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/17",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/markdown/markdown.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "actionsData",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/markdown/markdown.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "MarkdownFromComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/markdown/markdown.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "MarkdownFromsrc",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/markdown/markdown.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "MarkdownFromTemplate",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/markdown/markdown.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "metaDetail",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/markdown/markdown.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "ShowClipboard",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/markdown/markdown.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "ShowCommandline",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/mermaid/mermaid.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "MermaidComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/30",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/mermaid/mermaid.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "MermaidAttachClass",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/mermaid/mermaid.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "MermaidCustomColors",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/mermaid/mermaid.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "MermaidFontawesome",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/mermaid/mermaid.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "MermaidFromComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/mermaid/mermaid.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "MermaidFromSrc",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/mermaid/mermaid.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "MermaidFromTemplate",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/mermaid/mermaid.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "MermaidSimpleform",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/mermaid/mermaid.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "MermaidSubgraph",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/mermaid/mermaid.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "MermaidThemes",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/mermaid/mermaid.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "metaDetail",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/models/task.model.ts",
                 "type": "interface",
                 "linktype": "interface",
@@ -2683,6 +4570,144 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "defaultTasks",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/storybook-design/storybook-design.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "StorybookDesignComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/22",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/storybook-design/storybook-design.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "AddMDX",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/storybook-design/storybook-design.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "AddStory",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/storybook-design/storybook-design.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "DeployChromatic",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/storybook-design/storybook-design.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "FileStructure",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/storybook-design/storybook-design.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "GitComamnds",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/storybook-design/storybook-design.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "ImportantSteps",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/storybook-design/storybook-design.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "ImportModules",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/storybook-design/storybook-design.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "metaDetail",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/storybook-design/storybook-design.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "ModifyMetaData",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/storybook-design/storybook-design.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "ModifyPreview",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/youtube/youtube.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "YoutubeComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/youtube/youtube.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "metaDetail",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/youtube/youtube.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Title",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

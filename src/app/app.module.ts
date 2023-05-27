@@ -5,6 +5,8 @@ import { TaskModule } from './components/task.module';
  import { NgxsModule } from '@ngxs/store';
  import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
  import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
+ import { MarkdownModule } from 'ngx-markdown';
+
 
 
  import { environment } from '../environments/environment';
@@ -13,12 +15,21 @@ import { AppComponent } from './app.component';
 import { PureInboxScreenComponent } from './components/pure-inbox-screen/pure-inbox-screen.component';
 import { InboxScreenComponent } from './components/inbox-screen/inbox-screen.component';
 import { AppRoutingModule } from './app-routing.module';
+import { MarkdownComponent } from './markdown/markdown.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { MermaidComponent } from './mermaid/mermaid.component';
+import { YoutubeComponent } from './youtube/youtube.component';
+import { StorybookDesignComponent } from './storybook-design/storybook-design.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PureInboxScreenComponent,
-    InboxScreenComponent
+    InboxScreenComponent,
+    MarkdownComponent,
+    MermaidComponent,
+    YoutubeComponent,
+    StorybookDesignComponent,
     
     
   ],
@@ -26,8 +37,12 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserModule,
     AppRoutingModule,
     TaskModule,
+    HttpClientModule,
+    MarkdownModule.forRoot({ loader: HttpClient }),
     NgxsModule.forRoot([], {
     developmentMode: !environment.production,
+ 
+
     }),
     NgxsReduxDevtoolsPluginModule.forRoot(),
     NgxsLoggerPluginModule.forRoot({
