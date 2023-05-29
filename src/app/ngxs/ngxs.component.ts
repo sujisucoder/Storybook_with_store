@@ -59,30 +59,22 @@ export class NgxsComponent implements  AfterContentInit {
 
   markdownNgxsAction = `
 
-  ### Create a folder state and put the todo-actions.ts file and add below code
+  ###  Create a class that extends the Action class.The class must have the following properties:
 
+   - type: The type of the action. This is a string that identifies the action.
+   - payload: The payload of the action. This is an object that contains the data that is associated with the action.
 
   \`\`\`typescript  
 
-  // File name todo-actions.ts
-export class AddTodo {
-    static readonly type = '[Todo] Add';
-    constructor(public payload: any) { }
-}
+  
+  import { Action } from '@ngxs/store';
 
-export class EditTodo {
-    static readonly type = '[Todo] Edit';
-    constructor(public payload: any) { }
-}
-
-export class FetchAllTodos {
-    static readonly type = '[Todo] Fetch All';
-}
-
-export class DeleteTodo {
-    static readonly type = '[Todo] Delete';
-    constructor(public id: number) { }
-}
+  export class MyAction extends Action {
+  
+    constructor(public type: string, public payload: any) {}
+  
+  }
+  
   \`\`\`  
   `;
 
