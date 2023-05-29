@@ -6,12 +6,12 @@ import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { applicationConfig } from '@storybook/angular';
 import { importProvidersFrom } from '@angular/core';
-import * as TaskStory from '../task/task.stories';
+import * as TaskStory from '../pure-task/task.stories';
 import { Task } from '../../models/task.model';
 
 const metaDetail: Meta<PureTaskListComponent> = {
 
-  title: 'Task/TaskListComponent',
+  title: 'Task/PureTaskListComponent',
   component: PureTaskListComponent,
   decorators: [
     moduleMetadata({

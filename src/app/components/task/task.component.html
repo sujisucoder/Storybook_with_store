@@ -1,37 +1,37 @@
-<div class="list-item {{ task.state }}">
+<div class="list-item {{ (task | async).state }}">
     <label
-      [attr.aria-label]="'archiveTask-' + task.id"
-      for="checked-{{ task.id }}"
+      [attr.aria-label]="'archiveTask-' + (task | async).id"
+      for="checked-{{ (task | async).id }}"
       class="checkbox"
     >
       <input
         type="checkbox"
         disabled="true"
-        [defaultChecked]="task.state === 'TASK_ARCHIVED'"
-        name="checked-{{ task.id }}"
-        id="checked-{{ task.id }}"
+        [defaultChecked]="(task | async).state === 'TASK_ARCHIVED'"
+        name="checked-{{ (task | async).id }}"
+        id="checked-{{ (task | async).id }}"
       />
-      <span class="checkbox-custom" (click)="onArchive(task.id)"></span>
+      <span class="checkbox-custom" ></span>
     </label>
     <label
-      [attr.aria-label]="task.title + ''"
-      for="title-{{ task.id }}"
+      [attr.aria-label]="(task | async).title + ''"
+      for="title-{{ (task | async).id }}"
       class="title"
     >
       <input
         type="text"
-        [value]="task.title"
+        [value]="(task | async).title"
         readonly="true"
-        id="title-{{ task.id }}"
-        name="title-{{ task.id }}"
+        id="title-{{ (task | async).id }}"
+        name="title-{{ (task | async).id }}"
         placeholder="Input title"
       />
     </label>
     <button
-      *ngIf="task?.state !== 'TASK_ARCHIVED'"
+      *ngIf="(task | async).state !== 'TASK_ARCHIVED'"
       class="pin-button"
-      [attr.aria-label]="'pinTask-' + task.id"
-      (click)="onPin(task.id)"
+      [attr.aria-label]="'pinTask-' + (task | async).id"
+      
     >
       <span class="icon-star"></span>
     </button>

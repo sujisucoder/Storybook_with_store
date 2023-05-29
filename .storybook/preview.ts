@@ -14,7 +14,7 @@ const preview: Preview = {
           'Setup',
           [  'Markdown', 'Mermaid','Storybook','Ngxs'],
           'Task',
-          ['TaskComponent', 'TaskListComponent'],
+          ['PureTaskComponent', 'TaskListComponent'],
           'Screen',
           ['InboxScreen']
         ],

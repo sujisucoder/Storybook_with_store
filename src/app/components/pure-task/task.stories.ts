@@ -1,20 +1,20 @@
 import type { Meta, StoryObj } from '@storybook/angular/';
 
-import { TaskComponent } from './task.component';
+import { PureTaskComponent } from './pure-task.component';
 import { action } from '@storybook/addon-actions';
 import { Task } from '../../models/task.model';
-const meta: Meta<TaskComponent> = {
+const meta: Meta<PureTaskComponent> = {
   /* 👇 The title prop is optional.
    * See https://storybook.js.org/docs/angular/configure/overview#configure-story-loading
    * to learn how to generate automatic titles
    */
-  title: 'Task/TaskComponent',
-  component: TaskComponent,
+  title: 'Task/PureTaskComponent',
+  component: PureTaskComponent,
 
 };
 
 export default meta;
-type Story = StoryObj<TaskComponent>;
+type Story = StoryObj<PureTaskComponent>;
 
 const actionsData = {
   onPinTask: action('onPinTask'),

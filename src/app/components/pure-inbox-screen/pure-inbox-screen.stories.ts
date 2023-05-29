@@ -4,7 +4,7 @@ import type { Meta, StoryObj } from '@storybook/angular';
 import { importProvidersFrom } from '@angular/core';
 
  import { Store, NgxsModule } from '@ngxs/store';
- import { TasksState } from 'src/app/state/task.state'; 
+ import { TasksState } from 'src/app/state/tasklist.state'; 
 
  import { moduleMetadata, applicationConfig } from '@storybook/angular';
 

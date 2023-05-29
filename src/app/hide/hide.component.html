@@ -22,11 +22,12 @@
     
   <ng-template #pureInbox>
     <markdown ngPreserveWhitespaces> --- </markdown>
+    <markdown mermaid ngPreserveWhitespaces>
+      {{pureInboxMermaid1}}
+    </markdown>
     <div markdown  ngPreserveWhitespaces >{{pureInboxMarkdown1}}</div>
     <markdown  ngPreserveWhitespaces > {{pureInboxMarkdown2}} </markdown>
-    <markdown mermaid ngPreserveWhitespaces>
-        {{pureInboxMermaid1}}
-      </markdown>
+ 
   </ng-template>
   
 

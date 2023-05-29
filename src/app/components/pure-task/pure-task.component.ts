@@ -1,22 +1,16 @@
+
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 import { Task } from '../../models/task.model';
-import { Store } from '@ngxs/store';
-import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'app-task',
-  templateUrl: './task.component.html',
-  styleUrls: ['./task.component.css']
+  selector: 'app-pure-task',
+  templateUrl: './pure-task.component.html',
+  styleUrls: ['./pure-task.component.css']
 })
-export class TaskComponent {
+export class PureTaskComponent {
   @Input()
-  task: Observable<any>;
-  constructor(private store: Store) {
-
-  this.task = store.select((state) => state.taskstate.task);
-
-  }
+  task!: Task;
 
   // tslint:disable-next-line: no-output-on-prefix
   @Output()

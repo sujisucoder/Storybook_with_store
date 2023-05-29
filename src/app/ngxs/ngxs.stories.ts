@@ -50,3 +50,28 @@ export const Installation: StoryDetail = {
       myselectedtemp : 'installationNgxs'
     }
 };
+
+
+export const Create_Store: StoryDetail = {
+  args:{
+    myselectedtemp : 'createStore'
+  }
+};
+
+export const Create_Action: StoryDetail = {
+  args:{
+    myselectedtemp : 'createAction'
+  }
+};
+
+export const Create_State: StoryDetail = {
+  args:{
+    myselectedtemp : 'createState'
+  }
+};
+
+export const Create_Html: StoryDetail = {
+  args:{
+    myselectedtemp : 'createHtml'
+  }
+};

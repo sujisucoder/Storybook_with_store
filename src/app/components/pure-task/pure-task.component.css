@@ -1,0 +1,42 @@
+.list-item {
+    font-size: 14px;
+    line-height: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    height: 3rem;
+    width: 100%;
+    background: white;
+    transition: all ease-out 150ms;
+  }
+  
+  .list-item .title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    flex: 1;
+  }
+  
+  .list-item input[type="text"] {
+    background: transparent;
+    width: 100%;
+  }
+  
+  .list-item input[type="text"]:focus {
+    cursor: text;
+  }
+  
+  h1,
+  p,
+  label {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 100%;
+    line-height: 1;
+    font-family: inherit;
+    vertical-align: baseline;
+    line-height: normal;
+    font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
