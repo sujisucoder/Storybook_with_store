@@ -17,6 +17,8 @@ export class HideComponent implements AfterContentInit {
   simpleTask!: TemplateRef<any>;
   @ViewChild('taskList', { static: true })
   taskList!: TemplateRef<any>;
+  @ViewChild('pureInbox', { static: true })
+  pureInbox!: TemplateRef<any>;
 
   tems: TemplateRef<any> = this.simpleTask;
 
@@ -82,6 +84,55 @@ export interface Task {
     - Loading: In this story, we created a state where the task list is going to be loading to show 	
     - Empty: In this story, we don't have any tasks left to finish. 	
   `;
+
+  pureInboxMarkdown1 =`
+    ## storybook with store
+    ### Currently, the Taskbox app lacks a store to enhance its dynamism. To address this, we will employ a state behavior library, NGXS.
+
+
+    ### Let's start with installing the ngxs npm package
+
+    \`\`\`typescript	  
+    npm install @ngxs/store @ngxs/logger-plugin @ngxs/devtools-plugin
+    \`\`\`
+
+      ### For creating an InboxScreen
+        1. Develop a store, task.state.ts file.
+        2. Rename the tasklist to pure-tasklist.
+        3. Develop the tasklist.component.ts file,connect with store.
+        4. Establish a screen,Create inbox-screen.component.ts file.
+  `;
+
+  pureInboxMarkdown2 =`
+    ## PureInbox screen gonna have 2 stories.
+  `;
+
+
+  pureInboxMermaidDraft =`
+  <pre class="mermaid">	
+  flowchart TD	
+  id1([Create  task.state.ts ])--> id2([Add the presentational version of the taskbox])	
+  id2-->id3([ Rename tasklist.component.ts to   pure-task-list.component.ts])	
+  id1-->id4[[update our TaskList component to read data from the store]]	
+  id4 -->id5[[make task-list.component.ts ]]	
+  id1-->id6[[create a module to bridge  components and  store.]]
+  id6-->id7[[make task.module.ts]]
+  id7-->id8[[  In app.module.ts at imports]]
+  id8-->id9[[Add NgxsModule]]
+  id8-->id10[[Add TaskModule]]
+  id8-->id11[[Add NgxsReduxDevtoolsPluginModule]]
+  id8-->id12[[Add NgxsLoggerPluginModule]]
+  id3-->id13[[Rename task-list.stories.ts to pure-task-list.stories.ts]]
+</pre>	
+  `;
+  pureInboxMermaid1 =`
+  <pre class="mermaid">	
+  flowchart TD	
+  id1([ InboxScreen ])--> id2([ Default story  ])	
+  id1-->id3([Error story])	
+</pre>
+  `
+
   ngAfterContentInit() {
     switch (this.myselectedtemp) {
       case 'simpleTask':
@@ -89,6 +140,9 @@ export interface Task {
         break;
       case 'taskList':
         this.tems = this.taskList;
+        break;
+      case 'pureInbox':
+        this.tems = this.pureInbox;
         break;
     }
   }

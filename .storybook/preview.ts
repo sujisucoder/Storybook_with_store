@@ -12,9 +12,9 @@ const preview: Preview = {
           'Youtube',
           ['Title'],
           'Setup',
-          [  'Markdown', 'Mermaid'],
+          [  'Markdown', 'Mermaid','Storybook','Ngxs'],
           'Task',
-          ['Task', 'TaskList'],
+          ['TaskComponent', 'TaskListComponent'],
           'Screen',
           ['InboxScreen']
         ],

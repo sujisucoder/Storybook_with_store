@@ -17,7 +17,7 @@ import { TaskModule } from '../task.module';
 
 const meta: Meta<PureInboxScreenComponent> = {
   component: PureInboxScreenComponent,
-  title: 'Task/PureInboxScreen',
+  title: 'Screen/PureInboxScreen',
   decorators: [
     moduleMetadata({
       imports: [CommonModule, TaskModule],
@@ -30,6 +30,8 @@ const meta: Meta<PureInboxScreenComponent> = {
 
 export default meta;
 type Story = StoryObj<PureInboxScreenComponent>;
+
+
 
 export const Default: Story = {};
 

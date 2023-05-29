@@ -12,7 +12,7 @@ import { importProvidersFrom } from '@angular/core';
 
 const metaDetail: Meta<MarkdownComponent> = {
 
-  title: 'Setup/Markdown',
+    title: 'Setup/Markdown',
   component: MarkdownComponent,
   decorators:[
     moduleMetadata({

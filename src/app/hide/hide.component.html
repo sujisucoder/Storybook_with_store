@@ -18,6 +18,16 @@
     <markdown ngPreserveWhitespaces> --- </markdown>
     <div markdown ngPreserveWhitespaces>{{taskListMarkdown1}}</div>
   </ng-template>
+
+    
+  <ng-template #pureInbox>
+    <markdown ngPreserveWhitespaces> --- </markdown>
+    <div markdown  ngPreserveWhitespaces >{{pureInboxMarkdown1}}</div>
+    <markdown  ngPreserveWhitespaces > {{pureInboxMarkdown2}} </markdown>
+    <markdown mermaid ngPreserveWhitespaces>
+        {{pureInboxMermaid1}}
+      </markdown>
+  </ng-template>
   
 
 <ng-container [ngTemplateOutlet]="tems" [ngTemplateOutletContext]="myContext">

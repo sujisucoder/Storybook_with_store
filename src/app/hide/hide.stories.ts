@@ -11,7 +11,7 @@ import { importProvidersFrom } from '@angular/core';
 
 const metaDetail: Meta<HideComponent> = {
 
-    
+
   title: 'Hide/Task',
   component: HideComponent,
   decorators: [
@@ -53,3 +53,9 @@ export const TaskListMermaid: StoryDetail = {
     myselectedtemp: 'taskList'	
   }	
 };
+
+export const PureInboxMermaid: StoryDetail = {	
+    args: {	
+      myselectedtemp: 'pureInbox'	
+    }	
+  };

@@ -21,6 +21,7 @@ import { MermaidComponent } from './mermaid/mermaid.component';
 import { YoutubeComponent } from './youtube/youtube.component';
 import { StorybookDesignComponent } from './storybook-design/storybook-design.component';
 import { HideComponent } from './hide/hide.component';
+import { NgxsComponent } from './ngxs/ngxs.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { HideComponent } from './hide/hide.component';
     YoutubeComponent,
     StorybookDesignComponent,
     HideComponent,
+    NgxsComponent,
     
     
   ],

@@ -41,9 +41,9 @@ type tasklistStyleStory = StoryObj<PureTaskListComponent>;
 
 export const Template: tasklistStyleStory = {
     args: {
-        onPinTask: TaskStory.DefaultTask.args?.onPinTask,
-        onArchiveTask: TaskStory.DefaultTask.args?.onArchiveTask,
-      }
+      onPinTask: TaskStory.DefaultTask.args?.onPinTask,
+      onArchiveTask: TaskStory.DefaultTask.args?.onArchiveTask,
+    }
 };
 
 export const Default  : tasklistStyleStory = {
