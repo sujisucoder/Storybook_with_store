@@ -17,7 +17,7 @@ export class NgxsComponent implements  AfterContentInit {
   import { NgxsModule } from '@ngxs/store';
   @NgModule({
     imports: [
-      NgxsModule.forRoot([ToDoState], { // here login state 
+      NgxsModule.forRoot([], { // here login state 
         developmentMode: !environment.production
       })
     ]
@@ -25,44 +25,34 @@ export class NgxsComponent implements  AfterContentInit {
   export class AppModule {}
 
   \`\`\`
-  ## here ToDoState is a reference to a class that defines the state of your application. 
 
 
   `;
 
   markdownNgxsStore = `  
-  ### Here we have created a component that dispatches actions to create a to-do and for other operations. Apart from that, we are using a selector TodoState, from which we are listening for the updated to-do list.
+  ## Create a store in your app.component.ts file.
 
-  ### Put this code in the app.component.ts.
   \`\`\`typescript 
-  // File name app.component.ts
-  import { Component } from '@angular/core';
-  import { Store, Select } from '@ngxs/store';
-  import { TodoActions } from './state/todo-actions';
-  import { FormGroup, FormControl, Validators } from '@angular/forms';
-  import { TodoState, ITodo } from './state/todo-state';
+  import { Component, Input, Output, EventEmitter } from '@angular/core';
+  import { Task } from '../../models/task.model';
+  import { Store } from '@ngxs/store';
   import { Observable } from 'rxjs';
+  
   @Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.scss']
+    selector: 'app-task',
+    templateUrl: './task.component.html',
+    styleUrls: ['./task.component.css']
   })
-  export class AppComponent {
-    title = 'ngxs-todo-app';
+  export class TaskComponent {
+    @Input()
+    task: Observable<any>;
+    constructor(private store: Store) {
   
-    @Select(TodoState) todoList$: Observable<ITodo>;
-  
-    addForm = new FormGroup({
-      title: new FormControl('', [Validators.required])
-    });
-    constructor(private store: Store){}
-    onSubmit(form: any){
-      this.store.dispatch(new TodoActions.AddTodo(form));
-    }
-    markDone(id: string, is_done: boolean){
-      this.store.dispatch(new TodoActions.markDone(id, is_done));
+    this.task = store.select((state) => state.taskstate.task);
+
     }
   }
+  
   
   \`\`\`
   `;
@@ -97,91 +87,50 @@ export class DeleteTodo {
   `;
 
   markdownNgxsState = `
-    ### Here we have created the state of the todo, it contains the global state of the todo list. Create a folder state and put the todo-state.ts file and add below code
     \`\`\`typescript 
-
-    // File name todo-state.ts
     import { Injectable } from '@angular/core';
-    import { State, NgxsOnInit, Action, StateContext } from '@ngxs/store';
-    import { TodoActions } from './todo-actions';
-    import { patch, updateItem } from '@ngxs/store/operators';
-    
-    export interface ITodo {
-        id: string;
-        title: string;
-        is_done: boolean;
-    }
-    export interface ITodoStateModel {
-        todoList: ITodo[];
-    }
-    @State<ITodoStateModel>({
-        name: 'todoList',
-        defaults: {
-            todoList: [],
-        },
-    })
-    @Injectable()
-    export class TodoState implements NgxsOnInit {
-        ngxsOnInit(ctx) {
-            ctx.dispatch(new TodoActions.FetchAllTodos());
-        }
-        @Action(TodoActions.markDone)
-        markDone(
-          ctx: StateContext<ITodoStateModel>, 
-          { payload, is_done }: TodoActions.markDone
-        ) {
-            ctx.setState(
-                patch({
-                    todoList: updateItem(
-                      (item: ITodo) => item.id === payload, 
-                      patch({ is_done: !is_done })
-                    )
-                })
-            );
-        }
-    
-        @Action(TodoActions.AddTodo)
-        add(
-            ctx: StateContext<ITodoStateModel>,
-            { payload }: TodoActions.AddTodo,
-        ) {
-            const state = ctx.getState();
-            ctx.setState({
-                ...state,
-                todoList: [
-                    ...state.todoList,
-                    {
-                        ...payload,
-                        id: Math.random().toString(36).substring(7),
-                        is_done: false
-                    }
-                ],
-            }
-            );
-        }
-    
+import { State, Selector, Action, StateContext } from '@ngxs/store';
+import { patch, updateItem } from '@ngxs/store/operators';
+import { Task } from '../models/task.model';
+
+const defaultTasks = {
+  id: '1', title: 'new task', state: 'TASK_INBOX'
+}
+
+export interface TaskStateModel {
+  task: Task;
+}
+
+// Sets the default state
+@State<TaskStateModel>({
+    name: 'taskstate',
+    defaults: {
+      task: defaultTasks,
+    },
+  })
+
+  @Injectable()
+  export class TaskState {
+
+    @Selector()
+    static getTask(state: TaskStateModel): Task {
+      return state.task;
     }
 
+  }
     \`\`\` 
   `;
 
   
   markdownNgxsHtml = `
-    ### Here we have created a form that we use to create todo and listed all todos. put this code in your app.component.html
+    ### Here we have created component.html file.
     \`\`\`typescript 
-    <!-- File name  app.component.html -->
-    <form [formGroup]="addForm" (ngSubmit)="onSubmit(addForm.value)">
-      <input type="text" formControlName="title" class="form-control todo-list-input" placeholder="What do you need to do today?">
-      <button class="add btn btn-primary font-weight-bold todo-list-add-btn">Add</button> 
-    </form>
-    <ul class="d-flex flex-column-reverse todo-list">
-        <li *ngFor="let todo of (todoList$ | async) ?. todoList" [ngClass]="{'completed': todo.is_done}">
-          <div class="form-check"> 
-            <label class="form-check-label"> 
-              <input (click)="markDone(todo.id, todo.is_done)" class="checkbox" type="checkbox" [checked]="todo.is_done">{{todo.title}} <i class="input-helper"></i></label> 
-          </div>
-        </li>
-      </ul>
+    <div class="list-item {{ (task | async).state }}">
+    <label
+      [attr.aria-label]="'archiveTask-' + (task | async).id"
+      for="checked-{{ (task | async).id }}"
+      class="checkbox"
+    >
     \`\`\` 
 
 
@@ -191,7 +140,7 @@ export class DeleteTodo {
   @ViewChild('installationNgxs', { static: true })
   installationNgxs!: TemplateRef<any>;
 
-  @ViewChild('createState', { static: true })
+  @ViewChild('createStore', { static: true })
   createStore!: TemplateRef<any>;
 
   @ViewChild('createAction', { static: true })

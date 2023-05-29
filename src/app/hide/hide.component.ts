@@ -86,6 +86,10 @@ export interface Task {
   `;
 
   pureInboxMarkdown1 =`
+    ### pure Inbox screen consists of two screeen 
+    - Default: This screen shows the  app with tasks. 
+    - Error: This screen is for showing an error if the server failed to load.
+
     
   `;
 
