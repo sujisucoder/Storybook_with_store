@@ -8,7 +8,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "storybook": "ng run store:storybook",
-    "build-storybook": "ng run store:build-storybook"
+    "build-storybook": "ng run store:build-storybook",
+    "chromatic": "npx chromatic --project-token=chpt_79c027bf81aeba0"
   },
   "private": true,
   "dependencies": {
@@ -45,6 +46,7 @@
     "@storybook/testing-library": "^0.0.14-next.2",
     "@types/jasmine": "~4.3.0",
     "@types/marked": "^4.3.0",
+    "chromatic": "^6.17.4",
     "jasmine-core": "~4.6.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
@@ -55,5 +57,7 @@
     "react-dom": "^18.2.0",
     "storybook": "^7.0.17",
     "typescript": "~5.0.2"
-  }
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "store@0.0.0"
 }

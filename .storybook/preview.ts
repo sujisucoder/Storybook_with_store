@@ -16,7 +16,9 @@ const preview: Preview = {
           'Task',
           ['PureTaskComponent', 'TaskListComponent'],
           'Screen',
-          ['InboxScreen']
+          ['PureInboxScreen'],
+          'Data',
+          ['TaskList','TaskListPinned','InboxScreen']
         ],
       },
        showPanel: false 
