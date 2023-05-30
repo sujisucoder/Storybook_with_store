@@ -5,7 +5,6 @@ import type { Meta, StoryObj } from '@storybook/angular';
 
  import { Store, NgxsModule } from '@ngxs/store';
  import { TaskListState } from 'src/app/state/tasklist.state';
- import { TaskPinState } from 'src/app/state/tasklist-pinned.state';  
 
 
  import { moduleMetadata, applicationConfig } from '@storybook/angular';
@@ -25,7 +24,7 @@ const meta: Meta<PureInboxScreenComponent> = {
       imports: [CommonModule, TaskModule],
     }),
    applicationConfig({
-     providers: [Store, importProvidersFrom(NgxsModule.forRoot([TaskPinState]))],
+     providers: [Store, importProvidersFrom(NgxsModule.forRoot([]))],
     }),
   ],
 };
@@ -36,7 +35,5 @@ type Story = StoryObj<PureInboxScreenComponent>;
 export const Default: Story = {};
 
 export const Error: Story = {
-  args: {
-    error: true,
-  },
+
 };

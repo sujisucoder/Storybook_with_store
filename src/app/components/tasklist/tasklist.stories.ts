@@ -25,7 +25,7 @@ const meta: Meta<TaskListComponent> = {
       imports: [CommonModule, TaskModule],
     }),
    applicationConfig({
-     providers: [Store, importProvidersFrom(NgxsModule.forRoot([TaskListState]))],
+     providers: [Store, importProvidersFrom(NgxsModule.forRoot([]))],
     }),
   ],
 };
@@ -39,23 +39,4 @@ export const Default: Story = {
     
     },
 
-};
-
-export const WithPinnedTasks : Story = {
-  args: {
-  
-  
-    }
-};
-
-export const Loading : Story = {
-  args: {
-   
-    }
-};
-
-export const Empty : Story = {
-  args: {
-    
-    }
 };

@@ -22,6 +22,7 @@ import { YoutubeComponent } from './youtube/youtube.component';
 import { StorybookDesignComponent } from './storybook-design/storybook-design.component';
 import { HideComponent } from './hide/hide.component';
 import { NgxsComponent } from './ngxs/ngxs.component';
+import { TaskListPinModule } from './components/tasklist/tasklist-modules/tasklist-pinned.module';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { NgxsComponent } from './ngxs/ngxs.component';
     BrowserModule,
     AppRoutingModule,
     TaskModule,
+    TaskListPinModule,
     HttpClientModule,
     MarkdownModule.forRoot({ loader: HttpClient }),
     NgxsModule.forRoot([], {

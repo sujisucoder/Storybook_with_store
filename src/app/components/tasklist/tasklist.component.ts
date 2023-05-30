@@ -18,7 +18,7 @@ export  class TaskListComponent {
 
   constructor(private store: Store) {
 
-    this.tasks$ = store.select((state) => state.taskPinState.tasks);
+    this.tasks$ = store.select((state) => state.taskListState.tasks);
 
   }
   /**

@@ -3127,7 +3127,7 @@
         },
         {
             "name": "TaskListComponent",
-            "id": "component-TaskListComponent-c948ba913d46274fac628a7ba864c7a51eded954fa0c1b3a82315b2e01833b84f81a8fc5357e7b519279f64d006bfdc692847dc4d8564414ebc516d8c8f6c6ca",
+            "id": "component-TaskListComponent-373eb94fc711338c3be118c01d12bdee6feb69745e9cf69212657bd6430b9a7cefdd8df193c4b9aadf3ea494a943db60f5f2c919adb78bac2434ccec40662948",
             "file": "src/app/components/tasklist/tasklist.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -3225,7 +3225,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\nimport { Store } from '@ngxs/store';\r\nimport { ArchiveTask, PinTask } from '../../state/tasklist.state';\r\nimport { Observable } from 'rxjs';\r\n\r\n@Component({\r\n  selector: 'app-task-list',\r\n  template: `\r\n    <app-pure-tasklist\r\n      [tasks]=\"tasks$ | async\"\r\n      (onArchiveTask)=\"archiveTask($event)\"\r\n      (onPinTask)=\"pinTask($event)\"\r\n    ></app-pure-tasklist>\r\n  `,\r\n})\r\nexport  class TaskListComponent {\r\n  tasks$?: Observable<any>;\r\n\r\n  constructor(private store: Store) {\r\n\r\n    this.tasks$ = store.select((state) => state.taskPinState.tasks);\r\n\r\n  }\r\n  /**\r\n   * Component method to trigger the archiveTask event\r\n   */\r\n  archiveTask(id: string) {\r\n\r\n    this.store.dispatch(new ArchiveTask(id));\r\n\r\n  }\r\n\r\n  /**\r\n   * Component method to trigger the pinTask event\r\n   */\r\n  pinTask(id: string) {\r\n\r\n    this.store.dispatch(new PinTask(id));\r\n    \r\n  }\r\n}",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { Store } from '@ngxs/store';\r\nimport { ArchiveTask, PinTask } from '../../state/tasklist.state';\r\nimport { Observable } from 'rxjs';\r\n\r\n@Component({\r\n  selector: 'app-task-list',\r\n  template: `\r\n    <app-pure-tasklist\r\n      [tasks]=\"tasks$ | async\"\r\n      (onArchiveTask)=\"archiveTask($event)\"\r\n      (onPinTask)=\"pinTask($event)\"\r\n    ></app-pure-tasklist>\r\n  `,\r\n})\r\nexport  class TaskListComponent {\r\n  tasks$?: Observable<any>;\r\n\r\n  constructor(private store: Store) {\r\n\r\n    this.tasks$ = store.select((state) => state.taskListPinState.tasks);\r\n\r\n  }\r\n  /**\r\n   * Component method to trigger the archiveTask event\r\n   */\r\n  archiveTask(id: string) {\r\n\r\n    this.store.dispatch(new ArchiveTask(id));\r\n\r\n  }\r\n\r\n  /**\r\n   * Component method to trigger the pinTask event\r\n   */\r\n  pinTask(id: string) {\r\n\r\n    this.store.dispatch(new PinTask(id));\r\n    \r\n  }\r\n}",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
@@ -3406,14 +3406,73 @@
             ]
         },
         {
+            "name": "TaskListPinModule",
+            "id": "module-TaskListPinModule-e05bc9df951b6dadc61ac16d8a5d815b4b84738aa1773966253eef62c6fa964dda30c25a289da088b9001943514be8a32e733a34ebf1f171abccd30b1b9f06d1",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/components/tasklist/tasklist-modules/tasklist-pinned.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { NgxsModule } from '@ngxs/store';\r\n\r\nimport { TaskComponent } from '../../task/task.component'; \r\nimport { PureTaskComponent } from '../../pure-task/pure-task.component'; \r\nimport { TaskListComponent } from '../tasklist.component'; \r\nimport { TaskPinState } from 'src/app/state/tasklist-pinned.state'; \r\nimport { PureTaskListComponent } from '../../pure-tasklist/pure-tasklist.component';\r\n\r\n@NgModule({\r\n  imports: [CommonModule, NgxsModule.forFeature([TaskPinState])],\r\n  exports: [PureTaskComponent, TaskListComponent,TaskComponent],\r\n  declarations: [PureTaskComponent, TaskListComponent, PureTaskListComponent,TaskComponent],\r\n  providers: [],\r\n})\r\nexport class TaskListPinModule {}",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "PureTaskComponent"
+                        },
+                        {
+                            "name": "PureTaskListComponent"
+                        },
+                        {
+                            "name": "TaskComponent"
+                        },
+                        {
+                            "name": "TaskListComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "PureTaskComponent"
+                        },
+                        {
+                            "name": "TaskComponent"
+                        },
+                        {
+                            "name": "TaskListComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
             "name": "TaskModule",
-            "id": "module-TaskModule-24583964c260e07df1f90e06a35acfee782ff5180f64db44c232a1feed3de5a67dd4a59e483aae62a67fb167529f81a24cec4681b2a08d9113ff8e38c7996027",
+            "id": "module-TaskModule-b9b36baf430cd266e6d94779dca94d7904f0a394d22cb91c5bab81501f7854619d7141e6dd3be83b08f59a6368110e72210420b1faa406490b0b9ed379d1718f",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/components/task.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { NgxsModule } from '@ngxs/store';\r\n\r\nimport { TaskComponent } from './task/task.component';\r\nimport { PureTaskComponent } from './pure-task/pure-task.component';\r\nimport { TaskListComponent } from './tasklist/tasklist.component';\r\nimport { TaskListState } from '../state/tasklist.state';\r\nimport { TaskState } from '../state/task.state';\r\nimport { TaskPinState } from '../state/tasklist-pinned.state'; \r\nimport { PureTaskListComponent } from './pure-tasklist/pure-tasklist.component';\r\n\r\n@NgModule({\r\n  imports: [CommonModule, NgxsModule.forFeature([TaskListState,TaskPinState,TaskState])],\r\n  exports: [PureTaskComponent, TaskListComponent,TaskComponent],\r\n  declarations: [PureTaskComponent, TaskListComponent, PureTaskListComponent,TaskComponent],\r\n  providers: [],\r\n})\r\nexport class TaskModule {}",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { NgxsModule } from '@ngxs/store';\r\n\r\nimport { TaskComponent } from './task/task.component';\r\nimport { PureTaskComponent } from './pure-task/pure-task.component';\r\nimport { TaskListComponent } from './tasklist/tasklist.component';\r\nimport { TaskListState } from '../state/tasklist.state';\r\nimport { TaskState } from '../state/task.state';\r\nimport { TaskPinState } from '../state/tasklist-pinned.state'; \r\nimport { PureTaskListComponent } from './pure-tasklist/pure-tasklist.component';\r\n\r\n@NgModule({\r\n  imports: [CommonModule, NgxsModule.forFeature([TaskListState])],\r\n  exports: [PureTaskComponent, TaskListComponent,TaskComponent],\r\n  declarations: [PureTaskComponent, TaskListComponent, PureTaskListComponent,TaskComponent],\r\n  providers: [],\r\n})\r\nexport class TaskModule {}",
             "children": [
                 {
                     "type": "providers",
@@ -3985,7 +4044,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<PureInboxScreenComponent>",
-                "defaultValue": "{\r\n  component: PureInboxScreenComponent,\r\n  title: 'Data/InboxScreen',\r\n  tags: ['autodocs'],\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [CommonModule, TaskModule],\r\n    }),\r\n   applicationConfig({\r\n     providers: [Store, importProvidersFrom(NgxsModule.forRoot([TaskPinState]))],\r\n    }),\r\n  ],\r\n}"
+                "defaultValue": "{\r\n  component: PureInboxScreenComponent,\r\n  title: 'Data/InboxScreen',\r\n \r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [CommonModule, TaskModule],\r\n    }),\r\n   applicationConfig({\r\n     providers: [Store, importProvidersFrom(NgxsModule.forRoot([TaskPinState]))],\r\n    }),\r\n  ],\r\n}"
             },
             {
                 "name": "meta",
@@ -4015,7 +4074,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<TaskListComponent>",
-                "defaultValue": "{\r\n  component: TaskListComponent,\r\n  title: 'Data/TaskListPinned',\r\n  tags: ['autodocs'],\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [CommonModule, TaskModule],\r\n    }),\r\n   applicationConfig({\r\n     providers: [Store, importProvidersFrom(NgxsModule.forRoot([TaskPinState]))],\r\n    }),\r\n  ],\r\n}"
+                "defaultValue": "{\r\n  component: TaskListComponent,\r\n  title: 'Data/TaskListPinned',\r\n  \r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [CommonModule, TaskListPinModule],\r\n    }),\r\n   applicationConfig({\r\n     providers: [Store, importProvidersFrom(NgxsModule.forRoot([]))],\r\n    }),\r\n  ],\r\n}"
             },
             {
                 "name": "meta",
@@ -4025,7 +4084,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<TaskListComponent>",
-                "defaultValue": "{\r\n  component: TaskListComponent,\r\n  title: 'Data/TaskList',\r\n  tags: ['autodocs'],\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [CommonModule, TaskModule],\r\n    }),\r\n   applicationConfig({\r\n     providers: [Store, importProvidersFrom(NgxsModule.forRoot([TaskListState]))],\r\n    }),\r\n  ],\r\n}"
+                "defaultValue": "{\r\n  component: TaskListComponent,\r\n  title: 'Data/TaskList',\r\n\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [CommonModule, TaskModule],\r\n    }),\r\n   applicationConfig({\r\n     providers: [Store, importProvidersFrom(NgxsModule.forRoot([]))],\r\n    }),\r\n  ],\r\n}"
             },
             {
                 "name": "metaDetail",
@@ -4766,7 +4825,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<PureInboxScreenComponent>",
-                    "defaultValue": "{\r\n  component: PureInboxScreenComponent,\r\n  title: 'Data/InboxScreen',\r\n  tags: ['autodocs'],\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [CommonModule, TaskModule],\r\n    }),\r\n   applicationConfig({\r\n     providers: [Store, importProvidersFrom(NgxsModule.forRoot([TaskPinState]))],\r\n    }),\r\n  ],\r\n}"
+                    "defaultValue": "{\r\n  component: PureInboxScreenComponent,\r\n  title: 'Data/InboxScreen',\r\n \r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [CommonModule, TaskModule],\r\n    }),\r\n   applicationConfig({\r\n     providers: [Store, importProvidersFrom(NgxsModule.forRoot([TaskPinState]))],\r\n    }),\r\n  ],\r\n}"
                 }
             ],
             "src/app/components/pure-inbox-screen/pure-inbox-screen.stories.ts": [
@@ -4902,7 +4961,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<TaskListComponent>",
-                    "defaultValue": "{\r\n  component: TaskListComponent,\r\n  title: 'Data/TaskListPinned',\r\n  tags: ['autodocs'],\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [CommonModule, TaskModule],\r\n    }),\r\n   applicationConfig({\r\n     providers: [Store, importProvidersFrom(NgxsModule.forRoot([TaskPinState]))],\r\n    }),\r\n  ],\r\n}"
+                    "defaultValue": "{\r\n  component: TaskListComponent,\r\n  title: 'Data/TaskListPinned',\r\n  \r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [CommonModule, TaskListPinModule],\r\n    }),\r\n   applicationConfig({\r\n     providers: [Store, importProvidersFrom(NgxsModule.forRoot([]))],\r\n    }),\r\n  ],\r\n}"
                 },
                 {
                     "name": "WithPinnedTasks",
@@ -4954,7 +5013,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<TaskListComponent>",
-                    "defaultValue": "{\r\n  component: TaskListComponent,\r\n  title: 'Data/TaskList',\r\n  tags: ['autodocs'],\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [CommonModule, TaskModule],\r\n    }),\r\n   applicationConfig({\r\n     providers: [Store, importProvidersFrom(NgxsModule.forRoot([TaskListState]))],\r\n    }),\r\n  ],\r\n}"
+                    "defaultValue": "{\r\n  component: TaskListComponent,\r\n  title: 'Data/TaskList',\r\n\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [CommonModule, TaskModule],\r\n    }),\r\n   applicationConfig({\r\n     providers: [Store, importProvidersFrom(NgxsModule.forRoot([]))],\r\n    }),\r\n  ],\r\n}"
                 },
                 {
                     "name": "WithPinnedTasks",

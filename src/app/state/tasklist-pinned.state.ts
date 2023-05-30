@@ -6,28 +6,29 @@ import { Task } from '../models/task.model';
 
 // Defines the actions available to the app
 export const actions = {
+
   ARCHIVE_TASK: 'ARCHIVE_TASK',
   PIN_TASK: 'PIN_TASK',
   ERROR: 'APP_ERROR',
-
 };
 
 export class ArchiveTask {
-  static readonly type = actions.ARCHIVE_TASK;
 
+  static readonly type = actions.ARCHIVE_TASK;
   constructor(public payload: string) {}
 }
 
 export class PinTask {
-  static readonly type = actions.PIN_TASK;
 
+  static readonly type = actions.PIN_TASK;
   constructor(public payload: string) {}
 }
 
 export class AppError {
-       static readonly type = actions.ERROR;
-       constructor(public payload: boolean) {}
-     }
+
+  static readonly type = actions.ERROR;
+  constructor(public payload: boolean) {}
+}
     
 
 // The initial state of our store when the app loads.
@@ -47,7 +48,7 @@ export interface TaskListPinStateModel {
 
 // Sets the default state
 @State<TaskListPinStateModel>({
-  name: 'taskListPinState',
+  name: 'taskListState',
   defaults: {
     tasks: defaultTasks,
     status: 'idle',

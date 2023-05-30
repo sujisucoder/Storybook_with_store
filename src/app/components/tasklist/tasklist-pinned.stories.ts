@@ -1,20 +1,15 @@
 
 import type { Meta, StoryObj } from '@storybook/angular';
-
- import { importProvidersFrom } from '@angular/core';
-
- import { Store, NgxsModule } from '@ngxs/store';
- import { TaskListState } from 'src/app/state/tasklist.state'; 
- import { TaskPinState } from 'src/app/state/tasklist-pinned.state';  
+import { importProvidersFrom } from '@angular/core';
+import { Store, NgxsModule } from '@ngxs/store';
+import { TaskPinState } from 'src/app/state/tasklist-pinned.state';  
 
 
- import { moduleMetadata, applicationConfig } from '@storybook/angular';
-
+import { moduleMetadata, applicationConfig } from '@storybook/angular';
 import { CommonModule } from '@angular/common';
+import { TaskListPinModule } from './tasklist-modules/tasklist-pinned.module'; 
 
 import { TaskListComponent } from './tasklist.component'; 
-
-import { TaskModule } from '../task.module'; 
 
 const meta: Meta<TaskListComponent> = {
   component: TaskListComponent,
@@ -22,10 +17,10 @@ const meta: Meta<TaskListComponent> = {
   
   decorators: [
     moduleMetadata({
-      imports: [CommonModule, TaskModule],
+      imports: [CommonModule, TaskListPinModule],
     }),
    applicationConfig({
-     providers: [Store, importProvidersFrom(NgxsModule.forRoot([TaskPinState]))],
+     providers: [Store, importProvidersFrom(NgxsModule.forRoot([]))],
     }),
   ],
 };
@@ -33,29 +28,11 @@ const meta: Meta<TaskListComponent> = {
 export default meta;
 type Story = StoryObj<TaskListComponent>;
 
-export const Default: Story = {
+export const Pinned: Story = {
     args: {
         
     
     },
 
 };
-
-export const WithPinnedTasks : Story = {
-  args: {
-  
-  
-    }
-};
-
-export const Loading : Story = {
-  args: {
-   
-    }
-};
-
-export const Empty : Story = {
-  args: {
-    
-    }
-};
+        
