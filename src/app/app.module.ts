@@ -23,6 +23,7 @@ import { StorybookDesignComponent } from './storybook-design/storybook-design.co
 import { HideComponent } from './hide/hide.component';
 import { NgxsComponent } from './ngxs/ngxs.component';
 import { TaskListPinModule } from './components/tasklist/tasklist-modules/tasklist-pinned.module';
+import { InboxScreenModule } from './components/inbox-screen/inbox-module/inboxsScreen.module';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { TaskListPinModule } from './components/tasklist/tasklist-modules/taskli
     AppRoutingModule,
     TaskModule,
     TaskListPinModule,
+    InboxScreenModule,
     HttpClientModule,
     MarkdownModule.forRoot({ loader: HttpClient }),
     NgxsModule.forRoot([], {

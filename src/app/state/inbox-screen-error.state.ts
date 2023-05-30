@@ -33,44 +33,44 @@ export class AppError {
 // The initial state of our store when the app loads.
 // Usually you would fetch this from a server
 const defaultTasks = [
-  { id: '1', title: 'Something', state: 'TASK_INBOX' },
-  { id: '2', title: 'Something more', state: 'TASK_PINNED' },
+  { id: '1', title: 'Something', state: 'TASK_PINNED' },
+  { id: '2', title: 'Something more', state: 'TASK_INBOX' },
   { id: '3', title: 'Something else', state: 'TASK_PINNED' },
-  { id: '4', title: 'Something again', state: 'TASK_INBOX' },
+  { id: '4', title: 'Something again', state: 'TASK_PINNED' },
 ];
 
-export interface TaskListStateModel {
+export interface InboxStateModel {
   tasks: Task[];
   status: 'idle' | 'loading' | 'success' | 'error';
   error: boolean;
 }
 
 // Sets the default state
-@State<TaskListStateModel>({
+@State<InboxStateModel>({
   name: 'taskListState',
   defaults: {
     tasks: defaultTasks,
     status: 'idle',
-    error: false,
+    error: true,
   },
 })
 @Injectable()
-export class TaskListState {
+export class InboxState {
   // Defines a new selector for the error field
   @Selector()
-  static getError(state: TaskListStateModel): boolean {
+  static getError(state: InboxStateModel): boolean {
     return state.error;
   }
 
   @Selector()
-  static getAllTasks(state: TaskListStateModel): Task[] {
+  static getAllTasks(state: InboxStateModel): Task[] {
     return state.tasks;
   }
 
   // Triggers the PinTask action, similar to redux
   @Action(PinTask)
   pinTask(
-    { getState, setState }: StateContext<TaskListStateModel>,
+    { getState, setState }: StateContext<InboxStateModel>,
     { payload }: PinTask
   ) {
     const task = getState().tasks.find((task) => task.id === payload);
@@ -93,7 +93,7 @@ export class TaskListState {
   // Triggers the archiveTask action, similar to redux
   @Action(ArchiveTask)
   archiveTask(
-    { getState, setState }: StateContext<TaskListStateModel>,
+    { getState, setState }: StateContext<InboxStateModel>,
     { payload }: ArchiveTask
   ) {
     const task = getState().tasks.find((task) => task.id === payload);
@@ -115,7 +115,7 @@ export class TaskListState {
 
    @Action(AppError)
  setAppError(
-   { patchState, getState }: StateContext<TaskListStateModel>,
+   { patchState, getState }: StateContext<InboxStateModel>,
    { payload }: AppError
  ) {
    const state = getState();

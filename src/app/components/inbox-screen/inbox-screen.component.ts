@@ -12,6 +12,6 @@ import { Observable } from 'rxjs';
 export  class InboxScreenComponent {
   error$: Observable<boolean>;
   constructor(private store: Store) {
-    this.error$ = store.select((state) => state.taskbox.error);
+    this.error$ = store.select((state) => state.taskListState.error);
   }
 }

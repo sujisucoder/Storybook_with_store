@@ -29,6 +29,46 @@
     <markdown  ngPreserveWhitespaces > {{pureInboxMarkdown2}} </markdown>
  
   </ng-template>
+
+  <ng-template #dataTasklist>
+    <markdown ngPreserveWhitespaces> --- </markdown>
+    <markdown mermaid ngPreserveWhitespaces>
+      
+    </markdown>
+    <div markdown  ngPreserveWhitespaces >{{dataTasklistMarkdown}}</div>
+    <markdown  ngPreserveWhitespaces >  </markdown>
+ 
+  </ng-template>
+
+  <ng-template #dataTasklistPinned>
+    <markdown ngPreserveWhitespaces> --- </markdown>
+    <markdown mermaid ngPreserveWhitespaces>
+     
+    </markdown>
+    <div markdown  ngPreserveWhitespaces >{{dataTasklistPinnedMarkdown}}</div>
+    <markdown  ngPreserveWhitespaces > </markdown>
+ 
+  </ng-template>
+
+  <ng-template #dataInboxScreen>
+    <markdown ngPreserveWhitespaces> --- </markdown>
+    <markdown mermaid ngPreserveWhitespaces>
+      
+    </markdown>
+    <div markdown  ngPreserveWhitespaces >{{dataInboxScreenMarkdown}}</div>
+    <markdown  ngPreserveWhitespaces >  </markdown>
+ 
+  </ng-template>
+
+  <ng-template #dataInboxScreenError>
+    <markdown ngPreserveWhitespaces> --- </markdown>
+    <markdown mermaid ngPreserveWhitespaces>
+      
+    </markdown>
+    <div markdown  ngPreserveWhitespaces > {{dataInboxScreenErrorMarkdown}}</div>
+    <markdown  ngPreserveWhitespaces > </markdown>
+ 
+  </ng-template>
   
 
 <ng-container [ngTemplateOutlet]="tems" [ngTemplateOutletContext]="myContext">

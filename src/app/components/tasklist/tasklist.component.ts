@@ -21,9 +21,7 @@ export  class TaskListComponent {
     this.tasks$ = store.select((state) => state.taskListState.tasks);
 
   }
-  /**
-   * Component method to trigger the archiveTask event
-   */
+
   archiveTask(id: string) {
 
     this.store.dispatch(new ArchiveTask(id));

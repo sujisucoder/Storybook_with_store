@@ -59,3 +59,28 @@ export const PureInboxMermaid: StoryDetail = {
       myselectedtemp: 'pureInbox'	
     }	
   };
+
+  export const DataTasklistMermaid: StoryDetail = {	
+    args: {	
+      myselectedtemp: 'dataTasklist'	
+    }	
+  };
+
+  export const DataTasklistPinnedMermaid: StoryDetail = {	
+    args: {	
+      myselectedtemp: 'dataTasklistPinned'	
+    }	
+  };
+
+  export const DataInboxScreenMermaid: StoryDetail = {	
+    args: {	
+      myselectedtemp: 'dataInboxScreen'	
+    }	
+  };
+
+  export const DataInboxScreenErrorMermaid: StoryDetail = {	
+    args: {	
+      myselectedtemp: 'dataInboxScreenError'	
+    }	
+  };
+

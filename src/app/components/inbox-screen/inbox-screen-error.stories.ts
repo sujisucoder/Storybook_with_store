@@ -6,22 +6,21 @@ import type { Meta, StoryObj } from '@storybook/angular';
  import { Store, NgxsModule } from '@ngxs/store';
 
 
-
  import { moduleMetadata, applicationConfig } from '@storybook/angular';
 
 import { CommonModule } from '@angular/common';
 
-import { TaskListComponent } from './tasklist.component'; 
+import { InboxScreenComponent } from './inbox-screen.component'; 
 
-import { TaskModule } from '../task.module'; 
+import { InboxScreenModule } from './inbox-module/inboxsScreen.module'; 
 
-const meta: Meta<TaskListComponent> = {
-  component: TaskListComponent,
-  title: 'Data/TaskList',
-
+const meta: Meta<InboxScreenComponent> = {
+  component: InboxScreenComponent,
+  title: 'Data/InboxScreenError',
+ 
   decorators: [
     moduleMetadata({
-      imports: [CommonModule, TaskModule],
+      imports: [CommonModule, InboxScreenModule],
     }),
    applicationConfig({
      providers: [Store, importProvidersFrom(NgxsModule.forRoot([]))],
@@ -30,12 +29,9 @@ const meta: Meta<TaskListComponent> = {
 };
 
 export default meta;
-type Story = StoryObj<TaskListComponent>;
+type Story = StoryObj<InboxScreenComponent>;
 
-export const Default: Story = {
-    args: {
-        
-    
-    },
+export const Error: Story = {
+
 
 };

@@ -20,6 +20,17 @@ export class HideComponent implements AfterContentInit {
   @ViewChild('pureInbox', { static: true })
   pureInbox!: TemplateRef<any>;
 
+  @ViewChild('dataTasklist', { static: true })
+  dataTasklist!: TemplateRef<any>;
+
+  @ViewChild('dataTasklistPinned', { static: true })
+  dataTasklistPinned!: TemplateRef<any>;
+
+  @ViewChild('dataInboxScreen', { static: true })
+  dataInboxScreen!: TemplateRef<any>;
+
+  @ViewChild('dataInboxScreenError', { static: true })
+  dataInboxScreenError!: TemplateRef<any>;
   tems: TemplateRef<any> = this.simpleTask;
 
   myContext = { $implicit: 'World', localSk: 'Svet' };
@@ -107,6 +118,149 @@ export interface Task {
 </pre>
   `
 
+  dataTasklistMarkdown = `
+  ### The tasklist component is connected with an ngxs store, for that first  import NgxsModule  from '@ngxs/store'
+  \`\`\`typescript	
+    import { NgxsModule } from '@ngxs/store';
+    \`\`\`
+
+  ### Mention the created state.ts file to the imports.
+
+  \`\`\`typescript	
+  imports: [CommonModule, NgxsModule.forFeature([TaskListState])],
+  \`\`\`
+
+  ### Now in the stories.ts file , import the module which you mentioned the state.
+
+  \`\`\`typescript	
+   applicationConfig({providers: [Store,importProvidersFrom(NgxsModule.forRoot([]))],})
+  \`\`\`
+
+
+  
+  `;
+
+  dataTasklistPinnedMarkdown =`
+    ### Let's start with making a new state.ts file , in this file change the defaultTasks's state to TASK_PINNED.
+
+    \`\`\`typescript	
+    // Usually you would fetch this from a server
+    const defaultTasks = [
+      { id: '1', title: 'Something', state: 'TASK_PINNED' },
+      { id: '2', title: 'Something more', state: 'TASK_PINNED' },
+      { id: '3', title: 'Something else', state: 'TASK_PINNED' },
+      { id: '4', title: 'Something again', state: 'TASK_PINNED' },
+    ];
+    \`\`\`
+
+    ### create another module.ts file for taking the new state indivitually, In the module import the ngxsModule and mention it in the NgModule.
+
+      
+    \`\`\`typescript	
+
+    import { TaskPinState } from 'src/app/state/tasklist-pinned.state';
+
+    @NgModule({
+      imports: [CommonModule, NgxsModule.forFeature([TaskPinState])],
+      exports: [PureTaskComponent, TaskListComponent,TaskComponent],
+      declarations: [PureTaskComponent, TaskListComponent, PureTaskListComponent,TaskComponent],
+      providers: []
+    })
+    export class TaskListPinModule {}
+    \`\`\`
+
+    ### create a new stories .ts file,Include the newly created module in the imports.
+
+    \`\`\`typescript	
+
+    import { TaskListPinModule } from './tasklist-modules/tasklist-pinned.module'; 
+
+    decorators: [
+      moduleMetadata({
+        imports: [CommonModule, TaskListPinModule],
+      }),
+     applicationConfig({
+       providers: [Store, importProvidersFrom(NgxsModule.forRoot([]))],
+      }),
+    \`\`\`
+  
+  `;
+
+  
+  dataInboxScreenMarkdown =`
+  ### The InboxScreen component is connected with an ngxs store, for that first  import NgxsModule  from '@ngxs/store'
+  \`\`\`typescript	
+    import { NgxsModule } from '@ngxs/store';
+    \`\`\`
+
+
+  ### Now in the stories.ts file , import the module which you mentioned the state.
+
+  \`\`\`typescript	
+  decorators: [
+    moduleMetadata({
+      imports: [CommonModule, TaskModule],
+    }),
+   applicationConfig({
+     providers: [Store, importProvidersFrom(NgxsModule.forRoot([]))],
+    }),
+  ],  
+  \`\`\`
+ 
+  
+  `;
+
+  
+  dataInboxScreenErrorMarkdown =`
+    ### Start with making a new state.ts file , in this file change the error property from false to true , error property is a boolean type.
+
+    #### In state.ts file.
+  \`\`\`typescript	
+    // Sets the default state
+    @State<InboxStateModel>({
+      name: 'taskListState',
+      defaults: {
+        tasks: defaultTasks,
+        status: 'idle',
+        error: true,
+      },
+    })
+  \`\`\`
+
+  ### Create another module.ts file for taking the new state indivitually, In the module import the ngxsModule and mention it in the NgModule.
+
+  \`\`\`typescript	
+  import { InboxState } from 'src/app/state/inbox-screen-error.state'; 
+
+  @NgModule({
+    imports: [CommonModule, NgxsModule.forFeature([InboxState])],
+    exports: [ InboxScreenComponent,TaskListComponent,TaskComponent],
+    declarations: [PureTaskComponent, TaskListComponent,InboxScreenComponent,PureInboxScreenComponent, PureTaskListComponent,TaskComponent],
+    providers: [],
+  })
+  export class InboxScreenModule {}
+  \`\`\`
+
+  ### Create a new stories .ts file,Include the newly created module in the imports.
+
+  \`\`\`typescript	
+  import { InboxScreenModule } from './inbox-module/inboxsScreen.module'; 
+
+  decorators: [
+    moduleMetadata({
+      imports: [CommonModule, InboxScreenModule],
+    }),
+   applicationConfig({
+     providers: [Store, importProvidersFrom(NgxsModule.forRoot([]))],
+    }),
+  \`\`\`
+
+
+
+  
+  `;
+
+
   ngAfterContentInit() {
     switch (this.myselectedtemp) {
       case 'simpleTask':
@@ -118,6 +272,18 @@ export interface Task {
       case 'pureInbox':
         this.tems = this.pureInbox;
         break;
+        case 'dataTasklist':
+         this.tems = this.dataTasklist;
+          break;
+           case 'dataTasklistPinned':
+          this.tems = this.dataTasklistPinned;
+          break; 
+          case 'dataInboxScreen':
+          this.tems = this.dataInboxScreen;
+          break;
+           case 'dataInboxScreenError':
+          this.tems = this.dataInboxScreenError;
+          break;
     }
   }
 
