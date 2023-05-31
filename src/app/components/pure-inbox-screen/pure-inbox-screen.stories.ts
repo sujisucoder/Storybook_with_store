@@ -8,6 +8,8 @@ import { importProvidersFrom } from '@angular/core';
 
  import { moduleMetadata, applicationConfig } from '@storybook/angular';
 
+ import { fireEvent, within } from '@storybook/testing-library';
+
 
 import { CommonModule } from '@angular/common';
 
@@ -40,3 +42,13 @@ export const Error: Story = {
     error: true,
   },
 };
+
+ export const WithInteractions: Story = {
+     play: async ({ canvasElement }) => {
+       const canvas = within(canvasElement);
+       // Simulates pinning the first task
+       await fireEvent.click(canvas.getByLabelText('pinTask-1'));
+       // Simulates pinning the third task
+       await fireEvent.click(canvas.getByLabelText('pinTask-3'));
+     },
+   };

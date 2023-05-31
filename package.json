@@ -9,7 +9,8 @@
     "test": "ng test",
     "storybook": "ng run store:storybook",
     "build-storybook": "ng run store:build-storybook",
-    "chromatic": "npx chromatic --project-token=chpt_79c027bf81aeba0"
+    "chromatic": "npx chromatic --project-token=chpt_79c027bf81aeba0",
+    "test-storybook": "test-storybook --watch"
   },
   "private": true,
   "dependencies": {
@@ -39,10 +40,12 @@
     "@angular/compiler-cli": "^16.0.0",
     "@compodoc/compodoc": "^1.1.21",
     "@storybook/addon-essentials": "^7.0.17",
-    "@storybook/addon-interactions": "^7.0.17",
+    "@storybook/addon-interactions": "^7.0.18",
     "@storybook/addon-links": "^7.0.17",
     "@storybook/angular": "^7.0.17",
     "@storybook/blocks": "^7.0.17",
+    "@storybook/jest": "^0.1.0",
+    "@storybook/test-runner": "^0.10.0",
     "@storybook/testing-library": "^0.0.14-next.2",
     "@types/jasmine": "~4.3.0",
     "@types/marked": "^4.3.0",

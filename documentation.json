@@ -1646,7 +1646,7 @@
         },
         {
             "name": "HideComponent",
-            "id": "component-HideComponent-d89f8e2ec54d245e18a3b8e60237163ecd81777a7470935a94656a693080f265a10eb3c9fb9687341668d0cd60d83c9cf34b207069ba3b1658a7a78ebaec9bd8",
+            "id": "component-HideComponent-55717145a4fe4a37b3d95ff1ec88e9bdffadef064c0e7802b0adc5c98c493acadf505653c4b474b2d8dbf1494cae80f144f92aa626bc18e32afa8475fda75e7e",
             "file": "src/app/hide/hide.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1711,6 +1711,26 @@
                     ]
                 },
                 {
+                    "name": "dataInboxScreenErrorMarkdown",
+                    "defaultValue": "`\n    ### Start with making a new state.ts file , in this file change the error property from false to true , error property is a boolean type.\n\n    #### In state.ts file.\n  \\`\\`\\`typescript\t\n    // Sets the default state\n    @State<InboxStateModel>({\n      name: 'taskListState',\n      defaults: {\n        tasks: defaultTasks,\n        status: 'idle',\n        error: true,\n      },\n    })\n  \\`\\`\\`\n\n  ### Create another module.ts file for taking the new state indivitually, In the module import the ngxsModule and mention it in the NgModule.\n\n  \\`\\`\\`typescript\t\n  import { InboxState } from 'src/app/state/inbox-screen-error.state'; \n\n  @NgModule({\n    imports: [CommonModule, NgxsModule.forFeature([InboxState])],\n    exports: [ InboxScreenComponent,TaskListComponent,TaskComponent],\n    declarations: [PureTaskComponent, TaskListComponent,InboxScreenComponent,PureInboxScreenComponent, PureTaskListComponent,TaskComponent],\n    providers: [],\n  })\n  export class InboxScreenModule {}\n  \\`\\`\\`\n\n  ### Create a new stories .ts file,Include the newly created module in the imports.\n\n  \\`\\`\\`typescript\t\n  import { InboxScreenModule } from './inbox-module/inboxsScreen.module'; \n\n  decorators: [\n    moduleMetadata({\n      imports: [CommonModule, InboxScreenModule],\n    }),\n   applicationConfig({\n     providers: [Store, importProvidersFrom(NgxsModule.forRoot([]))],\n    }),\n  \\`\\`\\`\n\n\n\n  \n  `",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 214
+                },
+                {
+                    "name": "dataInboxScreenMarkdown",
+                    "defaultValue": "`\n  ### The InboxScreen component is connected with an ngxs store, for that first  import NgxsModule  from '@ngxs/store'\n  \\`\\`\\`typescript\t\n    import { NgxsModule } from '@ngxs/store';\n    \\`\\`\\`\n\n\n  ### Now in the stories.ts file , import the module which you mentioned the state.\n\n  \\`\\`\\`typescript\t\n  decorators: [\n    moduleMetadata({\n      imports: [CommonModule, TaskModule],\n    }),\n   applicationConfig({\n     providers: [Store, importProvidersFrom(NgxsModule.forRoot([]))],\n    }),\n  ],  \n  \\`\\`\\`\n \n  \n  `",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 190
+                },
+                {
                     "name": "dataTasklist",
                     "deprecated": false,
                     "deprecationMessage": "",
@@ -1729,6 +1749,16 @@
                     ]
                 },
                 {
+                    "name": "dataTasklistMarkdown",
+                    "defaultValue": "`\n  ### The tasklist component is connected with an ngxs store, for that first  import NgxsModule  from '@ngxs/store'\n  \\`\\`\\`typescript\t\n    import { NgxsModule } from '@ngxs/store';\n    \\`\\`\\`\n\n  ### Mention the created state.ts file to the imports.\n\n  \\`\\`\\`typescript\t\n  imports: [CommonModule, NgxsModule.forFeature([TaskListState])],\n  \\`\\`\\`\n\n  ### Now in the stories.ts file , import the module which you mentioned the state.\n\n  \\`\\`\\`typescript\t\n   applicationConfig({providers: [Store,importProvidersFrom(NgxsModule.forRoot([]))],})\n  \\`\\`\\`\n\n\n  \n  `",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 121
+                },
+                {
                     "name": "dataTasklistPinned",
                     "deprecated": false,
                     "deprecationMessage": "",
@@ -1745,6 +1775,16 @@
                     "modifierKind": [
                         167
                     ]
+                },
+                {
+                    "name": "dataTasklistPinnedMarkdown",
+                    "defaultValue": "`\n    ### Let's start with making a new state.ts file , in this file change the defaultTasks's state to TASK_PINNED.\n\n    \\`\\`\\`typescript\t\n    // Usually you would fetch this from a server\n    const defaultTasks = [\n      { id: '1', title: 'Something', state: 'TASK_PINNED' },\n      { id: '2', title: 'Something more', state: 'TASK_PINNED' },\n      { id: '3', title: 'Something else', state: 'TASK_PINNED' },\n      { id: '4', title: 'Something again', state: 'TASK_PINNED' },\n    ];\n    \\`\\`\\`\n\n    ### create another module.ts file for taking the new state indivitually, In the module import the ngxsModule and mention it in the NgModule.\n\n      \n    \\`\\`\\`typescript\t\n\n    import { TaskPinState } from 'src/app/state/tasklist-pinned.state';\n\n    @NgModule({\n      imports: [CommonModule, NgxsModule.forFeature([TaskPinState])],\n      exports: [PureTaskComponent, TaskListComponent,TaskComponent],\n      declarations: [PureTaskComponent, TaskListComponent, PureTaskListComponent,TaskComponent],\n      providers: []\n    })\n    export class TaskListPinModule {}\n    \\`\\`\\`\n\n    ### create a new stories .ts file,Include the newly created module in the imports.\n\n    \\`\\`\\`typescript\t\n\n    import { TaskListPinModule } from './tasklist-modules/tasklist-pinned.module'; \n\n    decorators: [\n      moduleMetadata({\n        imports: [CommonModule, TaskListPinModule],\n      }),\n     applicationConfig({\n       providers: [Store, importProvidersFrom(NgxsModule.forRoot([]))],\n      }),\n    \\`\\`\\`\n  \n  `",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 143
                 },
                 {
                     "name": "myContext",
@@ -1908,7 +1948,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 121,
+                    "line": 264,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -1922,14 +1962,14 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import {\n  Component,\n  Input,\n  AfterContentInit,\n  ViewChild,\n  TemplateRef,\n} from '@angular/core';\n\n\n@Component({\n  selector: 'app-hide-story',\n  templateUrl: './hide.component.html',\n})\nexport class HideComponent implements AfterContentInit {\n\n  @ViewChild('simpleTask', { static: true })\n  simpleTask!: TemplateRef<any>;\n  @ViewChild('taskList', { static: true })\n  taskList!: TemplateRef<any>;\n  @ViewChild('pureInbox', { static: true })\n  pureInbox!: TemplateRef<any>;\n\n  @ViewChild('dataTasklist', { static: true })\n  dataTasklist!: TemplateRef<any>;\n\n  @ViewChild('dataTasklistPinned', { static: true })\n  dataTasklistPinned!: TemplateRef<any>;\n\n  @ViewChild('dataInboxScreen', { static: true })\n  dataInboxScreen!: TemplateRef<any>;\n\n  @ViewChild('dataInboxScreenError', { static: true })\n  dataInboxScreenError!: TemplateRef<any>;\n  tems: TemplateRef<any> = this.simpleTask;\n\n  myContext = { $implicit: 'World', localSk: 'Svet' };\n\n  @Input()\n  myselectedtemp: string = 'fromComponent';\n\n  simpleTaskMermaid = `\t\n  <pre class=\"mermaid\">\t\n  flowchart TD\t\n  id1([Create a task.component.ts ])-->id2([Create a task.stories.ts])\t\n  id2-->id3([Make 3 Stories ])\t\n  id3-->id4[[1.Default]]\t\n  id3-->id5[[2.Pinned]]\t\n  id3-->id6[[3.Archived]]\t\n  </pre>\t\n  `;\n  simpleTaskMarkdown1 = `\t\n  \t\n- The Taskbox app is gonna consists of a   checkbox/Square box that can be activated or deactivated when ticked \t\n- you can add the task title .\t\n- by using the pin icon on the right side of the corner you can set a task to be pinned on the top.\t\n \t\n  ### The taskbox app will have 3 states which we are going to make through 3 different stories.\t\n  `;\n  simpleTaskMarkdown2 = `\t\n  what these three stories create is a scenerio \t\n  - Default : In this story the app is gonna be default means it  will not be having any pinned or archived tasks.\t\n  - Pinned : In this story the  task is gonna be in pinned state means the selected task is pinned to the top of the list, but for now there is only one task.\t\n  - Archived : In this story the task is considered as finished.\t\n  ### Let's use Typescript to create an interface for the Task model \t\n  src/app/models/task.model.ts\t\n  \\`\\`\\`typescript\t\nexport interface Task {\t\n  id: string;\t\n  title: string;\t\n  state: string;\t\n}\t\n  \\`\\`\\`\t\n  `;\n\n  taskListMermaid = `\t\n  \t\n  <pre class=\"mermaid\">\t\n    flowchart TD\t\n    id1([Create a tasklist.Component.ts file ])--> id2([Create a  tasklist.Stories.ts file])\t\n    id2-->id3([Create 4 Stories])\t\n    id3-->id4[[1.Default]]\t\n    id3-->id5[[2.Pinned ]]\t\n    id3-->id6[[3.Empty]]\t\n    id3-->id7[[4.Loading]]\t\n    id3-->id8([create an Empty array named task])\t\n    id8-->id9([Create a boolean varriable loading and set it false. ])\t\n    id9-->id10([change the  task array values to see different stories ])\t\n   \t\n    \t\n    \t\n  </pre>\t\n  `;\n  taskListMarkdown1 = `\t\n    #####  As you can see  now we added two more states using storybook.\t\n    - Loading: In this story, we created a state where the task list is going to be loading to show \t\n    - Empty: In this story, we don't have any tasks left to finish. \t\n  `;\n\n  pureInboxMarkdown1 =`\n    ### pure Inbox screen consists of two screeen \n    - Default: This screen shows the  app with tasks. \n    - Error: This screen is for showing an error if the server failed to load.\n\n    \n  `;\n\n  pureInboxMarkdown2 =`\n   \n  `;\n\n\n  pureInboxMermaid1 =`\n  ## PureInbox screen gonna have 2 stories.\n  <pre class=\"mermaid\">\t\n  flowchart TD\t\n  id1([ InboxScreen ])--> id2([ Default story  ])\t\n  id1-->id3([Error story])\t\n</pre>\n  `\n\n  ngAfterContentInit() {\n    switch (this.myselectedtemp) {\n      case 'simpleTask':\n        this.tems = this.simpleTask;\n        break;\n      case 'taskList':\n        this.tems = this.taskList;\n        break;\n      case 'pureInbox':\n        this.tems = this.pureInbox;\n        break;\n        case 'dataTasklist':\n         this.tems = this.dataTasklist;\n          break;\n           case 'dataTasklistPinned':\n          this.tems = this.dataTasklistPinned;\n          break; \n          case 'dataInboxScreen':\n          this.tems = this.dataInboxScreen;\n          break;\n           case 'dataInboxScreenError':\n          this.tems = this.dataInboxScreenError;\n          break;\n    }\n  }\n\n}\n",
+            "sourceCode": "import {\n  Component,\n  Input,\n  AfterContentInit,\n  ViewChild,\n  TemplateRef,\n} from '@angular/core';\n\n\n@Component({\n  selector: 'app-hide-story',\n  templateUrl: './hide.component.html',\n})\nexport class HideComponent implements AfterContentInit {\n\n  @ViewChild('simpleTask', { static: true })\n  simpleTask!: TemplateRef<any>;\n  @ViewChild('taskList', { static: true })\n  taskList!: TemplateRef<any>;\n  @ViewChild('pureInbox', { static: true })\n  pureInbox!: TemplateRef<any>;\n\n  @ViewChild('dataTasklist', { static: true })\n  dataTasklist!: TemplateRef<any>;\n\n  @ViewChild('dataTasklistPinned', { static: true })\n  dataTasklistPinned!: TemplateRef<any>;\n\n  @ViewChild('dataInboxScreen', { static: true })\n  dataInboxScreen!: TemplateRef<any>;\n\n  @ViewChild('dataInboxScreenError', { static: true })\n  dataInboxScreenError!: TemplateRef<any>;\n  tems: TemplateRef<any> = this.simpleTask;\n\n  myContext = { $implicit: 'World', localSk: 'Svet' };\n\n  @Input()\n  myselectedtemp: string = 'fromComponent';\n\n  simpleTaskMermaid = `\t\n  <pre class=\"mermaid\">\t\n  flowchart TD\t\n  id1([Create a task.component.ts ])-->id2([Create a task.stories.ts])\t\n  id2-->id3([Make 3 Stories ])\t\n  id3-->id4[[1.Default]]\t\n  id3-->id5[[2.Pinned]]\t\n  id3-->id6[[3.Archived]]\t\n  </pre>\t\n  `;\n  simpleTaskMarkdown1 = `\t\n  \t\n- The Taskbox app is gonna consists of a   checkbox/Square box that can be activated or deactivated when ticked \t\n- you can add the task title .\t\n- by using the pin icon on the right side of the corner you can set a task to be pinned on the top.\t\n \t\n  ### The taskbox app will have 3 states which we are going to make through 3 different stories.\t\n  `;\n  simpleTaskMarkdown2 = `\t\n  what these three stories create is a scenerio \t\n  - Default : In this story the app is gonna be default means it  will not be having any pinned or archived tasks.\t\n  - Pinned : In this story the  task is gonna be in pinned state means the selected task is pinned to the top of the list, but for now there is only one task.\t\n  - Archived : In this story the task is considered as finished.\t\n  ### Let's use Typescript to create an interface for the Task model \t\n  src/app/models/task.model.ts\t\n  \\`\\`\\`typescript\t\nexport interface Task {\t\n  id: string;\t\n  title: string;\t\n  state: string;\t\n}\t\n  \\`\\`\\`\t\n  `;\n\n  taskListMermaid = `\t\n  \t\n  <pre class=\"mermaid\">\t\n    flowchart TD\t\n    id1([Create a tasklist.Component.ts file ])--> id2([Create a  tasklist.Stories.ts file])\t\n    id2-->id3([Create 4 Stories])\t\n    id3-->id4[[1.Default]]\t\n    id3-->id5[[2.Pinned ]]\t\n    id3-->id6[[3.Empty]]\t\n    id3-->id7[[4.Loading]]\t\n    id3-->id8([create an Empty array named task])\t\n    id8-->id9([Create a boolean varriable loading and set it false. ])\t\n    id9-->id10([change the  task array values to see different stories ])\t\n   \t\n    \t\n    \t\n  </pre>\t\n  `;\n  taskListMarkdown1 = `\t\n    #####  As you can see  now we added two more states using storybook.\t\n    - Loading: In this story, we created a state where the task list is going to be loading to show \t\n    - Empty: In this story, we don't have any tasks left to finish. \t\n  `;\n\n  pureInboxMarkdown1 =`\n    ### pure Inbox screen consists of two screeen \n    - Default: This screen shows the  app with tasks. \n    - Error: This screen is for showing an error if the server failed to load.\n\n    \n  `;\n\n  pureInboxMarkdown2 =`\n   \n  `;\n\n\n  pureInboxMermaid1 =`\n  ## PureInbox screen gonna have 2 stories.\n  <pre class=\"mermaid\">\t\n  flowchart TD\t\n  id1([ InboxScreen ])--> id2([ Default story  ])\t\n  id1-->id3([Error story])\t\n</pre>\n  `\n\n  dataTasklistMarkdown = `\n  ### The tasklist component is connected with an ngxs store, for that first  import NgxsModule  from '@ngxs/store'\n  \\`\\`\\`typescript\t\n    import { NgxsModule } from '@ngxs/store';\n    \\`\\`\\`\n\n  ### Mention the created state.ts file to the imports.\n\n  \\`\\`\\`typescript\t\n  imports: [CommonModule, NgxsModule.forFeature([TaskListState])],\n  \\`\\`\\`\n\n  ### Now in the stories.ts file , import the module which you mentioned the state.\n\n  \\`\\`\\`typescript\t\n   applicationConfig({providers: [Store,importProvidersFrom(NgxsModule.forRoot([]))],})\n  \\`\\`\\`\n\n\n  \n  `;\n\n  dataTasklistPinnedMarkdown =`\n    ### Let's start with making a new state.ts file , in this file change the defaultTasks's state to TASK_PINNED.\n\n    \\`\\`\\`typescript\t\n    // Usually you would fetch this from a server\n    const defaultTasks = [\n      { id: '1', title: 'Something', state: 'TASK_PINNED' },\n      { id: '2', title: 'Something more', state: 'TASK_PINNED' },\n      { id: '3', title: 'Something else', state: 'TASK_PINNED' },\n      { id: '4', title: 'Something again', state: 'TASK_PINNED' },\n    ];\n    \\`\\`\\`\n\n    ### create another module.ts file for taking the new state indivitually, In the module import the ngxsModule and mention it in the NgModule.\n\n      \n    \\`\\`\\`typescript\t\n\n    import { TaskPinState } from 'src/app/state/tasklist-pinned.state';\n\n    @NgModule({\n      imports: [CommonModule, NgxsModule.forFeature([TaskPinState])],\n      exports: [PureTaskComponent, TaskListComponent,TaskComponent],\n      declarations: [PureTaskComponent, TaskListComponent, PureTaskListComponent,TaskComponent],\n      providers: []\n    })\n    export class TaskListPinModule {}\n    \\`\\`\\`\n\n    ### create a new stories .ts file,Include the newly created module in the imports.\n\n    \\`\\`\\`typescript\t\n\n    import { TaskListPinModule } from './tasklist-modules/tasklist-pinned.module'; \n\n    decorators: [\n      moduleMetadata({\n        imports: [CommonModule, TaskListPinModule],\n      }),\n     applicationConfig({\n       providers: [Store, importProvidersFrom(NgxsModule.forRoot([]))],\n      }),\n    \\`\\`\\`\n  \n  `;\n\n  \n  dataInboxScreenMarkdown =`\n  ### The InboxScreen component is connected with an ngxs store, for that first  import NgxsModule  from '@ngxs/store'\n  \\`\\`\\`typescript\t\n    import { NgxsModule } from '@ngxs/store';\n    \\`\\`\\`\n\n\n  ### Now in the stories.ts file , import the module which you mentioned the state.\n\n  \\`\\`\\`typescript\t\n  decorators: [\n    moduleMetadata({\n      imports: [CommonModule, TaskModule],\n    }),\n   applicationConfig({\n     providers: [Store, importProvidersFrom(NgxsModule.forRoot([]))],\n    }),\n  ],  \n  \\`\\`\\`\n \n  \n  `;\n\n  \n  dataInboxScreenErrorMarkdown =`\n    ### Start with making a new state.ts file , in this file change the error property from false to true , error property is a boolean type.\n\n    #### In state.ts file.\n  \\`\\`\\`typescript\t\n    // Sets the default state\n    @State<InboxStateModel>({\n      name: 'taskListState',\n      defaults: {\n        tasks: defaultTasks,\n        status: 'idle',\n        error: true,\n      },\n    })\n  \\`\\`\\`\n\n  ### Create another module.ts file for taking the new state indivitually, In the module import the ngxsModule and mention it in the NgModule.\n\n  \\`\\`\\`typescript\t\n  import { InboxState } from 'src/app/state/inbox-screen-error.state'; \n\n  @NgModule({\n    imports: [CommonModule, NgxsModule.forFeature([InboxState])],\n    exports: [ InboxScreenComponent,TaskListComponent,TaskComponent],\n    declarations: [PureTaskComponent, TaskListComponent,InboxScreenComponent,PureInboxScreenComponent, PureTaskListComponent,TaskComponent],\n    providers: [],\n  })\n  export class InboxScreenModule {}\n  \\`\\`\\`\n\n  ### Create a new stories .ts file,Include the newly created module in the imports.\n\n  \\`\\`\\`typescript\t\n  import { InboxScreenModule } from './inbox-module/inboxsScreen.module'; \n\n  decorators: [\n    moduleMetadata({\n      imports: [CommonModule, InboxScreenModule],\n    }),\n   applicationConfig({\n     providers: [Store, importProvidersFrom(NgxsModule.forRoot([]))],\n    }),\n  \\`\\`\\`\n\n\n\n  \n  `;\n\n\n  ngAfterContentInit() {\n    switch (this.myselectedtemp) {\n      case 'simpleTask':\n        this.tems = this.simpleTask;\n        break;\n      case 'taskList':\n        this.tems = this.taskList;\n        break;\n      case 'pureInbox':\n        this.tems = this.pureInbox;\n        break;\n        case 'dataTasklist':\n         this.tems = this.dataTasklist;\n          break;\n           case 'dataTasklistPinned':\n          this.tems = this.dataTasklistPinned;\n          break; \n          case 'dataInboxScreen':\n          this.tems = this.dataInboxScreen;\n          break;\n           case 'dataInboxScreenError':\n          this.tems = this.dataInboxScreenError;\n          break;\n    }\n  }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "implements": [
                 "AfterContentInit"
             ],
-            "templateData": "\n\n<ng-template #simpleTask>\n    <markdown ngPreserveWhitespaces> --- </markdown>\n    <markdown ngPreserveWhitespaces> {{simpleTaskMarkdown1}} </markdown>\n    <markdown mermaid ngPreserveWhitespaces>\n      {{ simpleTaskMermaid}}\n    </markdown>\n    <markdown ngPreserveWhitespaces> {{simpleTaskMarkdown2}} </markdown>\n    <div markdown ngPreserveWhitespaces>---</div>\n  </ng-template>\n  \n  <ng-template #taskList>\n    <markdown ngPreserveWhitespaces> --- </markdown>\n    <markdown mermaid ngPreserveWhitespaces>\n      {{ taskListMermaid}}\n    </markdown>\n    <markdown ngPreserveWhitespaces> --- </markdown>\n    <div markdown ngPreserveWhitespaces>{{taskListMarkdown1}}</div>\n  </ng-template>\n\n    \n  <ng-template #pureInbox>\n    <markdown ngPreserveWhitespaces> --- </markdown>\n    <markdown mermaid ngPreserveWhitespaces>\n      {{pureInboxMermaid1}}\n    </markdown>\n    <div markdown  ngPreserveWhitespaces >{{pureInboxMarkdown1}}</div>\n    <markdown  ngPreserveWhitespaces > {{pureInboxMarkdown2}} </markdown>\n \n  </ng-template>\n/////////////////////\n  <ng-template #dataTasklist>\n    <markdown ngPreserveWhitespaces> --- </markdown>\n    <markdown mermaid ngPreserveWhitespaces>\n      {{pureInboxMermaid1}}\n    </markdown>\n    <div markdown  ngPreserveWhitespaces >{{pureInboxMarkdown1}}</div>\n    <markdown  ngPreserveWhitespaces > {{pureInboxMarkdown2}} </markdown>\n \n  </ng-template>\n\n  <ng-template #dataTasklistPinned>\n    <markdown ngPreserveWhitespaces> --- </markdown>\n    <markdown mermaid ngPreserveWhitespaces>\n      {{pureInboxMermaid1}}\n    </markdown>\n    <div markdown  ngPreserveWhitespaces >{{pureInboxMarkdown1}}</div>\n    <markdown  ngPreserveWhitespaces > {{pureInboxMarkdown2}} </markdown>\n \n  </ng-template>\n\n  <ng-template #dataInboxScreen>\n    <markdown ngPreserveWhitespaces> --- </markdown>\n    <markdown mermaid ngPreserveWhitespaces>\n      {{pureInboxMermaid1}}\n    </markdown>\n    <div markdown  ngPreserveWhitespaces >{{pureInboxMarkdown1}}</div>\n    <markdown  ngPreserveWhitespaces > {{pureInboxMarkdown2}} </markdown>\n \n  </ng-template>\n\n  <ng-template #dataInboxScreenError>\n    <markdown ngPreserveWhitespaces> --- </markdown>\n    <markdown mermaid ngPreserveWhitespaces>\n      {{pureInboxMermaid1}}\n    </markdown>\n    <div markdown  ngPreserveWhitespaces >{{pureInboxMarkdown1}}</div>\n    <markdown  ngPreserveWhitespaces > {{pureInboxMarkdown2}} </markdown>\n \n  </ng-template>\n  \n\n<ng-container [ngTemplateOutlet]=\"tems\" [ngTemplateOutletContext]=\"myContext\">\n</ng-container>"
+            "templateData": "\n\n<ng-template #simpleTask>\n    <markdown ngPreserveWhitespaces> --- </markdown>\n    <markdown ngPreserveWhitespaces> {{simpleTaskMarkdown1}} </markdown>\n    <markdown mermaid ngPreserveWhitespaces>\n      {{ simpleTaskMermaid}}\n    </markdown>\n    <markdown ngPreserveWhitespaces> {{simpleTaskMarkdown2}} </markdown>\n    <div markdown ngPreserveWhitespaces>---</div>\n  </ng-template>\n  \n  <ng-template #taskList>\n    <markdown ngPreserveWhitespaces> --- </markdown>\n    <markdown mermaid ngPreserveWhitespaces>\n      {{ taskListMermaid}}\n    </markdown>\n    <markdown ngPreserveWhitespaces> --- </markdown>\n    <div markdown ngPreserveWhitespaces>{{taskListMarkdown1}}</div>\n  </ng-template>\n\n    \n  <ng-template #pureInbox>\n    <markdown ngPreserveWhitespaces> --- </markdown>\n    <markdown mermaid ngPreserveWhitespaces>\n      {{pureInboxMermaid1}}\n    </markdown>\n    <div markdown  ngPreserveWhitespaces >{{pureInboxMarkdown1}}</div>\n    <markdown  ngPreserveWhitespaces > {{pureInboxMarkdown2}} </markdown>\n \n  </ng-template>\n\n  <ng-template #dataTasklist>\n    <markdown ngPreserveWhitespaces> --- </markdown>\n    <markdown mermaid ngPreserveWhitespaces>\n      \n    </markdown>\n    <div markdown  ngPreserveWhitespaces >{{dataTasklistMarkdown}}</div>\n    <markdown  ngPreserveWhitespaces >  </markdown>\n \n  </ng-template>\n\n  <ng-template #dataTasklistPinned>\n    <markdown ngPreserveWhitespaces> --- </markdown>\n    <markdown mermaid ngPreserveWhitespaces>\n     \n    </markdown>\n    <div markdown  ngPreserveWhitespaces >{{dataTasklistPinnedMarkdown}}</div>\n    <markdown  ngPreserveWhitespaces > </markdown>\n \n  </ng-template>\n\n  <ng-template #dataInboxScreen>\n    <markdown ngPreserveWhitespaces> --- </markdown>\n    <markdown mermaid ngPreserveWhitespaces>\n      \n    </markdown>\n    <div markdown  ngPreserveWhitespaces >{{dataInboxScreenMarkdown}}</div>\n    <markdown  ngPreserveWhitespaces >  </markdown>\n \n  </ng-template>\n\n  <ng-template #dataInboxScreenError>\n    <markdown ngPreserveWhitespaces> --- </markdown>\n    <markdown mermaid ngPreserveWhitespaces>\n      \n    </markdown>\n    <div markdown  ngPreserveWhitespaces > {{dataInboxScreenErrorMarkdown}}</div>\n    <markdown  ngPreserveWhitespaces > </markdown>\n \n  </ng-template>\n  \n\n<ng-container [ngTemplateOutlet]=\"tems\" [ngTemplateOutletContext]=\"myContext\">\n</ng-container>"
         },
         {
             "name": "InboxScreenComponent",
@@ -4742,6 +4782,16 @@
                 "name": "metaDetail",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/markdown/markdown.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<MarkdownComponent>",
+                "defaultValue": "{\r\n\r\n    title: 'Setup/Markdown',\r\n  component: MarkdownComponent,\r\n  decorators:[\r\n    moduleMetadata({\r\n        //👇 Imports both components to allow component composition with storybook\r\n        declarations: [MarkdownComponent],\r\n        imports: [            \r\n            CommonModule,\r\n            // SharedModule,\r\n            HttpClientModule,\r\n            MarkdownModule.forRoot({loader: HttpClient}),\r\n        ],\r\n        providers:[MarkdownService]\r\n      }),\r\n      applicationConfig({\r\n        providers: [\r\n          importProvidersFrom(\r\n            MarkdownService\r\n          ),\r\n        ],\r\n      }),\r\n  componentWrapperDecorator(story => `<app-markdowncode [myselectedtemp]= \"myselectedtemp\"></app-markdowncode>`)\r\n  ]\r\n}"
+            },
+            {
+                "name": "metaDetail",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/hide/hide.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -4757,16 +4807,6 @@
                 "deprecationMessage": "",
                 "type": "Meta<MermaidComponent>",
                 "defaultValue": "{\r\n  /* 👇 The title prop is optional.\r\n   * See https://storybook.js.org/docs/angular/configure/overview#configure-story-loading\r\n   * to learn how to generate automatic titles\r\n   */\r\n  title: 'Setup/Mermaid',\r\n  component: MermaidComponent,\r\n  decorators: [\r\n    moduleMetadata({\r\n      //👇 Imports both components to allow component composition with storybook\r\n      declarations: [MermaidComponent],\r\n      imports: [\r\n        CommonModule,\r\n        // SharedModule,\r\n        HttpClientModule,\r\n        MarkdownModule.forRoot({ loader: HttpClient }),\r\n      ]\r\n    }),\r\n    applicationConfig({\r\n      providers: [\r\n        importProvidersFrom(\r\n          CommonModule,\r\n          HttpClientModule,\r\n          MarkdownModule.forRoot({ loader: HttpClient }),\r\n          MarkdownService\r\n        ),\r\n      ],\r\n    }),\r\n    componentWrapperDecorator(story => `<app-mermaidcode [myselectedtemp]= \"myselectedtemp\"></app-mermaidcode>`)\r\n  ]\r\n}"
-            },
-            {
-                "name": "metaDetail",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/markdown/markdown.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<MarkdownComponent>",
-                "defaultValue": "{\r\n\r\n    title: 'Setup/Markdown',\r\n  component: MarkdownComponent,\r\n  decorators:[\r\n    moduleMetadata({\r\n        //👇 Imports both components to allow component composition with storybook\r\n        declarations: [MarkdownComponent],\r\n        imports: [            \r\n            CommonModule,\r\n            // SharedModule,\r\n            HttpClientModule,\r\n            MarkdownModule.forRoot({loader: HttpClient}),\r\n        ],\r\n        providers:[MarkdownService]\r\n      }),\r\n      applicationConfig({\r\n        providers: [\r\n          importProvidersFrom(\r\n            MarkdownService\r\n          ),\r\n        ],\r\n      }),\r\n  componentWrapperDecorator(story => `<app-markdowncode [myselectedtemp]= \"myselectedtemp\"></app-markdowncode>`)\r\n  ]\r\n}"
             },
             {
                 "name": "metaDetail",
@@ -4929,6 +4969,16 @@
                 "defaultValue": "{\r\n  args: {\r\n    myselectedtemp: 'plan'\r\n  }\r\n}"
             },
             {
+                "name": "WithInteractions",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/pure-inbox-screen/pure-inbox-screen.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n     play: async ({ canvasElement }) => {\r\n       const canvas = within(canvasElement);\r\n       // Simulates pinning the first task\r\n       await fireEvent.click(canvas.getByLabelText('pinTask-1'));\r\n       // Simulates pinning the third task\r\n       await fireEvent.click(canvas.getByLabelText('pinTask-3'));\r\n     },\r\n   }"
+            },
+            {
                 "name": "WithPinnedTasks",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -5011,6 +5061,17 @@
                 "name": "StoryDetail",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
+                "rawtype": "StoryObj<MarkdownComponent>",
+                "file": "src/app/markdown/markdown.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 180
+            },
+            {
+                "name": "StoryDetail",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
                 "rawtype": "StoryObj<HideComponent>",
                 "file": "src/app/hide/hide.stories.ts",
                 "deprecated": false,
@@ -5024,17 +5085,6 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<MermaidComponent>",
                 "file": "src/app/mermaid/mermaid.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 180
-            },
-            {
-                "name": "StoryDetail",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "StoryObj<MarkdownComponent>",
-                "file": "src/app/markdown/markdown.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -5605,6 +5655,16 @@
                     "deprecationMessage": "",
                     "type": "Meta<PureInboxScreenComponent>",
                     "defaultValue": "{\r\n  component: PureInboxScreenComponent,\r\n  title: 'Screen/PureInboxScreen',\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [CommonModule, TaskModule],\r\n    }),\r\n    applicationConfig({\r\n     providers: [Store, importProvidersFrom(NgxsModule.forRoot([TaskListState]))],\r\n    }),\r\n  ],\r\n}"
+                },
+                {
+                    "name": "WithInteractions",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/pure-inbox-screen/pure-inbox-screen.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n     play: async ({ canvasElement }) => {\r\n       const canvas = within(canvasElement);\r\n       // Simulates pinning the first task\r\n       await fireEvent.click(canvas.getByLabelText('pinTask-1'));\r\n       // Simulates pinning the third task\r\n       await fireEvent.click(canvas.getByLabelText('pinTask-3'));\r\n     },\r\n   }"
                 }
             ],
             "src/app/components/pure-tasklist/pure-tasklist.stories.ts": [
@@ -5989,6 +6049,19 @@
                     "kind": 180
                 }
             ],
+            "src/app/markdown/markdown.stories.ts": [
+                {
+                    "name": "StoryDetail",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<MarkdownComponent>",
+                    "file": "src/app/markdown/markdown.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 180
+                }
+            ],
             "src/app/hide/hide.stories.ts": [
                 {
                     "name": "StoryDetail",
@@ -6009,19 +6082,6 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<MermaidComponent>",
                     "file": "src/app/mermaid/mermaid.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 180
-                }
-            ],
-            "src/app/markdown/markdown.stories.ts": [
-                {
-                    "name": "StoryDetail",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<MarkdownComponent>",
-                    "file": "src/app/markdown/markdown.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -6203,6 +6263,16 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/pure-inbox-screen/pure-inbox-screen.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "WithInteractions",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -6419,7 +6489,7 @@
                 "linktype": "component",
                 "name": "HideComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/20",
+                "coverageCount": "0/24",
                 "status": "low"
             },
             {

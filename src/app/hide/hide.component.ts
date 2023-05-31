@@ -118,6 +118,81 @@ export interface Task {
 </pre>
   `
 
+  pureInboxInteractionMarkdown =`
+  # Interaction testing 
+  ### let's use the interaction testing to test the stories 
+
+  ### 1. Install the npm package
+
+  \`\`\`typescript	
+  npm install @storybook/testing-library @storybook/jest @storybook/addon-interactions --save-dev
+    \`\`\`
+
+  ### 2. update the configuration file in storybook/main.ts file.
+
+  \`\`\`typescript	
+  // .storybook/main.ts
+
+  // Replace your-framework with the framework you are using (e.g., react-webpack5, vue3-vite)
+  import type { StorybookConfig } from '@storybook/your-framework';
+  
+  const config: StorybookConfig = {
+    framework: '@storybook/your-framework',
+    stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
+    addons: [
+      // Other Storybook addons
+      '@storybook/addon-interactions', // 👈 Register the addon
+    ],
+  };
+  
+  export default config;
+  \`\`\`
+
+  ### 3. Create a new story for the interaction test.
+
+  \`\`\`typescript
+  import { fireEvent, within } from '@storybook/testing-library';
+
+    
+ export const WithInteractions: Story = {
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    // Simulates pinning the first task
+    await fireEvent.click(canvas.getByLabelText('pinTask-1'));
+    // Simulates pinning the third task
+    await fireEvent.click(canvas.getByLabelText('pinTask-3'));
+  },
+};
+  \`\`\`
+
+  ### Now the test will only begin when we open the story each time , so let's automate the tests through test runner.
+
+  ### 1. Install npm package for test runner.
+  \`\`\`typescript
+  npm install @storybook/test-runner --save-dev
+  \`\`\`
+
+  ### 2. update package.json
+
+  \`\`\`typescript
+  {
+    "scripts": {
+      "test-storybook": "test-storybook"
+    }
+  }  
+  \`\`\`
+
+  ### 3. Run the test, use the following command
+
+  \`\`\`typescript
+    npm run test-storybook -- --watch
+  \`\`\`  
+
+  ### 4. You can find your test results through command line
+
+ 
+  `;
+
   dataTasklistMarkdown = `
   ### The tasklist component is connected with an ngxs store, for that first  import NgxsModule  from '@ngxs/store'
   \`\`\`typescript	
@@ -254,10 +329,6 @@ export interface Task {
      providers: [Store, importProvidersFrom(NgxsModule.forRoot([]))],
     }),
   \`\`\`
-
-
-
-  
   `;
 
 
